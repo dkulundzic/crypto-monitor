@@ -15,12 +15,18 @@ extension NetworkService {
         let requestDecorator = Container.shared.requestDecorator.resolve()
         requestDecorator.decorate(request: &request)
 
-        let (data, _) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard
+            let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode)
+        else {
+            throw NetworkError.serverError("Yo! There was an error.")
+        }
 
         do {
             return try JSONDecoder.default.decode(T.self, from: data)
         } catch {
-            throw NetworkError.decodingError
+            throw NetworkError.decodingError(error.localizedDescription)
         }
     }
 }
