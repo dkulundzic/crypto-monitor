@@ -1,4 +1,5 @@
 import Foundation
+import Factory
 
 @MainActor
 class AssetListViewModel: ObservableObject {
@@ -8,20 +9,14 @@ class AssetListViewModel: ObservableObject {
     @Published var error: String?
     private var showFavoritesOnly = false
     private var searchText = ""
-    private let networkService: NetworkService
-
-    init(
-        networkService: NetworkService = NetworkService()
-    ) {
-        self.networkService = networkService
-    }
+    @Injected(\.assetsNetworkService) var assetsNetworkService
 
     func loadAssets() async {
         isLoading = true
         defer { isLoading = false }
 
         do {
-            assets = try await networkService.fetchAssets()
+            assets = try await assetsNetworkService.fetchAssets()
             filterAssets(searchText: searchText)
         } catch {
             self.error = error.localizedDescription
