@@ -6,22 +6,25 @@ class AssetListViewModel: ObservableObject {
     @Published var filteredAssets: [Asset] = []
     @Published var isLoading = false
     @Published var error: String?
-    
     private var showFavoritesOnly = false
     private var searchText = ""
-    
+    private let networkService: NetworkService
+
+    init(
+        networkService: NetworkService = NetworkService()
+    ) {
+        self.networkService = networkService
+    }
+
     func loadAssets() async {
         isLoading = true
-        DispatchQueue.main.async { [weak self] in
-            Task {
-                do {
-                    self?.assets = try await NetworkService.shared.fetchAssets()
-                    self?.filterAssets(searchText: self?.searchText ?? "")
-                } catch {
-                    self?.error = error.localizedDescription
-                }
-                self?.isLoading = false
-            }
+        defer { isLoading = false }
+
+        do {
+            assets = try await networkService.fetchAssets()
+            filterAssets(searchText: searchText)
+        } catch {
+            self.error = error.localizedDescription
         }
     }
     
@@ -41,8 +44,7 @@ class AssetListViewModel: ObservableObject {
                 asset.name.localizedCaseInsensitiveContains(searchText) ||
                 asset.assetId.localizedCaseInsensitiveContains(searchText)
             
-            let matchesFavorites = !showFavoritesOnly || asset.isFavorite
-            
+            let matchesFavorites = !showFavoritesOnly || asset.isFavorite            
             return matchesSearch && matchesFavorites
         }
     }

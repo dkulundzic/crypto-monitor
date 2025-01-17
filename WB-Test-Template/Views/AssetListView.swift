@@ -4,12 +4,16 @@ struct AssetListView: View {
     @StateObject private var viewModel = AssetListViewModel()
     @State private var searchText = ""
     @State private var showFavoritesOnly = false
-    
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.filteredAssets) { asset in
-                    NavigationLink(destination: AssetDetailView(asset: asset)) {
+                ForEach(
+                    viewModel.filteredAssets
+                ) { asset in
+                    NavigationLink(
+                        destination: AssetDetailView(asset: asset)
+                    ) {
                         AssetRowView(asset: asset)
                     }
                 }
@@ -20,11 +24,13 @@ struct AssetListView: View {
             }
             .navigationTitle("Crypto Monitor")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
+                ToolbarItem(
+                    placement: .navigationBarTrailing
+                ) {
+                    Button {
                         showFavoritesOnly.toggle()
                         viewModel.toggleFavoritesFilter(showFavoritesOnly)
-                    }) {
+                    } label: {
                         Image(systemName: showFavoritesOnly ? "star.fill" : "star")
                     }
                 }
@@ -38,26 +44,30 @@ struct AssetListView: View {
 
 struct AssetRowView: View {
     let asset: Asset
-    
+
     var body: some View {
         HStack {
-            AsyncImage(url: URL(string: asset.iconUrl)) { image in
+            AsyncImage(
+                url: URL(string: asset.iconUrl)
+            ) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
             }
             .frame(width: 32, height: 32)
-            
-            VStack(alignment: .leading) {
+
+            VStack(
+                alignment: .leading
+            ) {
                 Text(asset.name)
                     .font(.headline)
                 Text(asset.assetId)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
-            
+
             Spacer()
-            
+
             if asset.isFavorite {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
