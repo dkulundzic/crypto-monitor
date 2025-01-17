@@ -26,6 +26,7 @@ extension NetworkService {
         do {
             return try JSONDecoder.default.decode(T.self, from: data)
         } catch {
+            print(error)
             throw NetworkError.decodingError(error.localizedDescription)
         }
     }

@@ -59,7 +59,7 @@ struct AssetRowView: View {
             VStack(
                 alignment: .leading
             ) {
-                Text(asset.name)
+                Text(asset.name.emptyIfNil)
                     .font(.headline)
                 Text(asset.assetId)
                     .font(.subheadline)

@@ -10,6 +10,6 @@ struct AssetDetailView: View {
         ) {
 
         }
-        .navigationTitle(asset.name)
+        .navigationTitle(asset.name.emptyIfNil)
     }
 }

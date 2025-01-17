@@ -22,24 +22,24 @@ class AssetListViewModel: ObservableObject {
             self.error = error.localizedDescription
         }
     }
-    
+
     func filterAssets(searchText: String) {
         self.searchText = searchText
         applyFilters()
     }
-    
+
     func toggleFavoritesFilter(_ showFavorites: Bool) {
         showFavoritesOnly = showFavorites
         applyFilters()
     }
-    
+
     private func applyFilters() {
         filteredAssets = assets.filter { asset in
-            let matchesSearch = searchText.isEmpty || 
-                asset.name.localizedCaseInsensitiveContains(searchText) ||
+            let matchesSearch = searchText.isEmpty ||
+                asset.name.emptyIfNil.localizedCaseInsensitiveContains(searchText) ||
                 asset.assetId.localizedCaseInsensitiveContains(searchText)
-            
-            let matchesFavorites = !showFavoritesOnly || asset.isFavorite            
+
+            let matchesFavorites = !showFavoritesOnly || asset.isFavorite
             return matchesSearch && matchesFavorites
         }
     }
