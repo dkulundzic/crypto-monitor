@@ -1,15 +1,21 @@
 import Foundation
+import Combine
 import Factory
 
 @MainActor
 class AssetListViewModel: ObservableObject {
-    @Published var assets: [Asset] = []
     @Published var filteredAssets: [Asset] = []
     @Published var isLoading = false
     @Published var error: String?
-    private var showFavoritesOnly = false
-    private var searchText = ""
+    @Published var showFavoritesOnly = false
+    @Published var searchText = ""
+    @Published private var assets: [Asset] = []
     @Injected(\.assetsNetworkService) var assetsNetworkService
+    private var bag = Set<AnyCancellable>()
+
+    init() {
+        initializeObserving()
+    }
 
     func loadAssets() async {
         isLoading = true
@@ -17,29 +23,45 @@ class AssetListViewModel: ObservableObject {
 
         do {
             assets = try await assetsNetworkService.fetchAssets()
-            filterAssets(searchText: searchText)
         } catch {
             self.error = error.localizedDescription
         }
     }
+}
 
-    func filterAssets(searchText: String) {
-        self.searchText = searchText
-        applyFilters()
+private extension AssetListViewModel {
+    func initializeObserving() {
+        let searchTextPublisher = $searchText
+            .removeDuplicates()
+            .debounce(for: 0.25, scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+
+        let favouritesPublisher = $showFavoritesOnly
+            .removeDuplicates()
+            .debounce(for: 0.1, scheduler: DispatchQueue.main)
+            .eraseToAnyPublisher()
+
+        Publishers.CombineLatest3(
+            $assets.removeDuplicates(), searchTextPublisher, favouritesPublisher
+        )
+        .map { assets, searchText, showFavoritesOnly in
+            assets.filter(searchText: searchText, favouritesExclusively: showFavoritesOnly)
+        }
+        .assign(to: &$filteredAssets)
     }
+}
 
-    func toggleFavoritesFilter(_ showFavorites: Bool) {
-        showFavoritesOnly = showFavorites
-        applyFilters()
-    }
-
-    private func applyFilters() {
-        filteredAssets = assets.filter { asset in
+private extension Collection where Element == Asset {
+    func filter(
+        searchText: String,
+        favouritesExclusively: Bool
+    ) -> [Element] {
+        self.filter { asset in
             let matchesSearch = searchText.isEmpty ||
                 asset.name.emptyIfNil.localizedCaseInsensitiveContains(searchText) ||
                 asset.assetId.localizedCaseInsensitiveContains(searchText)
 
-            let matchesFavorites = !showFavoritesOnly || asset.isFavorite
+            let matchesFavorites = !favouritesExclusively || asset.isFavorite
             return matchesSearch && matchesFavorites
         }
     }

@@ -1,9 +1,8 @@
 import SwiftUI
+import NukeUI
 
 struct AssetListView: View {
     @StateObject private var viewModel = AssetListViewModel()
-    @State private var searchText = ""
-    @State private var showFavoritesOnly = false
 
     var body: some View {
         NavigationView {
@@ -18,20 +17,16 @@ struct AssetListView: View {
                     }
                 }
             }
-            .searchable(text: $searchText)
-            .onChange(of: searchText) { _ in
-                viewModel.filterAssets(searchText: searchText)
-            }
+            .searchable(text: $viewModel.searchText)
             .navigationTitle("Crypto Monitor")
             .toolbar {
                 ToolbarItem(
                     placement: .navigationBarTrailing
                 ) {
                     Button {
-                        showFavoritesOnly.toggle()
-                        viewModel.toggleFavoritesFilter(showFavoritesOnly)
+                        viewModel.showFavoritesOnly.toggle()
                     } label: {
-                        Image(systemName: showFavoritesOnly ? "star.fill" : "star")
+                        Image(systemName: viewModel.showFavoritesOnly ? "star.fill" : "star")
                     }
                 }
             }
@@ -47,12 +42,16 @@ struct AssetRowView: View {
 
     var body: some View {
         HStack {
-            AsyncImage(
-                url: URL(string: asset.iconUrl)
-            ) { image in
-                image.resizable()
-            } placeholder: {
-                ProgressView()
+            LazyImage(
+                url: asset.iconUrl
+            ) { state in
+                if let image = state.image {
+                    image.resizable()
+                } else if state.error != nil {
+                    Color.red
+                } else {
+                    ProgressView()
+                }
             }
             .frame(width: 32, height: 32)
 

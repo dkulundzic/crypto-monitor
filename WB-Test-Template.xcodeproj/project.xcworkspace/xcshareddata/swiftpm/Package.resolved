@@ -1,5 +1,5 @@
 {
-  "originHash" : "84df9aa6ecd399d508c396fac25a34900ac329702697849f1f833cbdd041bee1",
+  "originHash" : "e3b1d735f344124782c1232f66ffac84e8f96a114b85b3673c19ce92b68ab999",
   "pins" : [
     {
       "identity" : "factory",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "fb04a8918848e413d3921d346a23bae7f81088d9",
         "version" : "2.4.3"
+      }
+    },
+    {
+      "identity" : "nuke?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Nuke?tab=readme-ov-file",
+      "state" : {
+        "revision" : "0ead44350d2737db384908569c012fe67c421e4d",
+        "version" : "12.8.0"
       }
     }
   ],

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Asset: Codable, Identifiable {
+struct Asset: Codable, Identifiable, Equatable {
     let assetId: String
     let name: String?
     let typeIsCrypto: Int
@@ -22,8 +22,12 @@ struct Asset: Codable, Identifiable {
     }
 
     // Local properties
-    var iconUrl: String {
+    var iconUrl: URL {
         "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4958c92dbddd4936b1f655e5063dc782.png"
+    }
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.assetId == rhs.assetId
     }
 
     private enum CodingKeys: String, CodingKey {
