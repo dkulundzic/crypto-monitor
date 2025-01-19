@@ -6,7 +6,7 @@ let apiKey = "9A52912A-724F-493D-90A4-8E7066C15B2E"
 protocol NetworkService { }
 
 extension NetworkService {
-    func resolve<T: Codable>(
+    func resolve<T: Decodable>(
         resource: any Resource
     ) async throws -> T {
         let url = Host.baseURL.appendingPathComponent(resource.endpoint)
@@ -18,7 +18,8 @@ extension NetworkService {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard
-            let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode)
+            let httpResponse = response as? HTTPURLResponse, (200...299)
+                .contains(httpResponse.statusCode)
         else {
             throw NetworkError.serverError("Yo! There was an error.")
         }
@@ -26,7 +27,6 @@ extension NetworkService {
         do {
             return try JSONDecoder.default.decode(T.self, from: data)
         } catch {
-            print(error)
             throw NetworkError.decodingError(error.localizedDescription)
         }
     }

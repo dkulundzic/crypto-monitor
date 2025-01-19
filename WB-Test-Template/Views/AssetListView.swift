@@ -74,3 +74,7 @@ struct AssetRowView: View {
         }
     }
 }
+
+#Preview {
+    AssetListView()
+}
