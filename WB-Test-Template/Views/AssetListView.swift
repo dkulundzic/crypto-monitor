@@ -1,5 +1,6 @@
 import SwiftUI
 import NukeUI
+import Factory
 
 struct AssetListView: View {
     @StateObject private var viewModel = AssetListViewModel()
@@ -76,5 +77,6 @@ struct AssetRowView: View {
 }
 
 #Preview {
-    AssetListView()
+    Container.shared.assetsNetworkService.register { MockAssetsNetworkService() }
+    return AssetListView()
 }

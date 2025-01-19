@@ -16,6 +16,17 @@ struct DefaultAssetsetNetworkService: AssetsNetworkService {
     }
 }
 
+struct MockAssetsNetworkService: AssetsNetworkService {
+    func fetchAssets() async throws -> [Asset] {
+        try DefaultJSONMock<[Asset]>(fileName: "Assets")
+            .mock()
+    }
+
+    func fetchAssetIcon() async throws -> Data {
+        fatalError()
+    }
+}
+
 extension Container {
     var assetsNetworkService: Factory<AssetsNetworkService> {
         self {

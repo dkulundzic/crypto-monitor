@@ -1,0 +1,145 @@
+[
+    {
+    "asset_id": "USD",
+    "name": "US Dollar",
+    "type_is_crypto": 0,
+    "data_quote_start": "2014-02-24T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2014-03-17T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2010-07-17T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 546209,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "id_icon": "0a4185f2-1a03-4a7c-b866-ba7076d8c73b",
+    "chain_addresses": [
+        {
+            "chain_id": "ETHEREUM",
+            "network_id": "MAINNET",
+            "address": "0xd233d1f6fd11640081abb8db125f722b5dc729dc"
+        }
+    ],
+    "data_start": "2010-07-17",
+    "data_end": "2025-01-17"
+},
+    {
+    "asset_id": "BTC",
+    "name": "Bitcoin",
+    "type_is_crypto": 1,
+    "data_quote_start": "2014-02-24T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2014-03-17T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2010-07-17T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 270039,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "price_usd": 104995.807476088,
+    "id_icon": "4caf2b16-a017-4e26-a348-2cea69c34cba",
+    "chain_addresses": [
+        {
+            "chain_id": "ARBITRUM",
+            "network_id": "MAINNET",
+            "address": "0x2f2a2543b76a4166549f7aab2e75bef0aefc5b0f"
+        },
+        {
+            "chain_id": "ETHEREUM",
+            "network_id": "MAINNET",
+            "address": "0x2260fac5e5542a773aa44fbcfedf7c193bc2c599"
+        }
+    ],
+    "data_start": "2010-07-17",
+    "data_end": "2025-01-17"
+},
+    {
+    "asset_id": "PLN",
+    "name": "Zloty",
+    "type_is_crypto": 0,
+    "data_quote_start": "2017-08-30T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2017-08-29T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2011-04-05T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 138,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "price_usd": 0.24099144003878,
+    "id_icon": "3f682b5b-77ec-4d8c-b612-b8ff3ac748f7",
+    "data_start": "2011-04-05",
+    "data_end": "2025-01-17"
+},
+    {
+    "asset_id": "EUR",
+    "name": "Euro",
+    "type_is_crypto": 0,
+    "data_quote_start": "2014-04-21T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2014-04-20T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2011-04-06T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 3302,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "price_usd": 1.0268875,
+    "id_icon": "688fcf1c-92bb-4c84-ac95-0971e9bfed2f",
+    "data_start": "2011-04-06",
+    "data_end": "2025-01-17"
+},
+    {
+    "asset_id": "ETH",
+    "name": "Ethereum",
+    "type_is_crypto": 1,
+    "data_quote_start": "2015-08-08T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2015-08-07T14:50:38.1774950Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2015-08-07T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 230211,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "price_usd": 3171.26975802143,
+    "id_icon": "604ae453-3d9f-4ad0-9a48-9905cce617c2",
+    "chain_addresses": [
+        {
+            "chain_id": "ARBITRUM",
+            "network_id": "MAINNET",
+            "address": "0x82af49447d8a07e3bd95bd0d56f35241523fbab1"
+        },
+        {
+            "chain_id": "ETHEREUM",
+            "network_id": "MAINNET",
+            "address": "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+        }
+    ],
+    "data_start": "2015-08-07",
+    "data_end": "2025-01-17"
+},
+    {
+    "asset_id": "SOL",
+    "name": "SOL",
+    "type_is_crypto": 1,
+    "data_quote_start": "2018-01-17T00:00:00.0000000Z",
+    "data_quote_end": "2025-01-17T00:00:00.0000000Z",
+    "data_orderbook_start": "2018-01-16T00:00:00.0000000Z",
+    "data_orderbook_end": "2025-01-17T00:00:00.0000000Z",
+    "data_trade_start": "2018-01-13T00:00:00.0000000Z",
+    "data_trade_end": "2025-01-17T00:00:00.0000000Z",
+    "data_symbols_count": 64254,
+    "volume_1hrs_usd": 0,
+    "volume_1day_usd": 0,
+    "volume_1mth_usd": 0,
+    "price_usd": 292.050578757972,
+    "data_start": "2018-01-13",
+    "data_end": "2025-01-17"
+}
+]
