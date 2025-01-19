@@ -3,7 +3,7 @@ import Factory
 
 protocol AssetsNetworkService: NetworkService {
     func fetchAssets() async throws -> [Asset]
-    func fetchAssetIcon() async throws -> Data
+    func fetchAssetIcons() async throws -> [AssetIcon]
 }
 
 struct DefaultAssetsetNetworkService: AssetsNetworkService {
@@ -11,8 +11,8 @@ struct DefaultAssetsetNetworkService: AssetsNetworkService {
         try await resolve(resource: AssetsResource.assets)
     }
 
-    func fetchAssetIcon() async throws -> Data {
-        fatalError()
+    func fetchAssetIcons() async throws -> [AssetIcon] {
+        try await resolve(resource: AssetsResource.icons(64))
     }
 }
 
@@ -22,8 +22,9 @@ struct MockAssetsNetworkService: AssetsNetworkService {
             .mock()
     }
 
-    func fetchAssetIcon() async throws -> Data {
-        fatalError()
+    func fetchAssetIcons() async throws -> [AssetIcon] {
+        try DefaultJSONMock<[AssetIcon]>(fileName: "AssetsIcons")
+            .mock()
     }
 }
 
