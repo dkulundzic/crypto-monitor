@@ -9,7 +9,7 @@ struct DefaultRequestDecorator: RequestDecorator {
     func decorate(
         request: inout URLRequest
     ) {
-        request.addValue(apiKey, forHTTPHeaderField: "X-CoinAPI-Key")
+        request.addValue(apiKey, forHTTPHeaderField: CustomHTTPField.apiKey.rawValue)
     }
 
     private enum CustomHTTPField: String {
