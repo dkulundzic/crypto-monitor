@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F48C9B32D3E9776004981F1 /* ExchangeRatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */; };
+		2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
@@ -61,6 +63,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesResponse.swift; sourceTree = "<group>"; };
+		2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISO8601DateFormatter+Utility.swift"; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
@@ -125,6 +129,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F48C9B12D3E976C004981F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		2FE785442D3A6252002C2B71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,10 +148,11 @@
 		2FE785452D3A6260002C2B71 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */,
 				2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */,
 				2FFE1EE82D3A80CE000EE296 /* Optional+Utility.swift */,
-				2FE7855F2D3A79DC002C2B71 /* URL+ExpressibleByStringLiteral.swift */,
 				2FFE1EED2D3D1600000EE296 /* Task+Utility.swift */,
+				2FE7855F2D3A79DC002C2B71 /* URL+ExpressibleByStringLiteral.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -147,6 +160,7 @@
 		2FE785482D3A723B002C2B71 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				2F48C9B12D3E976C004981F1 /* Models */,
 				2FE785582D3A7699002C2B71 /* Resources */,
 				2FE7855D2D3A77F1002C2B71 /* Services */,
 				2FE7855E2D3A77FE002C2B71 /* Utility */,
@@ -453,6 +467,7 @@
 				2FE785622D3A7B9E002C2B71 /* RequestDecorator.swift in Sources */,
 				84E0D1FC2D1AE64400A55CCB /* AssetListView.swift in Sources */,
 				2FE7855A2D3A76A0002C2B71 /* AssetsResource.swift in Sources */,
+				2F48C9B32D3E9776004981F1 /* ExchangeRatesResponse.swift in Sources */,
 				2FFE1EE92D3A80CE000EE296 /* Optional+Utility.swift in Sources */,
 				2FFE1EEE2D3D1600000EE296 /* Task+Utility.swift in Sources */,
 				2FFE1EF42D3D1865000EE296 /* Assets.json in Sources */,
@@ -469,6 +484,7 @@
 				2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */,
 				2FE785532D3A7611002C2B71 /* NetworkError.swift in Sources */,
 				84E0D1C82D1AE26C00A55CCB /* ContentView.swift in Sources */,
+				2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */,
 				2FE7854A2D3A7428002C2B71 /* AssetsNetworkService.swift in Sources */,
 				2FE785572D3A766E002C2B71 /* Resource.swift in Sources */,
 			);

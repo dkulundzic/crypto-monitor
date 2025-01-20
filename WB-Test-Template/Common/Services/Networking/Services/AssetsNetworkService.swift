@@ -2,13 +2,17 @@ import Foundation
 import Factory
 
 protocol AssetsNetworkService: NetworkService {
-    func fetchAssets() async throws -> [Asset]
+    func fetchAssets(filterAssetIds: Set<String>) async throws -> [Asset]
     func fetchAssetIcons() async throws -> [AssetIcon]
 }
 
 struct DefaultAssetNetworkService: AssetsNetworkService {
-    func fetchAssets() async throws -> [Asset] {
-        return try await resolve(resource: AssetsResource.assets)
+    func fetchAssets(
+        filterAssetIds: Set<String> = []
+    ) async throws -> [Asset] {
+        return try await resolve(
+            resource: AssetsResource.assets(filterAssetIds: filterAssetIds)
+        )
     }
 
     func fetchAssetIcons() async throws -> [AssetIcon] {
@@ -17,9 +21,12 @@ struct DefaultAssetNetworkService: AssetsNetworkService {
 }
 
 struct MockAssetsNetworkService: AssetsNetworkService {
-    func fetchAssets() async throws -> [Asset] {
+    func fetchAssets(
+        filterAssetIds: Set<String>
+    ) async throws -> [Asset] {
         try DefaultJSONMock<[Asset]>(fileName: "Assets")
             .mock()
+            .filter { filterAssetIds.contains($0.assetId) }
     }
 
     func fetchAssetIcons() async throws -> [AssetIcon] {

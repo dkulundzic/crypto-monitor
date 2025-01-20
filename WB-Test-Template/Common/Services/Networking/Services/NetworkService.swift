@@ -18,8 +18,24 @@ extension NetworkService {
         let (data, response) = try await URLSession.shared.data(for: request)
 
         guard
-            let httpResponse = response as? HTTPURLResponse, (200...299)
-                .contains(httpResponse.statusCode)
+            let httpResponse = response as? HTTPURLResponse
+        else {
+            throw NetworkError.serverError("Yo! There was an error.")
+        }
+
+#if DEBUG
+        if
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
+        {
+            print(
+                String(data: jsonData, encoding: .utf8)
+            )
+        }
+#endif
+
+        guard
+            (200...299).contains(httpResponse.statusCode)
         else {
             throw NetworkError.serverError("Yo! There was an error.")
         }

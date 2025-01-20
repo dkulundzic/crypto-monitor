@@ -22,7 +22,6 @@ class AssetListViewModel: ObservableObject {
         defer { isLoading = false }
 
         do {
-            assets = try await assetsNetworkService.fetchAssets()
         } catch {
             self.error = error.localizedDescription
         }

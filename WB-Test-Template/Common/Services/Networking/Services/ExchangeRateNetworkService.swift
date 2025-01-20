@@ -2,14 +2,14 @@ import Foundation
 import Factory
 
 protocol ExchangeRateNetworkService: NetworkService {
-    func get(for assetId: String, against assetIdQuote: String) async throws -> [ExchangeRate]
-    func getAllRates(for assetId: String) async throws -> [ExchangeRate]
+    func getAllRates(for assetId: String) async throws -> ExchangeRatesResponse
+    func get(for assetId: String, against assetIdQuote: String) async throws -> ExchangeRate
 }
 
 struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
     func getAllRates(
         for assetId: String
-    ) async throws -> [ExchangeRate] {
+    ) async throws -> ExchangeRatesResponse {
         try await resolve(
             resource: ExchangeRateResource.allRates(
                 assetId: assetId
@@ -20,7 +20,7 @@ struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
     func get(
         for assetId: String,
         against assetIdQuote: String
-    ) async throws -> [ExchangeRate] {
+    ) async throws -> ExchangeRate {
         try await resolve(
             resource: ExchangeRateResource.get(
                 assetId: assetId,
