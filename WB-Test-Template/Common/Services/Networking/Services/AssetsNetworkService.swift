@@ -6,9 +6,9 @@ protocol AssetsNetworkService: NetworkService {
     func fetchAssetIcons() async throws -> [AssetIcon]
 }
 
-struct DefaultAssetsetNetworkService: AssetsNetworkService {
+struct DefaultAssetNetworkService: AssetsNetworkService {
     func fetchAssets() async throws -> [Asset] {
-        try await resolve(resource: AssetsResource.assets)
+        return try await resolve(resource: AssetsResource.assets)
     }
 
     func fetchAssetIcons() async throws -> [AssetIcon] {
@@ -31,7 +31,7 @@ struct MockAssetsNetworkService: AssetsNetworkService {
 extension Container {
     var assetsNetworkService: Factory<AssetsNetworkService> {
         self {
-            DefaultAssetsetNetworkService()
+            DefaultAssetNetworkService()
         }.unique
     }
 }

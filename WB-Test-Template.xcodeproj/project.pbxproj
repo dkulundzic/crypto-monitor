@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
 		2FE7854A2D3A7428002C2B71 /* AssetsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785492D3A7428002C2B71 /* AssetsNetworkService.swift */; };
 		2FE7854C2D3A7486002C2B71 /* ExchangeRateNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE7854B2D3A7486002C2B71 /* ExchangeRateNetworkService.swift */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
 		2FE785492D3A7428002C2B71 /* AssetsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsNetworkService.swift; sourceTree = "<group>"; };
 		2FE7854B2D3A7486002C2B71 /* ExchangeRateNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateNetworkService.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			children = (
 				84E0D1F22D1AE64400A55CCB /* Asset.swift */,
 				2FFE1EF62D3D1B56000EE296 /* AssetIcon.swift */,
+				2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E0D1C42D1AE26C00A55CCB /* WB_Test_TemplateApp.swift in Sources */,
+				2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */,
 				2FE7854C2D3A7486002C2B71 /* ExchangeRateNetworkService.swift in Sources */,
 				84E0D1C62D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift in Sources */,
 				2FE785622D3A7B9E002C2B71 /* RequestDecorator.swift in Sources */,

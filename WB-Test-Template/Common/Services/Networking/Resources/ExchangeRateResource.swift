@@ -1,11 +1,14 @@
 import Foundation
 
 enum ExchangeRateResource: Resource {
+    case allRates(assetId: String)
     case get(assetId: String, quote: String)
 
     var endpoint: String {
         switch self {
-        case .get(let assetId, let quote):
+        case let .allRates(assetId):
+            "exchangerate/\(assetId)"
+        case let .get(assetId, quote):
             "exchangerate/\(assetId)/\(quote)"
         }
     }

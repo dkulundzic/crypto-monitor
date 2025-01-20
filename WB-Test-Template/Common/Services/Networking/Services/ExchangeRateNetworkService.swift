@@ -1,16 +1,32 @@
 import Foundation
 import Factory
 
-protocol ExchangeRateNetworkService {
-    func get(for assetId: String, assetIdQuote: String) async throws -> Any
+protocol ExchangeRateNetworkService: NetworkService {
+    func get(for assetId: String, against assetIdQuote: String) async throws -> [ExchangeRate]
+    func getAllRates(for assetId: String) async throws -> [ExchangeRate]
 }
 
 struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
+    func getAllRates(
+        for assetId: String
+    ) async throws -> [ExchangeRate] {
+        try await resolve(
+            resource: ExchangeRateResource.allRates(
+                assetId: assetId
+            )
+        )
+    }
+    
     func get(
         for assetId: String,
-        assetIdQuote: String
-    ) async throws -> Any {
-        fatalError()
+        against assetIdQuote: String
+    ) async throws -> [ExchangeRate] {
+        try await resolve(
+            resource: ExchangeRateResource.get(
+                assetId: assetId,
+                quote: assetIdQuote
+            )
+        )
     }
 }
 

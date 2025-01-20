@@ -9,9 +9,9 @@ enum AssetsResource: Resource {
         switch self {
         case .assets:
             "/assets"
-        case .details(let id):
+        case let .details(id):
             "/assets/\(id)"
-        case .icons(let iconSize):
+        case let .icons(iconSize):
             "/assets/icons/\(iconSize)"
         }
     }
