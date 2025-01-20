@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
 		2FE7854A2D3A7428002C2B71 /* AssetsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785492D3A7428002C2B71 /* AssetsNetworkService.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
 		2FE785492D3A7428002C2B71 /* AssetsNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsNetworkService.swift; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 			children = (
 				84E0D1F42D1AE64400A55CCB /* AssetDetailView.swift */,
 				84E0D1F52D1AE64400A55CCB /* AssetListView.swift */,
+				2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				84E0D1FB2D1AE64400A55CCB /* AssetDetailView.swift in Sources */,
 				84E0D1FA2D1AE64400A55CCB /* Asset.swift in Sources */,
 				2FFE1EF22D3D17A3000EE296 /* JSONMock.swift in Sources */,
+				2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */,
 				2FE7855C2D3A7768002C2B71 /* ExchangeRateResource.swift in Sources */,
 				84E0D1F92D1AE64400A55CCB /* NetworkService.swift in Sources */,
 				2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */,

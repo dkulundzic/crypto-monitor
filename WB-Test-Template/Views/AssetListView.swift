@@ -1,10 +1,9 @@
 import SwiftUI
-import NukeUI
 import Factory
 
 struct AssetListView: View {
     @StateObject private var viewModel = AssetListViewModel()
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -16,6 +15,11 @@ struct AssetListView: View {
                     ) {
                         AssetRowView(asset: asset)
                     }
+                }
+            }
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView()
                 }
             }
             .searchable(text: $viewModel.searchText)
@@ -38,45 +42,9 @@ struct AssetListView: View {
     }
 }
 
-struct AssetRowView: View {
-    let asset: Asset
-
-    var body: some View {
-        HStack {
-            LazyImage(
-                url: asset.iconUrl
-            ) { state in
-                if let image = state.image {
-                    image.resizable()
-                } else if state.error != nil {
-                    Color.red
-                } else {
-                    ProgressView()
-                }
-            }
-            .frame(width: 32, height: 32)
-
-            VStack(
-                alignment: .leading
-            ) {
-                Text(asset.name.emptyIfNil)
-                    .font(.headline)
-                Text(asset.assetId)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-            }
-
-            Spacer()
-
-            if asset.isFavorite {
-                Image(systemName: "star.fill")
-                    .foregroundColor(.yellow)
-            }
-        }
-    }
-}
-
 #Preview {
-    Container.shared.assetsNetworkService.register { MockAssetsNetworkService() }
+    Container.shared.assetsNetworkService.register {
+        MockAssetsNetworkService()
+    }
     return AssetListView()
 }
