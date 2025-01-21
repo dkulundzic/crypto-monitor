@@ -1,6 +1,6 @@
 import Foundation
 
-struct Asset: Codable, Identifiable, Equatable {
+struct Asset: Codable, Identifiable, Hashable {
     let assetId: String
     let name: String?
     let typeIsCrypto: Int
@@ -21,9 +21,14 @@ struct Asset: Codable, Identifiable, Equatable {
         assetId
     }
 
-    // Local properties
     var iconUrl: URL {
         "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4958c92dbddd4936b1f655e5063dc782.png"
+    }
+
+    func hash(
+        into hasher: inout Hasher
+    ) {
+        hasher.combine(assetId)
     }
 
     static func == (lhs: Self, rhs: Self) -> Bool {
@@ -45,5 +50,21 @@ struct Asset: Codable, Identifiable, Equatable {
         case volume1DayUsd
         case volume1MthUsd
         case priceUsd
+    }
+}
+
+extension Collection where Element == Asset {
+    func filter(
+        searchText: String,
+        favouritesExclusively: Bool
+    ) -> [Element] {
+        self.filter { asset in
+            let matchesSearch = searchText.isEmpty ||
+            asset.name.emptyIfNil.localizedCaseInsensitiveContains(searchText) ||
+            asset.assetId.localizedCaseInsensitiveContains(searchText)
+
+            let matchesFavorites = !favouritesExclusively || asset.isFavorite
+            return matchesSearch && matchesFavorites
+        }
     }
 }

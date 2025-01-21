@@ -2,12 +2,15 @@ import SwiftUI
 import NukeUI
 
 struct AssetRowView: View {
-    let asset: Asset
+    let id: String
+    let name: String
+    let iconUrl: URL
+    let isFavorite: Bool
 
     var body: some View {
         HStack {
             LazyImage(
-                url: asset.iconUrl
+                url: iconUrl
             ) { state in
                 if let image = state.image {
                     image.resizable()
@@ -22,16 +25,16 @@ struct AssetRowView: View {
             VStack(
                 alignment: .leading
             ) {
-                Text(asset.name.emptyIfNil)
+                Text(name)
                     .font(.headline)
-                Text(asset.assetId)
+                Text(id)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
             }
 
             Spacer()
 
-            if asset.isFavorite {
+            if isFavorite {
                 Image(systemName: "star.fill")
                     .foregroundColor(.yellow)
             }

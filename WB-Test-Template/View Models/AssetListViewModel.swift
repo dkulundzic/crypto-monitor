@@ -3,13 +3,15 @@ import Combine
 import Factory
 
 @MainActor
-class AssetListViewModel: ObservableObject {
+class AssetListViewModel: ViewModel {
+    typealias View = AssetListView
     @Published var filteredAssets: [Asset] = []
     @Published var isLoading = false
     @Published var error: String?
     @Published var showFavoritesOnly = false
     @Published var searchText = ""
     @Published private var assets: [Asset] = []
+    @Published private var icons: [AssetIcon] = []
     @Injected(\.assetsNetworkService) var assetsNetworkService
     private var bag = Set<AnyCancellable>()
 
@@ -17,16 +19,12 @@ class AssetListViewModel: ObservableObject {
         initializeObserving()
     }
 
-    func loadAssets() async {
-        isLoading = true
-        defer { isLoading = false }
-
-        do {
-            assets = try await assetsNetworkService.fetchAssets(
-                filterAssetIds: []
-            )
-        } catch {
-            self.error = error.localizedDescription
+    func onAction(
+        _ action: AssetListView.Action
+    ) async {
+        switch action {
+        case .onTask, .onPullToRefresh:
+            await loadAssets()
         }
     }
 }
@@ -51,20 +49,19 @@ private extension AssetListViewModel {
         }
         .assign(to: &$filteredAssets)
     }
-}
 
-private extension Collection where Element == Asset {
-    func filter(
-        searchText: String,
-        favouritesExclusively: Bool
-    ) -> [Element] {
-        self.filter { asset in
-            let matchesSearch = searchText.isEmpty ||
-                asset.name.emptyIfNil.localizedCaseInsensitiveContains(searchText) ||
-                asset.assetId.localizedCaseInsensitiveContains(searchText)
+    func loadAssets() async {
+        isLoading = filteredAssets.isEmpty
+        defer { isLoading = false }
 
-            let matchesFavorites = !favouritesExclusively || asset.isFavorite
-            return matchesSearch && matchesFavorites
+        do {
+            async let assetsTask = assetsNetworkService.fetchAssets(filterAssetIds: [])
+            async let iconsTask = assetsNetworkService.fetchAssetIcons()
+            let (assets, icons) = try await (assetsTask, iconsTask)
+            self.assets = assets
+            self.icons = icons
+        } catch {
+            self.error = error.localizedDescription
         }
     }
 }

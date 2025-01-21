@@ -1,7 +1,7 @@
 import SwiftUI
 import Factory
 
-struct AssetListView: View {
+struct AssetListView: ActionableView {
     @StateObject private var viewModel = AssetListViewModel()
     
     var body: some View {
@@ -13,7 +13,12 @@ struct AssetListView: View {
                     NavigationLink(
                         destination: AssetDetailView(asset: asset)
                     ) {
-                        AssetRowView(asset: asset)
+                        AssetRowView(
+                            id: asset.id,
+                            name: asset.name.emptyIfNil,
+                            iconUrl: asset.iconUrl,
+                            isFavorite: asset.isFavorite
+                        )
                     }
                 }
             }
@@ -22,7 +27,12 @@ struct AssetListView: View {
                     ProgressView()
                 }
             }
-            .searchable(text: $viewModel.searchText)
+            .searchable(
+                text: $viewModel.searchText
+            )
+            .refreshable {
+                await viewModel.onAction(.onPullToRefresh)
+            }
             .navigationTitle("Crypto Monitor")
             .toolbar {
                 ToolbarItem(
@@ -37,8 +47,13 @@ struct AssetListView: View {
             }
         }
         .task {
-            await viewModel.loadAssets()
+            await viewModel.onAction(.onTask)
         }
+    }
+
+    enum Action {
+        case onTask
+        case onPullToRefresh
     }
 }
 
