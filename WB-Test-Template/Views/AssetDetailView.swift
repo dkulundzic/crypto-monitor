@@ -8,8 +8,17 @@ struct AssetDetailView: View {
             alignment: .leading,
             spacing: 16
         ) {
-
+            
         }
         .navigationTitle(asset.name.emptyIfNil)
+    }
+}
+
+#Preview {
+    let asset = try! DefaultJSONMock<[Asset]>(fileName: "Assets")
+        .mock()
+        .first!
+    NavigationView {
+        AssetDetailView(asset: asset)
     }
 }

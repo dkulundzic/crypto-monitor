@@ -22,6 +22,9 @@ class AssetListViewModel: ObservableObject {
         defer { isLoading = false }
 
         do {
+            assets = try await assetsNetworkService.fetchAssets(
+                filterAssetIds: []
+            )
         } catch {
             self.error = error.localizedDescription
         }
