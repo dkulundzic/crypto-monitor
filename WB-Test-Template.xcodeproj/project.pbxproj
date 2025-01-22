@@ -20,6 +20,8 @@
 		2F49AC252D3FDADC007D6A92 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC242D3FDADC007D6A92 /* AssetRepository.swift */; };
 		2F49AC282D3FE6E3007D6A92 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC272D3FE6E3007D6A92 /* Repository.swift */; };
 		2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2A2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift */; };
+		2F49AC2D2D40FA6B007D6A92 /* AssetIconsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2C2D40FA6B007D6A92 /* AssetIconsRepository.swift */; };
+		2F49AC2F2D40FA91007D6A92 /* AssetIconMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2E2D40FA91007D6A92 /* AssetIconMO.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
@@ -87,6 +89,8 @@
 		2F49AC242D3FDADC007D6A92 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		2F49AC272D3FE6E3007D6A92 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		2F49AC2A2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Utility.swift"; sourceTree = "<group>"; };
+		2F49AC2C2D40FA6B007D6A92 /* AssetIconsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIconsRepository.swift; sourceTree = "<group>"; };
+		2F49AC2E2D40FA91007D6A92 /* AssetIconMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIconMO.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
@@ -191,6 +195,7 @@
 			children = (
 				2F49AC1B2D3FD48E007D6A92 /* Model.xcdatamodeld */,
 				2F49AC212D3FD949007D6A92 /* AssetMO.swift */,
+				2F49AC2E2D40FA91007D6A92 /* AssetIconMO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				2F49AC242D3FDADC007D6A92 /* AssetRepository.swift */,
+				2F49AC2C2D40FA6B007D6A92 /* AssetIconsRepository.swift */,
 				2F49AC272D3FE6E3007D6A92 /* Repository.swift */,
 			);
 			path = Repositories;
@@ -566,6 +572,7 @@
 				2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */,
 				2F49AC1D2D3FD48E007D6A92 /* Model.xcdatamodeld in Sources */,
 				2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */,
+				2F49AC2F2D40FA91007D6A92 /* AssetIconMO.swift in Sources */,
 				2FE7855C2D3A7768002C2B71 /* ExchangeRateResource.swift in Sources */,
 				2F49AC192D3FD416007D6A92 /* CoreDataStackStartupProcess.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
@@ -579,6 +586,7 @@
 				2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */,
 				2FE7854A2D3A7428002C2B71 /* AssetsNetworkService.swift in Sources */,
 				2FE785572D3A766E002C2B71 /* Resource.swift in Sources */,
+				2F49AC2D2D40FA6B007D6A92 /* AssetIconsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

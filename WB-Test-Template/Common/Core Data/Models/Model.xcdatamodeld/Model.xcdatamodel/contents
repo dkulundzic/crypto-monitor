@@ -22,4 +22,14 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="AssetIcon" representedClassName=".AssetIconMO" syncable="YES">
+        <attribute name="assetId" optional="YES" attributeType="String"/>
+        <attribute name="exchangeId" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="assetId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
 </model>

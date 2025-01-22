@@ -12,6 +12,8 @@ struct AssetIcon: Codable, Hashable {
     }
 }
 
+
+
 extension Collection where Element == AssetIcon {
     func icon(
         for assetId: String
