@@ -217,10 +217,8 @@
 		2F49AC302D4101A2007D6A92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				2F49AC312D4101B6007D6A92 /* Data Sources */,
 				2F49AC1A2D3FD465007D6A92 /* Core Data */,
 				84E0D1F32D1AE64400A55CCB /* Models */,
-				2F49AC232D3FDAD2007D6A92 /* Repositories */,
 				84E0D1F12D1AE64400A55CCB /* Services */,
 			);
 			path = Data;
@@ -389,7 +387,9 @@
 		84E0D1F12D1AE64400A55CCB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				2F49AC312D4101B6007D6A92 /* Data Sources */,
 				2FE785482D3A723B002C2B71 /* Networking */,
+				2F49AC232D3FDAD2007D6A92 /* Repositories */,
 			);
 			path = Services;
 			sourceTree = "<group>";

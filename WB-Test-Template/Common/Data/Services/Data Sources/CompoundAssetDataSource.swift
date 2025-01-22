@@ -65,7 +65,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
                 )
             }
 
-            try await compoundAssetRepository.insert(assets)
+            try await compoundAssetRepository.save(assets)
 
             let freshLocalAssets = try await compoundAssetRepository.fetchAll()
             assetsSubject.send(freshLocalAssets)

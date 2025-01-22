@@ -13,7 +13,7 @@ final class DefaultAssetRepository: AssetRepository {
             .map { $0.toDomain() }
     }
 
-    func insert(
+    func save(
         _ model: Asset
     ) async throws {
         let transient = AssetMO(context: persistentContainer.viewContext)
@@ -21,7 +21,7 @@ final class DefaultAssetRepository: AssetRepository {
         try persistentContainer.viewContext.saveIfNeeded()
     }
 
-    func insert(
+    func save(
         _ models: [Asset]
     ) async throws {
         var iterator = models.makeIterator()

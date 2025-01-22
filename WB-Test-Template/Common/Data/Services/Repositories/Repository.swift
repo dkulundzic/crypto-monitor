@@ -4,8 +4,8 @@ import CoreData
 protocol Repository {
     associatedtype Model
     func fetchAll() async throws -> [Model]
-    func insert(_ model: Model) async throws
-    func insert(_ models: [Model]) async throws
+    func save(_ model: Model) async throws
+    func save(_ models: [Model]) async throws
     func delete(_ id: String) async throws
 }
 
