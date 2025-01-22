@@ -102,7 +102,8 @@ extension AssetMO: DomainObjectTransformable {
             volume1HrsUsd: volume1HrsUsd,
             volume1DayUsd: volume1DayUsd,
             volume1MthUsd: volume1MthUsd,
-            priceUsd: priceUsd
+            priceUsd: priceUsd,
+            iconUrl: icon?.url
         )
     }
 }

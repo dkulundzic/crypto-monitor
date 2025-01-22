@@ -22,6 +22,7 @@
 		2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2A2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift */; };
 		2F49AC2D2D40FA6B007D6A92 /* AssetIconsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2C2D40FA6B007D6A92 /* AssetIconsRepository.swift */; };
 		2F49AC2F2D40FA91007D6A92 /* AssetIconMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC2E2D40FA91007D6A92 /* AssetIconMO.swift */; };
+		2F49AC332D4101C0007D6A92 /* AssetsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC322D4101C0007D6A92 /* AssetsDataSource.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
@@ -91,6 +92,7 @@
 		2F49AC2A2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Utility.swift"; sourceTree = "<group>"; };
 		2F49AC2C2D40FA6B007D6A92 /* AssetIconsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIconsRepository.swift; sourceTree = "<group>"; };
 		2F49AC2E2D40FA91007D6A92 /* AssetIconMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIconMO.swift; sourceTree = "<group>"; };
+		2F49AC322D4101C0007D6A92 /* AssetsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsDataSource.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
@@ -221,12 +223,21 @@
 		2F49AC302D4101A2007D6A92 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2F49AC312D4101B6007D6A92 /* Data Sources */,
 				2F49AC1A2D3FD465007D6A92 /* Core Data */,
 				84E0D1F32D1AE64400A55CCB /* Models */,
 				2F49AC232D3FDAD2007D6A92 /* Repositories */,
 				84E0D1F12D1AE64400A55CCB /* Services */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		2F49AC312D4101B6007D6A92 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2F49AC322D4101C0007D6A92 /* AssetsDataSource.swift */,
+			);
+			path = "Data Sources";
 			sourceTree = "<group>";
 		};
 		2FE785442D3A6252002C2B71 /* Extensions */ = {
@@ -577,6 +588,7 @@
 				84E0D1FA2D1AE64400A55CCB /* Asset.swift in Sources */,
 				2F49AC222D3FD949007D6A92 /* AssetMO.swift in Sources */,
 				2FFE1EF22D3D17A3000EE296 /* JSONMock.swift in Sources */,
+				2F49AC332D4101C0007D6A92 /* AssetsDataSource.swift in Sources */,
 				2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */,
 				2F49AC1D2D3FD48E007D6A92 /* Model.xcdatamodeld in Sources */,
 				2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */,

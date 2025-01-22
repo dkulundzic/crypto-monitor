@@ -33,7 +33,9 @@ struct AssetListView: ActionableView {
             .refreshable {
                 await viewModel.onAction(.onPullToRefresh)
             }
-            .navigationTitle("Crypto Monitor")
+            .navigationTitle(
+                "Crypto Monitor"
+            )
             .toolbar {
                 ToolbarItem(
                     placement: .navigationBarTrailing
@@ -45,6 +47,9 @@ struct AssetListView: ActionableView {
                     }
                 }
             }
+            .animation(
+                .default, value: viewModel.filteredAssets
+            )
         }
         .task {
             await viewModel.onAction(.onTask)

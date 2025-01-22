@@ -12,7 +12,9 @@ class AssetListViewModel: ViewModel {
     @Published var searchText = ""
     @Published private var assets: [Asset] = []
     @Published private var icons: [AssetIcon] = []
+    @Injected(\.assetsDataSource) var assetsDataSource
     @Injected(\.assetsNetworkService) var assetsNetworkService
+    @Injected(\.assetIconsRepository) var assetIconsRepository
     private var bag = Set<AnyCancellable>()
 
     init() {
@@ -24,13 +26,19 @@ class AssetListViewModel: ViewModel {
     ) async {
         switch action {
         case .onTask, .onPullToRefresh:
-            await loadAssets()
+            await loadAssets(
+                includeCachedData: action == .onTask
+            )
         }
     }
 }
 
 private extension AssetListViewModel {
     func initializeObserving() {
+        assetsDataSource.assets
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$assets)
+
         let searchTextPublisher = $searchText
             .removeDuplicates()
             .debounce(for: 0.25, scheduler: DispatchQueue.main)
@@ -50,16 +58,16 @@ private extension AssetListViewModel {
         .assign(to: &$filteredAssets)
     }
 
-    func loadAssets() async {
+    func loadAssets(
+        includeCachedData: Bool
+    ) async {
         isLoading = filteredAssets.isEmpty
         defer { isLoading = false }
 
         do {
-            async let assetsTask = assetsNetworkService.fetchAssets(filterAssetIds: [])
-            async let iconsTask = assetsNetworkService.fetchAssetIcons()
-            let (assets, icons) = try await (assetsTask, iconsTask)
-            self.assets = assets
-            self.icons = icons
+            try await assetsDataSource.fetchAll(
+                policy: includeCachedData ? .loadLocalThenRemote : .loadRemoteOnly
+            )
         } catch {
             self.error = error.localizedDescription
         }
