@@ -26,7 +26,9 @@ struct MockAssetsNetworkService: AssetsNetworkService {
     ) async throws -> [Asset] {
         try DefaultJSONMock<[Asset]>(fileName: "Assets")
             .mock()
-            .filter { filterAssetIds.contains($0.assetId) }
+            .filter {
+                filterAssetIds.contains($0.assetId.emptyIfNil)
+            }
     }
 
     func fetchAssetIcons() async throws -> [AssetIcon] {

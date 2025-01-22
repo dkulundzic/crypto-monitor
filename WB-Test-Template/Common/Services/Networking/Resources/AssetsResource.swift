@@ -16,7 +16,7 @@ enum AssetsResource: Resource {
         }
     }
 
-    var queryItems: [URLQueryItem]? {
+    var queryItems: [URLQueryItem] {
         switch self {
         case let .assets(filterIds):
             let filterIds = filterIds.joined(separator: ";")
@@ -24,7 +24,7 @@ enum AssetsResource: Resource {
                 .init(name: "filter_asset_id", value: filterIds)
             ]
         case .details, .icons:
-            return nil
+            return []
         }
     }
 }

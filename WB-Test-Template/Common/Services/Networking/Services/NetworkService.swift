@@ -9,7 +9,10 @@ extension NetworkService {
     func resolve<T: Decodable>(
         resource: any Resource
     ) async throws -> T {
-        let url = Host.baseURL.appendingPathComponent(resource.endpoint)
+        let url = Host.baseURL
+            .appendingPathComponent(resource.endpoint)
+            .appending(queryItems: resource.queryItems)
+        print(url)
 
         var request = URLRequest(url: url)
         let requestDecorator = Container.shared.requestDecorator.resolve()

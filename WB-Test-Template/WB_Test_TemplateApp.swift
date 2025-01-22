@@ -3,10 +3,11 @@ import Factory
 
 @main
 struct WB_Test_TemplateApp: App {
-    @Injected(\.exchangeRateNetworkService) var exchangeRateNetworkService
+    @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
+    @InjectedObject(\.coreDataStack) private var coreDataStack
 
     init() {
-
+        boostrap()
     }
 
     var body: some Scene {
@@ -19,5 +20,6 @@ struct WB_Test_TemplateApp: App {
 private extension WB_Test_TemplateApp {
     func boostrap() {
         StartupProcessService()
+            .execute(CoreDataStackStartupProcess())
     }
 }
