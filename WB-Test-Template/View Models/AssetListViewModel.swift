@@ -11,10 +11,7 @@ class AssetListViewModel: ViewModel {
     @Published var showFavoritesOnly = false
     @Published var searchText = ""
     @Published private var assets: [Asset] = []
-    @Published private var icons: [AssetIcon] = []
-    @Injected(\.assetsDataSource) var assetsDataSource
-    @Injected(\.assetsNetworkService) var assetsNetworkService
-    @Injected(\.assetIconsRepository) var assetIconsRepository
+    @Injected(\.compoundAssetsDataSource) var assetsDataSource
     private var bag = Set<AnyCancellable>()
 
     init() {

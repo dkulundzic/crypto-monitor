@@ -15,45 +15,11 @@ struct Asset: Codable, Identifiable, Hashable {
     let volume1DayUsd: Double?
     let volume1MthUsd: Double?
     let priceUsd: Double?
-    let iconUrl: URL
+    let iconUrl: URL?
     var isFavorite: Bool = false
 
     var id: String {
         assetId ?? UUID().uuidString
-    }
-
-    init(
-        assetId: String?,
-        name: String?,
-        typeIsCrypto: Int,
-        dataQuoteStart: Date?,
-        dataQuoteEnd: Date?,
-        dataOrderbookStart: Date?,
-        dataOrderbookEnd: Date?,
-        dataTradeStart: Date?,
-        dataTradeEnd: Date?,
-        dataSymbolsCount: Int,
-        volume1HrsUsd: Double?,
-        volume1DayUsd: Double?,
-        volume1MthUsd: Double?,
-        priceUsd: Double?,
-        iconUrl: URL?
-    ) {
-        self.assetId = assetId
-        self.name = name
-        self.typeIsCrypto = typeIsCrypto
-        self.dataQuoteStart = dataQuoteStart
-        self.dataQuoteEnd = dataQuoteEnd
-        self.dataOrderbookStart = dataOrderbookStart
-        self.dataOrderbookEnd = dataOrderbookEnd
-        self.dataTradeStart = dataTradeStart
-        self.dataTradeEnd = dataTradeEnd
-        self.dataSymbolsCount = dataSymbolsCount
-        self.volume1HrsUsd = volume1HrsUsd
-        self.volume1DayUsd = volume1DayUsd
-        self.volume1MthUsd = volume1MthUsd
-        self.priceUsd = priceUsd
-        self.iconUrl = iconUrl ?? "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4958c92dbddd4936b1f655e5063dc782.png"
     }
 
     func hash(

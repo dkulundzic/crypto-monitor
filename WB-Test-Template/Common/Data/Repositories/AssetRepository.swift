@@ -103,13 +103,13 @@ extension AssetMO: DomainObjectTransformable {
             volume1DayUsd: volume1DayUsd,
             volume1MthUsd: volume1MthUsd,
             priceUsd: priceUsd,
-            iconUrl: icon?.url
+            iconUrl: iconUrl ?? "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4958c92dbddd4936b1f655e5063dc782.png"
         )
     }
 }
 
 extension Container {
-    var assetRepository: Factory<any AssetRepository> {
+    var compoundAssetRepository: Factory<any AssetRepository> {
         self {
             DefaultAssetRepository()
         }

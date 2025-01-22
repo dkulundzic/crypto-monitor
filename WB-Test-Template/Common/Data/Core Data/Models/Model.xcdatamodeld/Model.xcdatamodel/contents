@@ -9,7 +9,7 @@
         <attribute name="dataSymbolsCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="dataTradeEnd" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="dataTradeStart" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="iconUrl" optional="YES" attributeType="URI" derived="YES" derivationExpression="icon.url" customClassName="."/>
+        <attribute name="iconUrl" optional="YES" attributeType="URI"/>
         <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="priceUsd" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -17,17 +17,6 @@
         <attribute name="volume1DayUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="volume1HrsUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="volume1MthUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="icon" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AssetIcon"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="assetId"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
-    </entity>
-    <entity name="AssetIcon" representedClassName=".AssetIconMO" syncable="YES">
-        <attribute name="assetId" optional="YES" attributeType="String"/>
-        <attribute name="exchangeId" optional="YES" attributeType="String"/>
-        <attribute name="url" optional="YES" attributeType="URI"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="assetId"/>

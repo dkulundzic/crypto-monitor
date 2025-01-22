@@ -16,7 +16,7 @@ struct AssetListView: ActionableView {
                         AssetRowView(
                             id: asset.id,
                             name: asset.name.emptyIfNil,
-                            iconUrl: asset.iconUrl,
+                            iconUrl: asset.iconUrl ?? "https://www.google.com",
                             isFavorite: asset.isFavorite
                         )
                     }

@@ -12,7 +12,7 @@ extension NetworkService {
         let url = Host.baseURL
             .appendingPathComponent(resource.endpoint)
             .appending(queryItems: resource.queryItems)
-        print(url)
+        print("🌐: ", url)
 
         var request = URLRequest(url: url)
         let requestDecorator = Container.shared.requestDecorator.resolve()
