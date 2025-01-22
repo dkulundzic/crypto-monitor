@@ -29,8 +29,7 @@ extension NetworkService {
 #if DEBUG
         if
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
-        {
+            let jsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted]) {
             print(
                 String(data: jsonData, encoding: .utf8)
             )

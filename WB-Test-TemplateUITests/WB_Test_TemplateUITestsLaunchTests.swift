@@ -1,5 +1,5 @@
 //
-//  WB_Test_TemplateUITestsLaunchTests.swift
+//  CryptoMonitorUITestsLaunchTests.swift
 //  WB-Test-TemplateUITests
 //
 //  Created by Admin on 12/24/24.
@@ -7,9 +7,8 @@
 
 import XCTest
 
-final class WB_Test_TemplateUITestsLaunchTests: XCTestCase {
-
-    override class var runsForEachTargetApplicationUIConfiguration: Bool {
+final class CryptoMonitorUITestsLaunchTests: XCTestCase {
+    override static var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }
 

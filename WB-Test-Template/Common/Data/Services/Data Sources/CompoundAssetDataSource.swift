@@ -61,7 +61,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
                     volume1DayUsd: $0.volume1DayUsd,
                     volume1MthUsd: $0.volume1MthUsd,
                     priceUsd: $0.priceUsd,
-                    iconUrl: iconsMap[$0.assetId] ?? "https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_16/4958c92dbddd4936b1f655e5063dc782.png"
+                    iconUrl: iconsMap[$0.assetId] ?? Statics.defaultAssetIconUrl
                 )
             }
 

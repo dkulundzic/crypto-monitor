@@ -3,7 +3,7 @@ import Factory
 
 struct AssetListView: ActionableView {
     @StateObject private var viewModel = AssetListViewModel()
-    
+
     var body: some View {
         NavigationView {
             List {

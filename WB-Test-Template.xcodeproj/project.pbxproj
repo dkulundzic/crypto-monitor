@@ -13,7 +13,6 @@
 		2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */; };
 		2F49AC142D3FD3B0007D6A92 /* StartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */; };
 		2F49AC162D3FD3B5007D6A92 /* StartupProcessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */; };
-		2F49AC192D3FD416007D6A92 /* CoreDataStackStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC182D3FD416007D6A92 /* CoreDataStackStartupProcess.swift */; };
 		2F49AC1D2D3FD48E007D6A92 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC1B2D3FD48E007D6A92 /* Model.xcdatamodeld */; };
 		2F49AC1F2D3FD4B4007D6A92 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC1E2D3FD4B4007D6A92 /* CoreDataStack.swift */; };
 		2F49AC282D3FE6E3007D6A92 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC272D3FE6E3007D6A92 /* Repository.swift */; };
@@ -22,6 +21,7 @@
 		2F49AC372D41147C007D6A92 /* AssetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC362D41147C007D6A92 /* AssetRepository.swift */; };
 		2F49AC392D411498007D6A92 /* Asset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC382D411498007D6A92 /* Asset.swift */; };
 		2F49AC3B2D4114FF007D6A92 /* CompoundAssetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC3A2D4114FF007D6A92 /* CompoundAssetDataSource.swift */; };
+		2F49AC3E2D4121A3007D6A92 /* Statics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC3D2D4121A3007D6A92 /* Statics.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */; };
@@ -43,8 +43,7 @@
 		2FFE1EF52D3D1AA2000EE296 /* Assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE1EF32D3D185F000EE296 /* Assets.json */; };
 		2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE1EF62D3D1B56000EE296 /* AssetIcon.swift */; };
 		2FFE1EF92D3D1BB0000EE296 /* AssetsIcons.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE1EF82D3D1BB0000EE296 /* AssetsIcons.json */; };
-		84E0D1C42D1AE26C00A55CCB /* WB_Test_TemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C32D1AE26C00A55CCB /* WB_Test_TemplateApp.swift */; };
-		84E0D1C62D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C52D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift */; };
+		84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */; };
 		84E0D1C82D1AE26C00A55CCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C72D1AE26C00A55CCB /* ContentView.swift */; };
 		84E0D1CA2D1AE26E00A55CCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */; };
 		84E0D1CD2D1AE26E00A55CCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E0D1CC2D1AE26E00A55CCB /* Preview Assets.xcassets */; };
@@ -81,7 +80,6 @@
 		2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableView.swift; sourceTree = "<group>"; };
 		2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupProcess.swift; sourceTree = "<group>"; };
 		2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupProcessService.swift; sourceTree = "<group>"; };
-		2F49AC182D3FD416007D6A92 /* CoreDataStackStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStackStartupProcess.swift; sourceTree = "<group>"; };
 		2F49AC1C2D3FD48E007D6A92 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2F49AC1E2D3FD4B4007D6A92 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		2F49AC272D3FE6E3007D6A92 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -90,6 +88,7 @@
 		2F49AC362D41147C007D6A92 /* AssetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRepository.swift; sourceTree = "<group>"; };
 		2F49AC382D411498007D6A92 /* Asset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Asset.swift; sourceTree = "<group>"; };
 		2F49AC3A2D4114FF007D6A92 /* CompoundAssetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompoundAssetDataSource.swift; sourceTree = "<group>"; };
+		2F49AC3D2D4121A3007D6A92 /* Statics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statics.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Utility.swift"; sourceTree = "<group>"; };
@@ -109,8 +108,7 @@
 		2FFE1EF62D3D1B56000EE296 /* AssetIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIcon.swift; sourceTree = "<group>"; };
 		2FFE1EF82D3D1BB0000EE296 /* AssetsIcons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssetsIcons.json; sourceTree = "<group>"; };
 		84E0D1C02D1AE26C00A55CCB /* WB-Test-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WB-Test-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		84E0D1C32D1AE26C00A55CCB /* WB_Test_TemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WB_Test_TemplateApp.swift; sourceTree = "<group>"; };
-		84E0D1C52D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WB_Test_TemplateDocument.swift; sourceTree = "<group>"; };
+		84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorApp.swift; sourceTree = "<group>"; };
 		84E0D1C72D1AE26C00A55CCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E0D1CC2D1AE26E00A55CCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -164,6 +162,7 @@
 		2F49AC122D3FD3A8007D6A92 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				2F49AC3D2D4121A3007D6A92 /* Statics.swift */,
 				2F49AC172D3FD40B007D6A92 /* Startup Process */,
 			);
 			path = Utility;
@@ -174,7 +173,6 @@
 			children = (
 				2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */,
 				2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */,
-				2F49AC182D3FD416007D6A92 /* CoreDataStackStartupProcess.swift */,
 			);
 			path = "Startup Process";
 			sourceTree = "<group>";
@@ -348,8 +346,7 @@
 			children = (
 				84E0D1CE2D1AE26E00A55CCB /* Info.plist */,
 				84E0D1C72D1AE26C00A55CCB /* ContentView.swift */,
-				84E0D1C32D1AE26C00A55CCB /* WB_Test_TemplateApp.swift */,
-				84E0D1C52D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift */,
+				84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */,
 				84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */,
 				2FFE1EEF2D3D1777000EE296 /* Common */,
 				84E0D1CB2D1AE26E00A55CCB /* Preview Content */,
@@ -434,6 +431,7 @@
 				84E0D1BC2D1AE26C00A55CCB /* Sources */,
 				84E0D1BD2D1AE26C00A55CCB /* Frameworks */,
 				84E0D1BE2D1AE26C00A55CCB /* Resources */,
+				2F49AC3C2D411F22007D6A92 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -555,16 +553,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2F49AC3C2D411F22007D6A92 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84E0D1BC2D1AE26C00A55CCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84E0D1C42D1AE26C00A55CCB /* WB_Test_TemplateApp.swift in Sources */,
+				84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */,
 				2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */,
 				2FE7854C2D3A7486002C2B71 /* ExchangeRateNetworkService.swift in Sources */,
 				2F49AC372D41147C007D6A92 /* AssetRepository.swift in Sources */,
-				84E0D1C62D1AE26C00A55CCB /* WB_Test_TemplateDocument.swift in Sources */,
 				2FE785622D3A7B9E002C2B71 /* RequestDecorator.swift in Sources */,
 				84E0D1FC2D1AE64400A55CCB /* AssetListView.swift in Sources */,
 				2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */,
@@ -578,6 +596,7 @@
 				2FE785552D3A7635002C2B71 /* Host.swift in Sources */,
 				2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */,
 				84E0D1FD2D1AE64400A55CCB /* AssetListViewModel.swift in Sources */,
+				2F49AC3E2D4121A3007D6A92 /* Statics.swift in Sources */,
 				2FE785602D3A79DC002C2B71 /* URL+ExpressibleByStringLiteral.swift in Sources */,
 				2F49AC392D411498007D6A92 /* Asset.swift in Sources */,
 				84E0D1FB2D1AE64400A55CCB /* AssetDetailView.swift in Sources */,
@@ -587,7 +606,6 @@
 				2F49AC1D2D3FD48E007D6A92 /* Model.xcdatamodeld in Sources */,
 				2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */,
 				2FE7855C2D3A7768002C2B71 /* ExchangeRateResource.swift in Sources */,
-				2F49AC192D3FD416007D6A92 /* CoreDataStackStartupProcess.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
 				84E0D1F92D1AE64400A55CCB /* NetworkService.swift in Sources */,
 				2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */,
@@ -764,6 +782,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WB-Test-Template/Preview Content\"";
 				DEVELOPMENT_TEAM = CWV9HNSQMT;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WB-Test-Template/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -796,6 +815,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WB-Test-Template/Preview Content\"";
 				DEVELOPMENT_TEAM = CWV9HNSQMT;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WB-Test-Template/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

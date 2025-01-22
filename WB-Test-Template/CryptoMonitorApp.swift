@@ -2,7 +2,7 @@ import SwiftUI
 import Factory
 
 @main
-struct WB_Test_TemplateApp: App {
+struct CryptoMonitorApp: App {
     @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
     @InjectedObject(\.coreDataStack) private var coreDataStack
 
@@ -17,9 +17,6 @@ struct WB_Test_TemplateApp: App {
     }
 }
 
-private extension WB_Test_TemplateApp {
-    func boostrap() {
-        StartupProcessService()
-            .execute(CoreDataStackStartupProcess())
-    }
+private extension CryptoMonitorApp {
+    func boostrap() { }
 }

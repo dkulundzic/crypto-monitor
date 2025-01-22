@@ -19,7 +19,7 @@ final class AssetMO: NSManagedObject {
     @NSManaged var volume1MthUsd: Double
     @NSManaged var iconUrl: URL?
 
-    @nonobjc class func fetchRequest() -> NSFetchRequest<AssetMO> {
+    @nonobjc static func fetchRequest() -> NSFetchRequest<AssetMO> {
         NSFetchRequest(entityName: "Asset")
     }
 }

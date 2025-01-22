@@ -16,7 +16,7 @@ struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
             )
         )
     }
-    
+
     func get(
         for assetId: String,
         against assetIdQuote: String
