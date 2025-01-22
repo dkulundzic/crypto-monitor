@@ -218,6 +218,17 @@
 			path = "Core Data";
 			sourceTree = "<group>";
 		};
+		2F49AC302D4101A2007D6A92 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2F49AC1A2D3FD465007D6A92 /* Core Data */,
+				84E0D1F32D1AE64400A55CCB /* Models */,
+				2F49AC232D3FDAD2007D6A92 /* Repositories */,
+				84E0D1F12D1AE64400A55CCB /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		2FE785442D3A6252002C2B71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,12 +301,9 @@
 		2FFE1EEF2D3D1777000EE296 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2F49AC1A2D3FD465007D6A92 /* Core Data */,
+				2F49AC302D4101A2007D6A92 /* Data */,
 				2FE785442D3A6252002C2B71 /* Extensions */,
 				2FFE1EF02D3D1798000EE296 /* Mocking */,
-				84E0D1F32D1AE64400A55CCB /* Models */,
-				2F49AC232D3FDAD2007D6A92 /* Repositories */,
-				84E0D1F12D1AE64400A55CCB /* Services */,
 				2F49AC122D3FD3A8007D6A92 /* Utility */,
 			);
 			path = Common;
