@@ -5,11 +5,11 @@ import Factory
 @MainActor
 class AssetListViewModel: ViewModel {
     typealias View = AssetListView
-    @Published var filteredAssets: [Asset] = []
-    @Published var isLoading = false
-    @Published var error: String?
-    @Published var showFavoritesOnly = false
     @Published var searchText = ""
+    @Published var showFavoritesOnly = false
+    @Published private(set) var filteredAssets: [Asset] = []
+    @Published private(set) var isLoading = false
+    @Published private(set) var error: String?
     @Published private var assets: [Asset] = []
     @Injected(\.compoundAssetsDataSource) var assetsDataSource
     private var bag = Set<AnyCancellable>()

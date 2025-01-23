@@ -3,7 +3,15 @@ import NukeUI
 import Factory
 
 struct AssetDetailView: ActionableView {
-    let asset: Asset
+    @StateObject private var viewModel: AssetDetailViewModel
+
+    init(
+        asset: Asset
+    ) {
+        _viewModel = StateObject(
+            wrappedValue: .init(asset: asset)
+        )
+    }
 
     var body: some View {
         VStack(
@@ -11,24 +19,41 @@ struct AssetDetailView: ActionableView {
             spacing: 32
         ) {
             List {
-                Section("Exchange rates") {
-                    Text("Test")
-                }
-
-                Section("Exchange rates") {
-
+                ForEach(
+                    viewModel.sections
+                ) { section in
+                    Section(
+                        section.title
+                    ) {
+                        ForEach(section.items) { item in
+                            DataPointView(
+                                title: item.title,
+                                detail: item.detail
+                            )
+                        }
+                    }
                 }
             }
             .listStyle(.insetGrouped)
         }
-        .navigationTitle(asset.name.emptyIfNil)
-        .navigationBarTitleDisplayMode(.inline)
+        .animation(
+            .spring, value: viewModel.sections
+        )
+        .refreshable {
+            await viewModel.onAction(.onPullToRefresh)
+        }
+        .navigationTitle(
+            viewModel.assetName
+        )
+        .navigationBarTitleDisplayMode(
+            .inline
+        )
         .toolbar {
             ToolbarItem(
                 placement: .automatic
             ) {
                 LazyImage(
-                    url: asset.iconUrl
+                    url: viewModel.assetIconUrl
                 ) { state in
                     if let image = state.image {
                         image.resizable()
@@ -41,9 +66,15 @@ struct AssetDetailView: ActionableView {
                 .frame(width: 16, height: 16)
             }
         }
+        .task {
+            await viewModel.onAction(.onTask)
+        }
     }
 
-    enum Action { }
+    enum Action {
+        case onTask
+        case onPullToRefresh
+    }
 }
 
 #Preview {

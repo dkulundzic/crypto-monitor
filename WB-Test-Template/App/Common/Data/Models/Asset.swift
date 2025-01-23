@@ -11,9 +11,9 @@ struct Asset: Codable, Identifiable, Hashable {
     let dataTradeStart: Date?
     let dataTradeEnd: Date?
     let dataSymbolsCount: Int
-    let volume1HrsUsd: Double?
-    let volume1DayUsd: Double?
-    let volume1MthUsd: Double?
+    let volume1HrsUsd: Double
+    let volume1DayUsd: Double
+    let volume1MthUsd: Double
     let priceUsd: Double?
     let iconUrl: URL?
     var isFavorite: Bool = false

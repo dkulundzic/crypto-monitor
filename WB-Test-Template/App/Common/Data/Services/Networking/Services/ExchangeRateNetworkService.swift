@@ -2,17 +2,18 @@ import Foundation
 import Factory
 
 protocol ExchangeRateNetworkService: NetworkService {
-    func getAllRates(for assetId: String) async throws -> ExchangeRatesResponse
+    func getAllRates(for assetId: String, filterAssetId: [String]) async throws -> ExchangeRatesResponse
     func get(for assetId: String, against assetIdQuote: String) async throws -> ExchangeRate
 }
 
 struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
     func getAllRates(
-        for assetId: String
+        for assetId: String,
+        filterAssetId: [String]
     ) async throws -> ExchangeRatesResponse {
         try await resolve(
             resource: ExchangeRateResource.allRates(
-                assetId: assetId
+                assetId: assetId, filterAssetId: filterAssetId
             )
         )
     }

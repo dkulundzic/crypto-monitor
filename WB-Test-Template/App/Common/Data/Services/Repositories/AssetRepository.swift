@@ -77,9 +77,9 @@ extension Asset: ManagedObjectTransformable {
         model.dataTradeStart = dataTradeEnd
         model.typeIsCrypto = typeIsCrypto == 0 ? false : true
         model.dataSymbolsCount = Int64(dataSymbolsCount)
-        model.volume1HrsUsd = volume1HrsUsd ?? 0
-        model.volume1DayUsd = volume1DayUsd ?? 0
-        model.volume1MthUsd = volume1MthUsd ?? 0
+        model.volume1HrsUsd = volume1HrsUsd
+        model.volume1DayUsd = volume1DayUsd
+        model.volume1MthUsd = volume1MthUsd
         model.priceUsd = priceUsd ?? 0
         model.isFavorite = isFavorite
         return model

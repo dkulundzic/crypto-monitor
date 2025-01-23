@@ -14,9 +14,9 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="priceUsd" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="typeIsCrypto" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="volume1DayUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="volume1HrsUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="volume1MthUsd" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="volume1DayUsd" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="volume1HrsUsd" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="volume1MthUsd" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="assetId"/>
