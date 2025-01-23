@@ -53,12 +53,6 @@ private extension AssetDetailViewModel {
             }
             .receive(on: DispatchQueue.main)
             .assign(to: &$sections)
-
-        $sections
-            .sink { sections in
-                print(sections)
-            }
-            .store(in: &bag)
     }
 
     func loadExchangeRates() async {
