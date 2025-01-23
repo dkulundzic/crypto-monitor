@@ -16,7 +16,7 @@ struct DefaultAssetNetworkService: AssetsNetworkService {
     }
 
     func fetchAssetIcons() async throws -> [AssetIcon] {
-        try await resolve(resource: AssetsResource.icons(64))
+        try await resolve(resource: AssetsResource.icons(128))
     }
 }
 

@@ -13,7 +13,7 @@ struct AssetListView: ActionableView {
                     NavigationLink(
                         destination: AssetDetailView(asset: asset)
                     ) {
-                        AssetRowView(
+                        AssetListRowView(
                             id: asset.id,
                             name: asset.name.emptyIfNil,
                             iconUrl: asset.iconUrl ?? "https://www.google.com",

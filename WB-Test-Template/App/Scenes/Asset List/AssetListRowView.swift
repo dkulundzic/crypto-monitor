@@ -1,7 +1,7 @@
 import SwiftUI
 import NukeUI
 
-struct AssetRowView: View {
+struct AssetListRowView: View {
     let id: String
     let name: String
     let iconUrl: URL
