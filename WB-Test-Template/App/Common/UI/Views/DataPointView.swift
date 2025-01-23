@@ -13,7 +13,7 @@ struct DataPointView: View {
             Text(title)
                 .foregroundStyle(.secondary)
                 .font(.callout)
-                .fontWeight(.bold)
+                .fontWeight(.medium)
 
             if layout == .horizontal {
                 Spacer()
@@ -22,7 +22,7 @@ struct DataPointView: View {
             Text(detail)
                 .foregroundStyle(.foreground)
                 .font(.callout)
-                .fontWeight(.medium)
+                .fontWeight(.light)
         }
     }
 }

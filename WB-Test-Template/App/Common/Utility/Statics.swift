@@ -7,16 +7,9 @@ enum Statics {
 
     enum PopularExchangeRate: String, CaseIterable {
         case usd = "USD"
-        case cad = "CAD"
-        case aud = "AUD"
-        case nzd = "NZD"
         case eur = "EUR"
         case gbp = "GBP"
-        case zloty = "PLN"
         case chf = "CHF"
-        case sek = "SEK"
-        case krone = "DKK"
-        case ruble = "RUB"
         case btc = "BTC"
         case ethereum = "ETH"
         case solana = "SOL"
