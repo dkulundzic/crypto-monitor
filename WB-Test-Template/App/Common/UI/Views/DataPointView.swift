@@ -19,10 +19,12 @@ struct DataPointView: View {
                 Spacer()
             }
 
-            Text(detail)
-                .foregroundStyle(.foreground)
-                .font(.callout)
-                .fontWeight(.light)
+            if !detail.isEmpty {
+                Text(detail)
+                    .foregroundStyle(.foreground)
+                    .font(.callout)
+                    .fontWeight(.light)
+            }
         }
     }
 }

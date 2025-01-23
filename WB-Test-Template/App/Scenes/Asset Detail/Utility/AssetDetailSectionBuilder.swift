@@ -13,7 +13,15 @@ struct AssetDetailSectionBuilder {
 
 private extension AssetDetailSectionBuilder {
     func buildExchangeRatesSection() -> AssetDetailSection? {
-        guard !rates.isEmpty else { return nil }
+        guard
+            !rates.isEmpty
+        else {
+            return .exchangeRates(
+                [
+                    .init(title: "No available data", detail: "")
+                ]
+            )
+        }
         let items: [AssetDetailSection.Item] = rates
             .map { rate in
                     .init(

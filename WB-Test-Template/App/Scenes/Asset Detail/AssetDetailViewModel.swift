@@ -45,7 +45,9 @@ private extension AssetDetailViewModel {
             .compactMap { [asset] rates in
                 AssetDetailSectionBuilder(
                     asset: asset,
-                    rates: rates
+                    rates: rates.sorted(
+                        by: { $0.assetIdQuote.emptyIfNil < $1.assetIdQuote.emptyIfNil }
+                    )
                 )
                 .build()
             }
@@ -60,13 +62,9 @@ private extension AssetDetailViewModel {
     }
 
     func loadExchangeRates() async {
-        do {
-            exchangeRates = try await exchangeRateNetworkService.getAllRates(
-                for: asset.assetId.emptyIfNil,
-                filterAssetId: Statics.PopularExchangeRate.textual
-            ).rates
-        } catch {
-            print(error)
-        }
+        exchangeRates = (try? await exchangeRateNetworkService.getAllRates(
+            for: asset.assetId.emptyIfNil,
+            filterAssetId: Statics.PopularExchangeRate.textual
+        ).rates) ?? []
     }
 }
