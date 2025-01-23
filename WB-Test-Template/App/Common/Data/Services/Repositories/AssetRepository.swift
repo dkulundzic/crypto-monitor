@@ -82,6 +82,7 @@ extension Asset: ManagedObjectTransformable {
         model.volume1MthUsd = volume1MthUsd
         model.priceUsd = priceUsd ?? 0
         model.isFavorite = isFavorite
+        model.iconUrl = iconUrl
         return model
     }
 }
