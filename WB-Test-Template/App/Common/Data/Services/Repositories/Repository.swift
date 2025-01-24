@@ -3,6 +3,7 @@ import CoreData
 
 protocol Repository {
     associatedtype Model
+    func fetch(id: String) async throws -> Model?
     func fetchAll() async throws -> [Model]
     func save(_ model: Model) async throws
     func save(_ models: [Model]) async throws

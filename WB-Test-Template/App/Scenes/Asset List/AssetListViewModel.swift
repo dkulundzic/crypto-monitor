@@ -11,7 +11,7 @@ class AssetListViewModel: ViewModel {
     @Published private(set) var isLoading = false
     @Published private(set) var error: String?
     @Published private var assets: [Asset] = []
-    @Injected(\.compoundAssetsDataSource) var assetsDataSource
+    @Injected(\.assetDataSource) var assetsDataSource
     private var bag = Set<AnyCancellable>()
 
     init() {
@@ -63,7 +63,7 @@ private extension AssetListViewModel {
 
         do {
             try await assetsDataSource.fetchAll(
-                policy: includeCachedData ? .loadLocalThenRemote : .loadRemoteOnly
+                policy: includeCachedData ? .cacheThenRemote : .remoteOnly
             )
         } catch {
             self.error = error.localizedDescription

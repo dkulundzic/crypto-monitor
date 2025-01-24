@@ -7,6 +7,16 @@ protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectT
 final class DefaultAssetRepository: AssetRepository {
     @Injected(\.persistentContainer) private var persistentContainer
 
+    func fetch(
+        id: String
+    ) async throws -> Asset? {
+        let request = AssetMO.fetchRequest()
+        request.predicate = NSPredicate(format: "assetId == %@", id)
+        return try persistentContainer.viewContext.fetch(request)
+            .first?
+            .toDomain()
+    }
+
     func fetchAll() async throws -> [Asset] {
         let request = AssetMO.fetchRequest()
         return try persistentContainer.viewContext.fetch(request)
@@ -110,7 +120,7 @@ extension AssetMO: DomainObjectTransformable {
 }
 
 extension Container {
-    var compoundAssetRepository: Factory<any AssetRepository> {
+    var assetRepository: Factory<any AssetRepository> {
         self {
             DefaultAssetRepository()
         }

@@ -1,14 +1,15 @@
 import Foundation
-import Factory
-
 import Combine
+import Factory
 
 @MainActor
 final class AssetDetailViewModel: ViewModel {
     typealias View = AssetDetailView
+    @Published var isBookmarked = false
     @Published private(set) var sections = [AssetDetailSection]()
     @Published private var exchangeRates = [ExchangeRate]()
     @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
+    @Injected(\.assetDataSource) private var assetDataSource
     private var bag = Set<AnyCancellable>()
     private let asset: Asset
 
@@ -16,6 +17,8 @@ final class AssetDetailViewModel: ViewModel {
         asset: Asset
     ) {
         self.asset = asset
+        self.isBookmarked = asset.isFavorite
+        print(asset.isFavorite)
         initializeObserving()
     }
 
@@ -25,6 +28,8 @@ final class AssetDetailViewModel: ViewModel {
         switch action {
         case .onTask, .onPullToRefresh:
             await loadExchangeRates()
+        case .onFavoriteButtonTapped:
+            return
         }
     }
 }
@@ -53,6 +58,19 @@ private extension AssetDetailViewModel {
             }
             .receive(on: DispatchQueue.main)
             .assign(to: &$sections)
+
+        $isBookmarked
+            .dropFirst()
+            .removeDuplicates()
+            .sink { [asset, assetDataSource] isBookmarked in
+                Task {
+                    try await assetDataSource.setBookmark(
+                        isBookmarked, for: asset
+                    )
+                    try? await assetDataSource.fetchAll(policy: .cacheOnly)
+                }
+            }
+            .store(in: &bag)
     }
 
     func loadExchangeRates() async {

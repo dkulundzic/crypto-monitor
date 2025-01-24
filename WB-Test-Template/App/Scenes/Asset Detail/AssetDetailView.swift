@@ -19,6 +19,10 @@ struct AssetDetailView: ActionableView {
             spacing: 32
         ) {
             List {
+                AssetBookmarkButton(
+                    isBookmarked: $viewModel.isBookmarked
+                )
+
                 ForEach(
                     viewModel.sections
                 ) { section in
@@ -63,7 +67,7 @@ struct AssetDetailView: ActionableView {
                         ProgressView()
                     }
                 }
-                .frame(width: 16, height: 16)
+                .frame(width: 20, height: 20)
             }
         }
         .task {
@@ -74,6 +78,7 @@ struct AssetDetailView: ActionableView {
     enum Action {
         case onTask
         case onPullToRefresh
+        case onFavoriteButtonTapped
     }
 }
 
