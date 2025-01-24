@@ -26,6 +26,7 @@
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
 		2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */; };
 		2FAC04352D43A3A2000E471B /* NetworkServiceRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */; };
+		2FAC04392D43A612000E471B /* ExchangeRateMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04382D43A612000E471B /* ExchangeRateMO.swift */; };
 		2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */; };
 		2FDEA9E22D41DC680034F241 /* DataPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E12D41DC680034F241 /* DataPointView.swift */; };
 		2FDEA9E52D41DD8F0034F241 /* AssetDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */; };
@@ -101,6 +102,7 @@
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceFetchPolicy.swift; sourceTree = "<group>"; };
 		2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceRetryPolicy.swift; sourceTree = "<group>"; };
+		2FAC04382D43A612000E471B /* ExchangeRateMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateMO.swift; sourceTree = "<group>"; };
 		2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
 		2FDEA9E12D41DC680034F241 /* DataPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPointView.swift; sourceTree = "<group>"; };
 		2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailSection.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				2F49AC342D411404007D6A92 /* AssetMO.swift */,
+				2FAC04382D43A612000E471B /* ExchangeRateMO.swift */,
 				2F49AC1B2D3FD48E007D6A92 /* Model.xcdatamodeld */,
 			);
 			path = Models;
@@ -676,6 +679,7 @@
 				2FFE1EF42D3D1865000EE296 /* Assets.json in Sources */,
 				2FE785552D3A7635002C2B71 /* Host.swift in Sources */,
 				2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */,
+				2FAC04392D43A612000E471B /* ExchangeRateMO.swift in Sources */,
 				84E0D1FD2D1AE64400A55CCB /* AssetListViewModel.swift in Sources */,
 				2F49AC3E2D4121A3007D6A92 /* Statics.swift in Sources */,
 				2FDEA9EE2D41F5490034F241 /* AssetBookmarkButton.swift in Sources */,

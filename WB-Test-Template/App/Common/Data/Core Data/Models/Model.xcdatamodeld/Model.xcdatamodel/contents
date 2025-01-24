@@ -23,4 +23,9 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="ExchangeRate" representedClassName=".ExchangeRateMO" syncable="YES">
+        <attribute name="assetIdQuote" attributeType="String"/>
+        <attribute name="rate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="time" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
 </model>
