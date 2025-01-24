@@ -27,6 +27,8 @@
 		2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */; };
 		2FAC04352D43A3A2000E471B /* NetworkServiceRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */; };
 		2FAC04392D43A612000E471B /* ExchangeRateMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04382D43A612000E471B /* ExchangeRateMO.swift */; };
+		2FAC043B2D43A757000E471B /* ExchangeRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC043A2D43A757000E471B /* ExchangeRateRepository.swift */; };
+		2FAC043F2D43A7D8000E471B /* ExchangeRateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */; };
 		2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */; };
 		2FDEA9E22D41DC680034F241 /* DataPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E12D41DC680034F241 /* DataPointView.swift */; };
 		2FDEA9E52D41DD8F0034F241 /* AssetDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */; };
@@ -103,6 +105,8 @@
 		2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceFetchPolicy.swift; sourceTree = "<group>"; };
 		2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceRetryPolicy.swift; sourceTree = "<group>"; };
 		2FAC04382D43A612000E471B /* ExchangeRateMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateMO.swift; sourceTree = "<group>"; };
+		2FAC043A2D43A757000E471B /* ExchangeRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateRepository.swift; sourceTree = "<group>"; };
+		2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataSource.swift; sourceTree = "<group>"; };
 		2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
 		2FDEA9E12D41DC680034F241 /* DataPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPointView.swift; sourceTree = "<group>"; };
 		2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailSection.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				2F49AC362D41147C007D6A92 /* AssetRepository.swift */,
+				2FAC043A2D43A757000E471B /* ExchangeRateRepository.swift */,
 				2F49AC272D3FE6E3007D6A92 /* Repository.swift */,
 			);
 			path = Repositories;
@@ -245,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				2F49AC3A2D4114FF007D6A92 /* AssetDataSource.swift */,
+				2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */,
 				2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */,
 			);
 			path = "Data Sources";
@@ -695,6 +701,8 @@
 				2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */,
 				2FE7855C2D3A7768002C2B71 /* ExchangeRateResource.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
+				2FAC043F2D43A7D8000E471B /* ExchangeRateDataSource.swift in Sources */,
+				2FAC043B2D43A757000E471B /* ExchangeRateRepository.swift in Sources */,
 				84E0D1F92D1AE64400A55CCB /* NetworkService.swift in Sources */,
 				2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */,
 				2F49AC162D3FD3B5007D6A92 /* StartupProcessService.swift in Sources */,

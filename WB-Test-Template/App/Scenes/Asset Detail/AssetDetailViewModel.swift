@@ -8,7 +8,7 @@ final class AssetDetailViewModel: ViewModel {
     @Published var isBookmarked = false
     @Published private(set) var sections = [AssetDetailSection]()
     @Published private var exchangeRates = [ExchangeRate]()
-    @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
+    @Injected(\.exchangeRatesDataSource) private var exchangeRatesDataSource
     @Injected(\.assetDataSource) private var assetDataSource
     private var bag = Set<AnyCancellable>()
     private let asset: Asset
@@ -27,8 +27,6 @@ final class AssetDetailViewModel: ViewModel {
         switch action {
         case .onTask, .onPullToRefresh:
             await loadExchangeRates()
-        case .onFavoriteButtonTapped:
-            return
         }
     }
 }
@@ -71,12 +69,18 @@ private extension AssetDetailViewModel {
                 }
             }
             .store(in: &bag)
+
+        exchangeRatesDataSource.rates
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .assign(to: &$exchangeRates)
     }
 
     func loadExchangeRates() async {
-        exchangeRates = (try? await exchangeRateNetworkService.getAllRates(
-            for: asset.id,
-            filterAssetId: Statics.PopularExchangeRate.textual
-        ).rates) ?? []
+        try? await exchangeRatesDataSource
+            .fetchAll(
+                for: asset.id,
+                policy: .cacheThenRemote
+            )
     }
 }

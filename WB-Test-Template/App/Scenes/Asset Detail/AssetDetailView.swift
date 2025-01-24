@@ -78,7 +78,6 @@ struct AssetDetailView: ActionableView {
     enum Action {
         case onTask
         case onPullToRefresh
-        case onFavoriteButtonTapped
     }
 }
 

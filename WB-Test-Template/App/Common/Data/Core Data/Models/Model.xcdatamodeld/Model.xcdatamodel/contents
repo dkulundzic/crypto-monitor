@@ -27,5 +27,10 @@
         <attribute name="assetIdQuote" attributeType="String"/>
         <attribute name="rate" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="time" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="assetIdQuote"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
 </model>

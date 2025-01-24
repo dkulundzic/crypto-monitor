@@ -2,6 +2,7 @@ import Foundation
 import Combine
 import Factory
 
+#warning("TODO: Think about extracting into a reusable type")
 protocol AssetsDataSource {
     var assets: AnyPublisher<[Asset], Never> { get }
     func fetchAll(policy: DataSourceFetchPolicy) async throws
@@ -13,7 +14,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     var assets: AnyPublisher<[Asset], Never> {
         assetsSubject.eraseToAnyPublisher()
     }
-
+    
     @Injected(\.assetRepository) private var assetRepository
     @Injected(\.assetsNetworkService) private var assetsNetworkService
     private let assetsSubject = PassthroughSubject<[Asset], Never>()
@@ -67,13 +68,13 @@ final class DefaultAssetsDataSource: AssetsDataSource {
             case .cacheThenRemote:
                 await optionalLoadFromCache()
                 try await loadFromRemote()
+                try await loadFromCache()
             case .remoteOnly:
                 try await loadFromRemote()
+                try await loadFromCache()
             case .cacheOnly:
-                break
+                try await loadFromCache()
             }
-
-            try await loadFromCache()
         }.value
     }
 
