@@ -18,7 +18,6 @@ final class AssetDetailViewModel: ViewModel {
     ) {
         self.asset = asset
         self.isBookmarked = asset.isFavorite
-        print(asset.isFavorite)
         initializeObserving()
     }
 
