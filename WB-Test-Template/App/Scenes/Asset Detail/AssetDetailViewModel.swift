@@ -67,7 +67,8 @@ private extension AssetDetailViewModel {
                     try await assetDataSource.setBookmark(
                         isBookmarked, for: asset
                     )
-                    try? await assetDataSource.fetchAll(policy: .cacheOnly)
+
+                    try await assetDataSource.fetchAll(policy: .cacheOnly)
                 }
             }
             .store(in: &bag)
@@ -75,7 +76,7 @@ private extension AssetDetailViewModel {
 
     func loadExchangeRates() async {
         exchangeRates = (try? await exchangeRateNetworkService.getAllRates(
-            for: asset.assetId.emptyIfNil,
+            for: asset.id,
             filterAssetId: Statics.PopularExchangeRate.textual
         ).rates) ?? []
     }

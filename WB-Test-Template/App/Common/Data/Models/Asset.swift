@@ -22,16 +22,6 @@ struct Asset: Codable, Identifiable, Hashable {
         assetId ?? UUID().uuidString
     }
 
-    func hash(
-        into hasher: inout Hasher
-    ) {
-        hasher.combine(assetId)
-    }
-
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.assetId == rhs.assetId
-    }
-
     private enum CodingKeys: String, CodingKey {
         case assetId
         case name
@@ -51,6 +41,28 @@ struct Asset: Codable, Identifiable, Hashable {
     }
 }
 
+extension Asset: ManagedObjectTransformable {
+    func toManaged(
+        using model: AssetMO
+    ) -> AssetMO {
+        model.assetId = assetId
+        model.name = name
+        model.dataQuoteStart = dataQuoteStart
+        model.dataQuoteEnd = dataQuoteEnd
+        model.dataOrderbookStart = dataOrderbookEnd
+        model.dataTradeStart = dataTradeEnd
+        model.typeIsCrypto = typeIsCrypto == 0 ? false : true
+        model.dataSymbolsCount = Int64(dataSymbolsCount)
+        model.volume1HrsUsd = volume1HrsUsd
+        model.volume1DayUsd = volume1DayUsd
+        model.volume1MthUsd = volume1MthUsd
+        model.priceUsd = priceUsd ?? 0
+        model.isFavorite = isFavorite
+        model.iconUrl = iconUrl
+        return model
+    }
+}
+
 extension Collection where Element == Asset {
     func filter(
         searchText: String,
@@ -59,7 +71,7 @@ extension Collection where Element == Asset {
         self.filter { asset in
             let matchesSearch = searchText.isEmpty ||
             asset.name.emptyIfNil.localizedCaseInsensitiveContains(searchText) ||
-            asset.assetId.emptyIfNil.localizedCaseInsensitiveContains(searchText)
+            asset.id.localizedCaseInsensitiveContains(searchText)
 
             let matchesFavorites = !favouritesExclusively || asset.isFavorite
             return matchesSearch && matchesFavorites

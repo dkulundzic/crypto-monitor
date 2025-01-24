@@ -28,7 +28,7 @@ extension Container {
         }
     }
 
-    var managedObjectContext: Factory<NSManagedObjectContext> {
+    var viewContext: Factory<NSManagedObjectContext> {
         self {
             Container.shared.persistentContainer.resolve().viewContext
         }

@@ -5,30 +5,30 @@ import Factory
 protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectTransformable { }
 
 final class DefaultAssetRepository: AssetRepository {
-    @Injected(\.persistentContainer) private var persistentContainer
+    @Injected(\.viewContext) private var viewContext
 
     func fetch(
         id: String
     ) async throws -> Asset? {
         let request = AssetMO.fetchRequest()
         request.predicate = NSPredicate(format: "assetId == %@", id)
-        return try persistentContainer.viewContext.fetch(request)
+        return try viewContext.fetch(request)
             .first?
             .toDomain()
     }
 
     func fetchAll() async throws -> [Asset] {
         let request = AssetMO.fetchRequest()
-        return try persistentContainer.viewContext.fetch(request)
+        return try viewContext.fetch(request)
             .map { $0.toDomain() }
     }
 
     func save(
         _ model: Asset
     ) async throws {
-        let transient = AssetMO(context: persistentContainer.viewContext)
+        let transient = AssetMO(context: viewContext)
         _ = model.toManaged(using: transient)
-        try persistentContainer.viewContext.saveIfNeeded()
+        try viewContext.saveIfNeeded()
     }
 
     func save(
@@ -51,8 +51,8 @@ final class DefaultAssetRepository: AssetRepository {
             return false
         }
 
-        try persistentContainer.viewContext.execute(batchInsertRequest)
-        try persistentContainer.viewContext.saveIfNeeded()
+        try viewContext.execute(batchInsertRequest)
+        try viewContext.saveIfNeeded()
     }
 
     func delete(
@@ -63,59 +63,15 @@ final class DefaultAssetRepository: AssetRepository {
         fetchRequest.predicate = NSPredicate(format: "assetId == %@", assetId)
 
         guard
-            let relevantAsset = try persistentContainer.viewContext
+            let relevantAsset = try viewContext
                 .fetch(fetchRequest)
                 .first
         else {
             fatalError()
         }
 
-        persistentContainer.viewContext.delete(relevantAsset)
-        try persistentContainer.viewContext.saveIfNeeded()
-    }
-}
-
-extension Asset: ManagedObjectTransformable {
-    func toManaged(
-        using model: AssetMO
-    ) -> AssetMO {
-        model.assetId = assetId
-        model.name = name
-        model.dataQuoteStart = dataQuoteStart
-        model.dataQuoteEnd = dataQuoteEnd
-        model.dataOrderbookStart = dataOrderbookEnd
-        model.dataTradeStart = dataTradeEnd
-        model.typeIsCrypto = typeIsCrypto == 0 ? false : true
-        model.dataSymbolsCount = Int64(dataSymbolsCount)
-        model.volume1HrsUsd = volume1HrsUsd
-        model.volume1DayUsd = volume1DayUsd
-        model.volume1MthUsd = volume1MthUsd
-        model.priceUsd = priceUsd ?? 0
-        model.isFavorite = isFavorite
-        model.iconUrl = iconUrl
-        return model
-    }
-}
-
-extension AssetMO: DomainObjectTransformable {
-    func toDomain() -> Asset {
-        .init(
-            assetId: assetId,
-            name: name,
-            typeIsCrypto: typeIsCrypto ? 1 : 0,
-            dataQuoteStart: dataQuoteStart,
-            dataQuoteEnd: dataQuoteEnd,
-            dataOrderbookStart: dataOrderbookStart,
-            dataOrderbookEnd: dataOrderbookEnd,
-            dataTradeStart: dataTradeStart,
-            dataTradeEnd: dataTradeEnd,
-            dataSymbolsCount: Int(dataSymbolsCount),
-            volume1HrsUsd: volume1HrsUsd,
-            volume1DayUsd: volume1DayUsd,
-            volume1MthUsd: volume1MthUsd,
-            priceUsd: priceUsd,
-            iconUrl: iconUrl ?? Statics.defaultAssetIconUrl
-        )
+        viewContext.delete(relevantAsset)
+        try viewContext.saveIfNeeded()
     }
 }
 

@@ -24,7 +24,7 @@ class AssetListViewModel: ViewModel {
         switch action {
         case .onTask, .onPullToRefresh:
             await loadAssets(
-                includeCachedData: action == .onTask
+                policy: action == .onTask ? .cacheThenRemote : .cacheOnly
             )
         }
     }
@@ -32,9 +32,10 @@ class AssetListViewModel: ViewModel {
 
 private extension AssetListViewModel {
     func initializeObserving() {
-        assetsDataSource.assets
+        let assetsPublisher = assetsDataSource
+            .assets
+            .removeDuplicates()
             .receive(on: DispatchQueue.main)
-            .assign(to: &$assets)
 
         let searchTextPublisher = $searchText
             .removeDuplicates()
@@ -47,7 +48,9 @@ private extension AssetListViewModel {
             .eraseToAnyPublisher()
 
         Publishers.CombineLatest3(
-            $assets.removeDuplicates(), searchTextPublisher, favouritesPublisher
+            assetsPublisher,
+            searchTextPublisher,
+            favouritesPublisher
         )
         .map { assets, searchText, showFavoritesOnly in
             assets.filter(searchText: searchText, favouritesExclusively: showFavoritesOnly)
@@ -56,14 +59,14 @@ private extension AssetListViewModel {
     }
 
     func loadAssets(
-        includeCachedData: Bool
+        policy: DataSourceFetchPolicy
     ) async {
         isLoading = filteredAssets.isEmpty
         defer { isLoading = false }
 
         do {
             try await assetsDataSource.fetchAll(
-                policy: includeCachedData ? .cacheThenRemote : .remoteOnly
+                policy: policy
             )
         } catch {
             self.error = error.localizedDescription

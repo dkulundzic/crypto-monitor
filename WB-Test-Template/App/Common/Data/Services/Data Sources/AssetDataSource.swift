@@ -83,15 +83,15 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     ) async throws {
         let request = AssetMO.fetchRequest()
         request.predicate = NSPredicate(
-            format: "assetId == %@", asset.assetId.emptyIfNil
+            format: "assetId == %@", asset.id
         )
-//
-//        var asset1 = try await assetRepository.fetch(id: asset.id)
-//        asset1?.isFavorite = bookmark
-//        try persistentContainer.viewContext.saveIfNeeded()
-//        print(asset1?.isFavorite)
-//        let asset2 = try persistentContainer.viewContext.fetch(request).first
-//        print(asset2?.isFavorite)
+
+        if var asset = try await assetRepository.fetch(
+            id: asset.id
+        ) {
+            asset.isFavorite = bookmark
+            try await assetRepository.save(asset)
+        }
     }
 }
 
@@ -99,6 +99,6 @@ extension Container {
     var assetDataSource: Factory<AssetsDataSource> {
         self {
             DefaultAssetsDataSource()
-        }
+        }.singleton
     }
 }

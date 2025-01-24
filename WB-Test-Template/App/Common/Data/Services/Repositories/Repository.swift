@@ -1,8 +1,14 @@
 import Foundation
 import CoreData
 
+@globalActor actor RepositoryActor: GlobalActor {
+    static var shared = RepositoryActor()
+}
+
+@RepositoryActor
 protocol Repository {
     associatedtype Model
+    nonisolated init()
     func fetch(id: String) async throws -> Model?
     func fetchAll() async throws -> [Model]
     func save(_ model: Model) async throws

@@ -25,3 +25,26 @@ final class AssetMO: NSManagedObject {
 }
 
 extension AssetMO: Identifiable { }
+
+extension AssetMO: DomainObjectTransformable {
+    func toDomain() -> Asset {
+        .init(
+            assetId: assetId,
+            name: name,
+            typeIsCrypto: typeIsCrypto ? 1 : 0,
+            dataQuoteStart: dataQuoteStart,
+            dataQuoteEnd: dataQuoteEnd,
+            dataOrderbookStart: dataOrderbookStart,
+            dataOrderbookEnd: dataOrderbookEnd,
+            dataTradeStart: dataTradeStart,
+            dataTradeEnd: dataTradeEnd,
+            dataSymbolsCount: Int(dataSymbolsCount),
+            volume1HrsUsd: volume1HrsUsd,
+            volume1DayUsd: volume1DayUsd,
+            volume1MthUsd: volume1MthUsd,
+            priceUsd: priceUsd,
+            iconUrl: iconUrl ?? Statics.defaultAssetIconUrl,
+            isFavorite: isFavorite
+        )
+    }
+}
