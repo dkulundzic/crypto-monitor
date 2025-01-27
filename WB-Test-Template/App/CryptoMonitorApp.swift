@@ -12,7 +12,7 @@ struct CryptoMonitorApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AssetListView()
+            CryptoMonitorAppView()
         }
     }
 }

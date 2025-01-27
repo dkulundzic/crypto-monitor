@@ -24,6 +24,9 @@
 		2F49AC3E2D4121A3007D6A92 /* Statics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC3D2D4121A3007D6A92 /* Statics.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */; };
 		2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */; };
+		2F94C1992D47860700EDFE8E /* ConnectivityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */; };
+		2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */; };
+		2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */; };
 		2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */; };
 		2FAC04352D43A3A2000E471B /* NetworkServiceRetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */; };
 		2FAC04392D43A612000E471B /* ExchangeRateMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04382D43A612000E471B /* ExchangeRateMO.swift */; };
@@ -55,7 +58,6 @@
 		2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFE1EF62D3D1B56000EE296 /* AssetIcon.swift */; };
 		2FFE1EF92D3D1BB0000EE296 /* AssetsIcons.json in Resources */ = {isa = PBXBuildFile; fileRef = 2FFE1EF82D3D1BB0000EE296 /* AssetsIcons.json */; };
 		84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */; };
-		84E0D1C82D1AE26C00A55CCB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C72D1AE26C00A55CCB /* ContentView.swift */; };
 		84E0D1CA2D1AE26E00A55CCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */; };
 		84E0D1CD2D1AE26E00A55CCB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E0D1CC2D1AE26E00A55CCB /* Preview Assets.xcassets */; };
 		84E0D1D82D1AE26E00A55CCB /* WB_Test_TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1D72D1AE26E00A55CCB /* WB_Test_TemplateTests.swift */; };
@@ -102,6 +104,9 @@
 		2F49AC3D2D4121A3007D6A92 /* Statics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statics.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRowView.swift; sourceTree = "<group>"; };
 		2F9269D62D3E910A00DBA5A7 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityObserver.swift; sourceTree = "<group>"; };
+		2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppViewModel.swift; sourceTree = "<group>"; };
+		2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppView.swift; sourceTree = "<group>"; };
 		2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceFetchPolicy.swift; sourceTree = "<group>"; };
 		2FAC04342D43A3A2000E471B /* NetworkServiceRetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceRetryPolicy.swift; sourceTree = "<group>"; };
 		2FAC04382D43A612000E471B /* ExchangeRateMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateMO.swift; sourceTree = "<group>"; };
@@ -131,7 +136,6 @@
 		2FFE1EF82D3D1BB0000EE296 /* AssetsIcons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AssetsIcons.json; sourceTree = "<group>"; };
 		84E0D1C02D1AE26C00A55CCB /* WB-Test-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WB-Test-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorApp.swift; sourceTree = "<group>"; };
-		84E0D1C72D1AE26C00A55CCB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E0D1CC2D1AE26E00A55CCB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		84E0D1CE2D1AE26E00A55CCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 		2F49AC122D3FD3A8007D6A92 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */,
 				2F49AC3D2D4121A3007D6A92 /* Statics.swift */,
 				2F49AC172D3FD40B007D6A92 /* Startup Process */,
 			);
@@ -260,7 +265,8 @@
 			isa = PBXGroup;
 			children = (
 				84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */,
-				84E0D1C72D1AE26C00A55CCB /* ContentView.swift */,
+				2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */,
+				2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */,
 				2FFE1EEF2D3D1777000EE296 /* Common */,
 				2FDEA9DB2D41DAAB0034F241 /* Scenes */,
 			);
@@ -669,7 +675,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */,
+				2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */,
 				2F9269D72D3E910A00DBA5A7 /* ExchangeRate.swift in Sources */,
+				2F94C1992D47860700EDFE8E /* ConnectivityObserver.swift in Sources */,
 				2FE7854C2D3A7486002C2B71 /* ExchangeRateNetworkService.swift in Sources */,
 				2F49AC372D41147C007D6A92 /* AssetRepository.swift in Sources */,
 				2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */,
@@ -687,6 +695,7 @@
 				2FE785472D3A6269002C2B71 /* JSONDecoder+Utility.swift in Sources */,
 				2FAC04392D43A612000E471B /* ExchangeRateMO.swift in Sources */,
 				84E0D1FD2D1AE64400A55CCB /* AssetListViewModel.swift in Sources */,
+				2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */,
 				2F49AC3E2D4121A3007D6A92 /* Statics.swift in Sources */,
 				2FDEA9EE2D41F5490034F241 /* AssetBookmarkButton.swift in Sources */,
 				2FE785602D3A79DC002C2B71 /* URL+ExpressibleByStringLiteral.swift in Sources */,
@@ -711,7 +720,6 @@
 				2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */,
 				2F49AC142D3FD3B0007D6A92 /* StartupProcess.swift in Sources */,
 				2F49AC1F2D3FD4B4007D6A92 /* CoreDataStack.swift in Sources */,
-				84E0D1C82D1AE26C00A55CCB /* ContentView.swift in Sources */,
 				2FAC04352D43A3A2000E471B /* NetworkServiceRetryPolicy.swift in Sources */,
 				2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */,
 				2FDEA9E92D41EA210034F241 /* DynamicStack.swift in Sources */,
@@ -880,7 +888,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WB-Test-Template/Preview Content\"";
-				DEVELOPMENT_TEAM = CWV9HNSQMT;
+				DEVELOPMENT_TEAM = 5Y2HY26HKK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -897,7 +905,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox.WB-Test-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox.crypto-monitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -913,7 +921,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WB-Test-Template/Preview Content\"";
-				DEVELOPMENT_TEAM = CWV9HNSQMT;
+				DEVELOPMENT_TEAM = 5Y2HY26HKK;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -930,7 +938,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox.WB-Test-Template";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox.crypto-monitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
