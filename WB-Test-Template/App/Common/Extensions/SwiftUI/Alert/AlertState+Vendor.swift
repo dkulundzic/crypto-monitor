@@ -3,32 +3,32 @@ import Foundation
 extension AlertState {
     static func error<Error>(
         _ error: Error,
-        confirmation: @escaping Action,
+        retry: Action? = nil,
         cancel: Action? = nil
     ) -> Self where Error: LocalizedError {
         Self.error(
             error.localizedDescription,
-            confirmation: confirmation,
+            retry: retry,
             cancel: cancel
         )
     }
 
     static func error(
         _ error: String,
-        confirmation: @escaping Action,
+        retry: Action? = nil,
         cancel: Action? = nil
     ) -> Self {
         .init(
             title: "Error", // TODO: Localize
             message: error,
             actions: [
-                .regular("Retry") {
-                    confirmation()
+                retry == nil ? nil: .regular("Retry") {
+                    retry?()
                 },
-                .casualCancel {
+                .cancel {
                     cancel?()
                 }
-            ]
+            ].compactMap { $0 }
         )
     }
 }

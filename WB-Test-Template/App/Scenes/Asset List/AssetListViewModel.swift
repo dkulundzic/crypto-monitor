@@ -80,11 +80,14 @@ private extension AssetListViewModel {
         do {
             try await assetsDataSource.fetchAll(policy: policy)
         } catch {
-            self.error = .error(error.localizedDescription) { [weak self, policy] in
-                Task {
-                    await self?.loadAssets(policy: policy)
+            self.error = .error(
+                error.localizedDescription,
+                retry: { [weak self, policy] in
+                    Task {
+                        await self?.loadAssets(policy: policy)
+                    }
                 }
-            }
+            )
         }
     }
 }

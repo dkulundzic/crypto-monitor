@@ -24,26 +24,28 @@ extension NetworkService {
             .retrying(
                 maxRetryCount: retry.maxRetryCount,
                 retryDelay: retry.retryDelay
-            ) { [request] in
-            let (data, response) = try await URLSession.shared.data(for: request)
+            ) { error in
+                (error as? URLError)?.code != .notConnectedToInternet
+            } operation: { [request] in
+                let (data, response) = try await URLSession.shared.data(for: request)
 
-            guard
-                let httpResponse = response as? HTTPURLResponse
-            else {
-                throw NetworkError.serverError("Yo! There was an error.")
-            }
+                guard
+                    let httpResponse = response as? HTTPURLResponse
+                else {
+                    throw NetworkError.serverError("Yo! There was an error.")
+                }
 
-            guard
-                (200...299).contains(httpResponse.statusCode)
-            else {
-                throw NetworkError.serverError("Yo! There was an error.")
-            }
+                guard
+                    (200...299).contains(httpResponse.statusCode)
+                else {
+                    throw NetworkError.serverError("Yo! There was an error.")
+                }
 
-            do {
-                return try JSONDecoder.default.decode(T.self, from: data)
-            } catch {
-                throw NetworkError.decodingError(error.localizedDescription)
-            }
-        }.value
+                do {
+                    return try JSONDecoder.default.decode(T.self, from: data)
+                } catch {
+                    throw NetworkError.decodingError(error.localizedDescription)
+                }
+            }.value
     }
 }
