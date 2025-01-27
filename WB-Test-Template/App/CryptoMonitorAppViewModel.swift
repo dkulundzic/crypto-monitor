@@ -13,9 +13,7 @@ final class CryptoMonitorAppViewModel: ViewModel {
 
     func onAction(
         _ action: CryptoMonitorAppView.Action
-    ) async {
-
-    }
+    ) async { }
 }
 
 private extension CryptoMonitorAppViewModel {
