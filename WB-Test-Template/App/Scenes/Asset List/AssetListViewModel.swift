@@ -26,7 +26,7 @@ class AssetListViewModel: ViewModel {
         switch action {
         case .onTask, .onPullToRefresh:
             await loadAssets(
-                policy: action == .onTask ? .cacheThenRemote : .cacheOnly
+                policy: .cacheThenRemote
             )
         }
     }
@@ -61,20 +61,14 @@ private extension AssetListViewModel {
 
         localAppStorage.lastAssetCacheUpdateDatePublisher
             .receive(on: DispatchQueue.main)
-            .compactMap { $0 }
             .map { date in
-                let formatter = DateFormatter()
-                formatter.dateStyle = .short
-                formatter.timeStyle = .none
-                return formatter.string(from: date)
+                if let date {
+                    return DateFormatter.defaultDateAndTime.string(from: date)
+                } else {
+                    return nil
+                }
             }
             .assign(to: &$formattedLastUpdateDate)
-
-        $formattedLastUpdateDate
-            .sink { dateString in
-                print(dateString)
-            }
-            .store(in: &bag)
     }
 
     func loadAssets(
@@ -84,9 +78,7 @@ private extension AssetListViewModel {
         defer { isLoading = false }
 
         do {
-            try await assetsDataSource.fetchAll(
-                policy: policy
-            )
+            try await assetsDataSource.fetchAll(policy: policy)
         } catch {
             self.error = error.localizedDescription
         }

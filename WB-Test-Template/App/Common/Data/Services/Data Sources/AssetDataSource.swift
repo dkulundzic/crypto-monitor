@@ -14,7 +14,8 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     var assets: AnyPublisher<[Asset], Never> {
         assetsSubject.eraseToAnyPublisher()
     }
-    
+
+    @Injected(\.localAppStorage) private var localAppStorage
     @Injected(\.assetRepository) private var assetRepository
     @Injected(\.assetsNetworkService) private var assetsNetworkService
     private let assetsSubject = PassthroughSubject<[Asset], Never>()
@@ -41,6 +42,9 @@ final class DefaultAssetsDataSource: AssetsDataSource {
                 let remoteAssets = try await assetsNetworkService.fetchAssets(
                     filterAssetIds: []
                 )
+
+                localAppStorage.lastAssetCacheUpdateDate = .now
+
                 let assets: [Asset] = remoteAssets.map {
                     .init(
                         assetId: $0.assetId,

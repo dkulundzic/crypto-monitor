@@ -7,6 +7,18 @@ struct AssetListView: ActionableView {
     var body: some View {
         NavigationView {
             List {
+                if let formattedLastUpdateDate = viewModel.formattedLastUpdateDate {
+                    Group {
+#warning("TODO: Localize")
+                        Text("Last updated: ")
+                            .font(.caption) +
+                        Text(formattedLastUpdateDate)
+                            .font(.caption)
+                            .fontWeight(.light)
+                    }
+                    .transition(.opacity)
+                }
+
                 ForEach(
                     viewModel.filteredAssets
                 ) { asset in
@@ -22,16 +34,19 @@ struct AssetListView: ActionableView {
                     }
                 }
             }
-            .overlay {
-                if viewModel.isLoading {
-                    ProgressView()
-                }
-            }
             .searchable(
                 text: $viewModel.searchText
             )
             .refreshable {
                 await viewModel.onAction(.onPullToRefresh)
+            }
+            .animation(
+                .default, value: viewModel.formattedLastUpdateDate
+            )
+            .overlay {
+                if viewModel.isLoading {
+                    ProgressView()
+                }
             }
             .navigationTitle(
                 "Crypto Monitor"

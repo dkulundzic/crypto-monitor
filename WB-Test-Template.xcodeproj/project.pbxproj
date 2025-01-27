@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F0B8EC82D47B26E00945173 /* LocalAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */; };
+		2F0B8ECA2D47BBB600945173 /* DateFormatter+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8EC92D47BBB600945173 /* DateFormatter+Utility.swift */; };
 		2F48C9B32D3E9776004981F1 /* ExchangeRatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */; };
 		2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */; };
 		2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAppStorage.swift; sourceTree = "<group>"; };
+		2F0B8EC92D47BBB600945173 /* DateFormatter+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Utility.swift"; sourceTree = "<group>"; };
 		2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesResponse.swift; sourceTree = "<group>"; };
 		2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISO8601DateFormatter+Utility.swift"; sourceTree = "<group>"; };
 		2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		2FE785452D3A6260002C2B71 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				2F0B8EC92D47BBB600945173 /* DateFormatter+Utility.swift */,
 				2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */,
 				2FE785462D3A6269002C2B71 /* JSONDecoder+Utility.swift */,
 				2FFE1EE82D3A80CE000EE296 /* Optional+Utility.swift */,
@@ -710,6 +713,7 @@
 				2F49AC352D411404007D6A92 /* AssetMO.swift in Sources */,
 				2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */,
 				2F49AC1D2D3FD48E007D6A92 /* Model.xcdatamodeld in Sources */,
+				2F0B8ECA2D47BBB600945173 /* DateFormatter+Utility.swift in Sources */,
 				2F49AC2B2D3FF2C2007D6A92 /* NSManagedObjectContext+Utility.swift in Sources */,
 				2FE7855C2D3A7768002C2B71 /* ExchangeRateResource.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,

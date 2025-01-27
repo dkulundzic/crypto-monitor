@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import Factory
 
-protocol LocalAppStorage {
+protocol LocalAppStorage: AnyObject {
     var lastAssetCacheUpdateDate: Date? { get set }
     var lastAssetCacheUpdateDatePublisher: AnyPublisher<Date?, Never> { get }
 }
@@ -16,19 +16,20 @@ final class DefaultLocalAppStorage: LocalAppStorage {
             UserDefaults.standard.setDate(
                 newValue, for: Key.lastAssetCacheUpdateDate.rawValue
             )
+            lastAssetCacheUpdateDateSubject.send(newValue)
         }
     }
 
     var lastAssetCacheUpdateDatePublisher: AnyPublisher<Date?, Never> {
         lastAssetCacheUpdateDateSubject
-            .removeDuplicates()
             .eraseToAnyPublisher()
     }
 
-    private let lastAssetCacheUpdateDateSubject = PassthroughSubject<Date?, Never>()
+    private let lastAssetCacheUpdateDateSubject: CurrentValueSubject<Date?, Never>
 
     init() {
-        lastAssetCacheUpdateDateSubject.send(lastAssetCacheUpdateDate)
+        lastAssetCacheUpdateDateSubject = CurrentValueSubject<Date?, Never>(nil)
+        lastAssetCacheUpdateDateSubject.value = lastAssetCacheUpdateDate
     }
 
     private enum Key: String {
