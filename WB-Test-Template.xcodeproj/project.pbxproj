@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F0B8EC82D47B26E00945173 /* LocalAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */; };
 		2F48C9B32D3E9776004981F1 /* ExchangeRatesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */; };
 		2F48C9B52D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */; };
 		2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */; };
@@ -87,6 +88,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAppStorage.swift; sourceTree = "<group>"; };
 		2F48C9B22D3E9776004981F1 /* ExchangeRatesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesResponse.swift; sourceTree = "<group>"; };
 		2F48C9B42D3E9986004981F1 /* ISO8601DateFormatter+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ISO8601DateFormatter+Utility.swift"; sourceTree = "<group>"; };
 		2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */,
+				2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */,
 				2F49AC3D2D4121A3007D6A92 /* Statics.swift */,
 				2F49AC172D3FD40B007D6A92 /* Startup Process */,
 			);
@@ -715,6 +718,7 @@
 				84E0D1F92D1AE64400A55CCB /* NetworkService.swift in Sources */,
 				2FFE1EF72D3D1B56000EE296 /* AssetIcon.swift in Sources */,
 				2F49AC162D3FD3B5007D6A92 /* StartupProcessService.swift in Sources */,
+				2F0B8EC82D47B26E00945173 /* LocalAppStorage.swift in Sources */,
 				2FDEA9E72D41E48E0034F241 /* AssetDetailSectionBuilder.swift in Sources */,
 				2FE785532D3A7611002C2B71 /* NetworkError.swift in Sources */,
 				2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */,
