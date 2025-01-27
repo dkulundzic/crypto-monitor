@@ -4,8 +4,8 @@ import Factory
 
 final class CryptoMonitorAppViewModel: ViewModel {
     typealias View = CryptoMonitorAppView
+    @Published private(set) var isOfflineIndicatorShown = false
     @Injected(\.connectivityObserver) private var connectivityObserver
-    private var bag = Set<AnyCancellable>()
 
     init() {
         initializeObserving()
@@ -23,9 +23,7 @@ private extension CryptoMonitorAppViewModel {
         connectivityObserver
             .isConnectedPublisher
             .receive(on: DispatchQueue.main)
-            .sink { isConnected in
-                print("Connectivity: \(isConnected)")
-            }
-            .store(in: &bag)
+            .map { !$0 }
+            .assign(to: &$isOfflineIndicatorShown)
     }
 }
