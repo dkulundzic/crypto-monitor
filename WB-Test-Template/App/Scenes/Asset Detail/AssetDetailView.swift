@@ -70,6 +70,9 @@ struct AssetDetailView: ActionableView {
                 .frame(width: 20, height: 20)
             }
         }
+        .alert(
+            state: $viewModel.alertState
+        )
         .task {
             await viewModel.onAction(.onTask)
         }

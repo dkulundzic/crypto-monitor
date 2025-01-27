@@ -6,6 +6,7 @@ import Factory
 final class AssetDetailViewModel: ViewModel {
     typealias View = AssetDetailView
     @Published var isBookmarked = false
+    @Published var alertState: AlertState?
     @Published private(set) var sections = [AssetDetailSection]()
     @Published private var exchangeRates = [ExchangeRate]()
     @Injected(\.exchangeRatesDataSource) private var exchangeRatesDataSource
@@ -77,10 +78,20 @@ private extension AssetDetailViewModel {
     }
 
     func loadExchangeRates() async {
-        try? await exchangeRatesDataSource
-            .fetchAll(
-                for: asset.id,
-                policy: .cacheThenRemote
-            )
+        do {
+            try await exchangeRatesDataSource
+                .fetchAll(
+                    for: asset.id,
+                    policy: .cacheThenRemote
+                )
+        } catch {
+            alertState =
+                .error(
+                    "There was an issue loading up-to-date exchange rates.", // TODO: Localize
+                    retry: { [weak self] in
+                        Task { await self?.loadExchangeRates() }
+                    }
+                )
+        }
     }
 }
