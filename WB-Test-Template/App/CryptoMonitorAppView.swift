@@ -5,6 +5,9 @@ struct CryptoMonitorAppView: ActionableView {
 
     var body: some View {
         AssetListView()
+            .animation(
+                .default, value: viewModel.isOfflineIndicatorShown
+            )
             .safeAreaInset(
                 edge: .bottom
             ) {
@@ -28,9 +31,6 @@ struct CryptoMonitorAppView: ActionableView {
                     )
                 }
             }
-            .animation(
-                .default, value: viewModel.isOfflineIndicatorShown
-            )
     }
 
     enum Action {

@@ -27,8 +27,8 @@ final class DefaultConnectivityObserving: ConnectivityObserving {
 
 private extension DefaultConnectivityObserving {
     func initializeObserving() {
-        monitor.pathUpdateHandler = { [isConnectedSubject] path in
-            isConnectedSubject.send(path.status == .satisfied)
+        monitor.pathUpdateHandler = { [weak self] path in
+            self?.isConnectedSubject.send(path.status == .satisfied)
         }
         monitor.start(queue: queue)
     }
