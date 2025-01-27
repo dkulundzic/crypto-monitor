@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct AlertState: Identifiable {
+struct AlertState: Equatable, Identifiable {
     var id: String {
         title
     }
@@ -50,7 +50,7 @@ struct AlertState: Identifiable {
         ]
     }
 
-    struct AlertAction: Identifiable {
+    struct AlertAction: Hashable, Identifiable {
         var id: String {
             title
         }
@@ -67,6 +67,19 @@ struct AlertState: Identifiable {
             self.title = title
             self.role = role
             self.action = action
+        }
+
+        func hash(
+            into hasher: inout Hasher
+        ) {
+            hasher.combine(title)
+        }
+
+        static func == (
+            lhs: AlertAction,
+            rhs: AlertAction
+        ) -> Bool {
+            lhs.title == rhs.title
         }
     }
 }

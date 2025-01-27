@@ -65,6 +65,7 @@ struct AssetListView: ActionableView {
             .animation(
                 .default, value: viewModel.filteredAssets
             )
+            .alert(state: $viewModel.error)
         }
         .task {
             await viewModel.onAction(.onTask)

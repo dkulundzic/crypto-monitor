@@ -7,10 +7,10 @@ class AssetListViewModel: ViewModel {
     typealias View = AssetListView
     @Published var searchText = ""
     @Published var showFavoritesOnly = false
+    @Published var error: AlertState?
     @Published private(set) var formattedLastUpdateDate: String?
     @Published private(set) var filteredAssets: [Asset] = []
     @Published private(set) var isLoading = false
-    @Published private(set) var error: String?
     @Published private var assets: [Asset] = []
     @Injected(\.assetDataSource) var assetsDataSource
     @Injected(\.localAppStorage) var localAppStorage
@@ -80,7 +80,11 @@ private extension AssetListViewModel {
         do {
             try await assetsDataSource.fetchAll(policy: policy)
         } catch {
-            self.error = error.localizedDescription
+            self.error = .error(error.localizedDescription) { [weak self, policy] in
+                Task {
+                    await self?.loadAssets(policy: policy)
+                }
+            }
         }
     }
 }

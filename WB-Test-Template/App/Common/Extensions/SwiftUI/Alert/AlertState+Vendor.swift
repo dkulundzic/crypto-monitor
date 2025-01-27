@@ -6,11 +6,26 @@ extension AlertState {
         confirmation: @escaping Action,
         cancel: Action? = nil
     ) -> Self where Error: LocalizedError {
+        Self.error(
+            error.localizedDescription,
+            confirmation: confirmation,
+            cancel: cancel
+        )
+    }
+
+    static func error(
+        _ error: String,
+        confirmation: @escaping Action,
+        cancel: Action? = nil
+    ) -> Self {
         .init(
             title: "Error", // TODO: Localize
-            message: error.localizedDescription,
+            message: error,
             actions: [
-                .cancel {
+                .regular("Retry") {
+                    confirmation()
+                },
+                .casualCancel {
                     cancel?()
                 }
             ]
