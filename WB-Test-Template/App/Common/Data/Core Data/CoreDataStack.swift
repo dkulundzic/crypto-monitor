@@ -33,4 +33,10 @@ extension Container {
             Container.shared.persistentContainer.resolve().viewContext
         }
     }
+
+    var backgroundContext: Factory<NSManagedObjectContext> {
+        self {
+            Container.shared.persistentContainer.resolve().newBackgroundContext()
+        }.singleton
+    }
 }

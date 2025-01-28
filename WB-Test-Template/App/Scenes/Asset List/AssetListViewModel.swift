@@ -54,9 +54,15 @@ private extension AssetListViewModel {
             searchTextPublisher,
             favouritesPublisher
         )
+        .receive(
+            on: DispatchQueue.global(
+                qos: .userInitiated
+            )
+        )
         .map { assets, searchText, showFavoritesOnly in
             assets.filter(searchText: searchText, favouritesExclusively: showFavoritesOnly)
         }
+        .receive(on: DispatchQueue.main)
         .assign(to: &$filteredAssets)
 
         localAppStorage.lastAssetCacheUpdateDatePublisher
