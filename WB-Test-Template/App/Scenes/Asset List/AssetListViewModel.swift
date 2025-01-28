@@ -12,8 +12,8 @@ class AssetListViewModel: ViewModel {
     @Published private(set) var filteredAssets: [Asset] = []
     @Published private(set) var isLoading = false
     @Published private var assets: [Asset] = []
-    @Injected(\.assetDataSource) var assetsDataSource
-    @Injected(\.localAppStorage) var localAppStorage
+    @Injected(\.assetDataSource) private var assetsDataSource
+    @Injected(\.localAppStorage) private var localAppStorage
     private var bag = Set<AnyCancellable>()
 
     init() {

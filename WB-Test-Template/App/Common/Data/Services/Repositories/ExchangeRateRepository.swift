@@ -6,29 +6,36 @@ protocol ExchangeRateRepository: Repository where Model == ExchangeRate, Model: 
 
 final class DefaultExchangeRateRepository: ExchangeRateRepository {
     @Injected(\.viewContext) private var viewContext
+    @Injected(\.backgroundContext) private var backgroundContext
 
     func fetch(
         id: String
     ) async throws -> ExchangeRate? {
         let request = ExchangeRateMO.fetchRequest()
         request.predicate = NSPredicate(format: "assetId == %@", id)
-        return try viewContext.fetch(request)
-            .first?
-            .toDomain()
+        return try await viewContext.perform { [viewContext] in
+            try viewContext.fetch(request)
+                .first?
+                .toDomain()
+        }
     }
 
     func fetchAll() async throws -> [ExchangeRate] {
         let request = ExchangeRateMO.fetchRequest()
-        return try viewContext.fetch(request)
-            .map { $0.toDomain() }
+        return try await viewContext.perform { [viewContext] in
+            try viewContext.fetch(request)
+                .map { $0.toDomain() }
+        }
     }
 
     func save(
         _ model: ExchangeRate
     ) async throws {
-        let transient = ExchangeRateMO(context: viewContext)
-        _ = model.toManaged(using: transient)
-        try viewContext.saveIfNeeded()
+        try await viewContext.perform { [viewContext] in
+            let transient = ExchangeRateMO(context: viewContext)
+            _ = model.toManaged(using: transient)
+            try viewContext.saveIfNeeded()
+        }
     }
 
     func save(
@@ -51,8 +58,10 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
             return false
         }
 
-        try viewContext.execute(batchInsertRequest)
-        try viewContext.saveIfNeeded()
+        try await backgroundContext.perform { [backgroundContext] in
+            try backgroundContext.execute(batchInsertRequest)
+            try backgroundContext.saveIfNeeded()
+        }
     }
 
     func delete(
@@ -62,16 +71,18 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
         fetchRequest.fetchLimit = 1
         fetchRequest.predicate = NSPredicate(format: "assetId == %@", assetId)
 
-        guard
-            let relevantExchangeRate = try viewContext
-                .fetch(fetchRequest)
-                .first
-        else {
-            fatalError()
-        }
+        try await backgroundContext.perform { [backgroundContext] in
+            guard
+                let relevantExchangeRate = try backgroundContext
+                    .fetch(fetchRequest)
+                    .first
+            else {
+                fatalError()
+            }
 
-        viewContext.delete(relevantExchangeRate)
-        try viewContext.saveIfNeeded()
+            backgroundContext.delete(relevantExchangeRate)
+            try backgroundContext.saveIfNeeded()
+        }
     }
 }
 

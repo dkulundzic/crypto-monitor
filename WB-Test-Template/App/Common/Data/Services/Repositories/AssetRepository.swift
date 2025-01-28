@@ -6,29 +6,36 @@ protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectT
 
 final class DefaultAssetRepository: AssetRepository {
     @Injected(\.viewContext) private var viewContext
+    @Injected(\.backgroundContext) private var backgroundContext
 
     func fetch(
         id: String
     ) async throws -> Asset? {
         let request = AssetMO.fetchRequest()
         request.predicate = NSPredicate(format: "assetId == %@", id)
-        return try viewContext.fetch(request)
-            .first?
-            .toDomain()
+        return try await viewContext.perform { [viewContext] in
+            try viewContext.fetch(request)
+                .first?
+                .toDomain()
+        }
     }
 
     func fetchAll() async throws -> [Asset] {
         let request = AssetMO.fetchRequest()
-        return try viewContext.fetch(request)
-            .map { $0.toDomain() }
+        return try await viewContext.perform { [viewContext] in
+            try viewContext.fetch(request)
+                .map { $0.toDomain() }
+        }
     }
 
     func save(
         _ model: Asset
     ) async throws {
-        let transient = AssetMO(context: viewContext)
-        _ = model.toManaged(using: transient)
-        try viewContext.saveIfNeeded()
+        return try await viewContext.perform { [viewContext] in
+            let transient = AssetMO(context: viewContext)
+            _ = model.toManaged(using: transient)
+            try viewContext.saveIfNeeded()
+        }
     }
 
     func save(
@@ -51,8 +58,10 @@ final class DefaultAssetRepository: AssetRepository {
             return false
         }
 
-        try viewContext.execute(batchInsertRequest)
-        try viewContext.saveIfNeeded()
+        try await backgroundContext.perform { [backgroundContext] in
+            try backgroundContext.execute(batchInsertRequest)
+            try backgroundContext.saveIfNeeded()
+        }
     }
 
     func delete(
@@ -62,16 +71,18 @@ final class DefaultAssetRepository: AssetRepository {
         fetchRequest.fetchLimit = 1
         fetchRequest.predicate = NSPredicate(format: "assetId == %@", assetId)
 
-        guard
-            let relevantAsset = try viewContext
-                .fetch(fetchRequest)
-                .first
-        else {
-            fatalError()
-        }
+        try await backgroundContext.perform { [backgroundContext] in
+            guard
+                let relevantAsset = try backgroundContext
+                    .fetch(fetchRequest)
+                    .first
+            else {
+                fatalError()
+            }
 
-        viewContext.delete(relevantAsset)
-        try viewContext.saveIfNeeded()
+            backgroundContext.delete(relevantAsset)
+            try backgroundContext.saveIfNeeded()
+        }
     }
 }
 
