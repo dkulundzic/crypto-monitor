@@ -10,8 +10,20 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 public enum L10n {
-  /// Test localization key
-  public static let test = L10n.tr("Localizable", "test", fallback: "Test localization key")
+  /// Cancel
+  public static let alertActionCancel = L10n.tr("Localizable", "alert_action_cancel", fallback: "Cancel")
+  /// OK
+  public static let alertActionCasualCancel = L10n.tr("Localizable", "alert_action_casual_cancel", fallback: "OK")
+  /// Retry
+  public static let alertActionRetry = L10n.tr("Localizable", "alert_action_retry", fallback: "Retry")
+  /// Last updated: 
+  public static let assetListLastUpdateLabel = L10n.tr("Localizable", "asset_list_last_update_label", fallback: "Last updated: ")
+  /// Crypto Monitor
+  public static let assetListNavigationTitle = L10n.tr("Localizable", "asset_list_navigation_title", fallback: "Crypto Monitor")
+  /// 
+  public static let exchangeRatesLoadingError = L10n.tr("Localizable", "exchange_rates_loading_error", fallback: "")
+  /// You're currently offline
+  public static let messageOffline = L10n.tr("Localizable", "message_offline", fallback: "You're currently offline")
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

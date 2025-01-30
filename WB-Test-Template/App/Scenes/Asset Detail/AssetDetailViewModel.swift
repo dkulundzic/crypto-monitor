@@ -3,6 +3,7 @@ import Combine
 import Factory
 import CryptoMonitorModel
 import CryptoMonitorData
+import CryptoMonitorLocalization
 
 @MainActor
 final class AssetDetailViewModel: ViewModel {
@@ -89,7 +90,7 @@ private extension AssetDetailViewModel {
         } catch {
             alertState =
                 .error(
-                    "There was an issue loading up-to-date exchange rates.", // TODO: Localize
+                    L10n.exchangeRatesLoadingError,
                     retry: { [weak self] in
                         Task { await self?.loadExchangeRates() }
                     }

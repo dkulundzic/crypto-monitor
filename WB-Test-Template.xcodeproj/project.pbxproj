@@ -46,6 +46,7 @@
 		2F90F83A2D4BD7EB00918EF2 /* AppearanceStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90F8392D4BD7EB00918EF2 /* AppearanceStartupProcess.swift */; };
 		2F90F8462D4BD8AE00918EF2 /* CryptoMonitorLocalization.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F8402D4BD8AE00918EF2 /* CryptoMonitorLocalization.framework */; };
 		2F90F8472D4BD8AE00918EF2 /* CryptoMonitorLocalization.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F8402D4BD8AE00918EF2 /* CryptoMonitorLocalization.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F8D42D4BDE9800918EF2 /* OfflineBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90F8D32D4BDE9800918EF2 /* OfflineBannerView.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */; };
 		2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */; };
 		2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */; };
@@ -271,6 +272,7 @@
 		2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F90F8392D4BD7EB00918EF2 /* AppearanceStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceStartupProcess.swift; sourceTree = "<group>"; };
 		2F90F8402D4BD8AE00918EF2 /* CryptoMonitorLocalization.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorLocalization.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F90F8D32D4BDE9800918EF2 /* OfflineBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineBannerView.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRowView.swift; sourceTree = "<group>"; };
 		2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppViewModel.swift; sourceTree = "<group>"; };
 		2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppView.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 				2FDEA9ED2D41F5490034F241 /* AssetBookmarkButton.swift */,
 				2FDEA9E12D41DC680034F241 /* DataPointView.swift */,
 				2FDEA9E82D41EA210034F241 /* DynamicStack.swift */,
+				2F90F8D32D4BDE9800918EF2 /* OfflineBannerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1182,6 +1185,7 @@
 				2FDEA9E22D41DC680034F241 /* DataPointView.swift in Sources */,
 				84E0D1FB2D1AE64400A55CCB /* AssetDetailView.swift in Sources */,
 				2FA192BF2D47F471008EB7EE /* View+Alert.swift in Sources */,
+				2F90F8D42D4BDE9800918EF2 /* OfflineBannerView.swift in Sources */,
 				2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
 				2FDEA9E72D41E48E0034F241 /* AssetDetailSectionBuilder.swift in Sources */,

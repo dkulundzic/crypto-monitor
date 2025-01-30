@@ -1,1 +1,14 @@
-"test" = "Test localization key";
+// MARK: - Asset List
+"asset_list_navigation_title" = "Crypto Monitor";
+"asset_list_last_update_label" = "Last updated: ";
+
+// MARK: - Messages
+"message_offline" = "You're currently offline";
+
+// MARK: - Actions
+"alert_action_cancel" = "Cancel";
+"alert_action_casual_cancel" = "OK";
+"alert_action_retry" = "Retry";
+
+// MARK: - Errors
+"exchange_rates_loading_error" = "";

@@ -1,6 +1,7 @@
 import SwiftUI
 import Factory
 import CryptoMonitorNetworking
+import CryptoMonitorLocalization
 
 struct AssetListView: ActionableView {
     @StateObject private var viewModel = AssetListViewModel()
@@ -10,8 +11,7 @@ struct AssetListView: ActionableView {
             List {
                 if let formattedLastUpdateDate = viewModel.formattedLastUpdateDate {
                     Group {
-#warning("TODO: Localize")
-                        Text("Last updated: ")
+                        Text(L10n.assetListLastUpdateLabel)
                             .font(.caption) +
                         Text(formattedLastUpdateDate)
                             .font(.caption)
@@ -50,7 +50,7 @@ struct AssetListView: ActionableView {
                 }
             }
             .navigationTitle(
-                "Crypto Monitor"
+                L10n.assetListNavigationTitle
             )
             .toolbar {
                 ToolbarItem(

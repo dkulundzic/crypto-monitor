@@ -1,9 +1,10 @@
 import Foundation
 import CryptoMonitorCore
+import CryptoMonitorLocalization
 
 extension AlertState.AlertAction {
     static func cancel(
-        _ title: String = "Cancel", // TODO: Localize
+        _ title: String = L10n.alertActionCancel,
         action: @escaping Action = { }
     ) -> Self {
         .init(
@@ -14,7 +15,7 @@ extension AlertState.AlertAction {
     }
 
     static func casualCancel(
-        _ title: String = "OK", // TODO: Localize
+        _ title: String = L10n.alertActionCasualCancel,
         action: @escaping Action = { }
     ) -> Self {
         .init(

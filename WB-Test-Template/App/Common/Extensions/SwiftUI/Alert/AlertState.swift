@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 import CryptoMonitorCore
+import CryptoMonitorLocalization
 
 struct AlertState: Equatable, Identifiable {
     var id: String {
@@ -23,13 +24,7 @@ struct AlertState: Equatable, Identifiable {
                 return actions
             } else {
                 return [
-                    actions, [
-                        .init(
-                            title: "Cancel", // TODO: Localize
-                            role: .cancel,
-                            action: { }
-                        )
-                    ]
+                    actions, [.cancel()]
                 ].flatMap { $0 }
             }
         }()
@@ -42,13 +37,7 @@ struct AlertState: Equatable, Identifiable {
     ) {
         self.title = title
         self.message = message
-        self.actions = [
-            .init(
-                title: "Cancel", // TODO: Localize
-                role: .cancel,
-                action: onCancel
-            )
-        ]
+        self.actions = [.cancel(action: onCancel)]
     }
 
     struct AlertAction: Hashable, Identifiable {
