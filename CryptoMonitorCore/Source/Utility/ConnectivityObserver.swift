@@ -3,12 +3,12 @@ import Network
 import Combine
 import Factory
 
-protocol ConnectivityObserving {
+public protocol ConnectivityObserving {
     var isConnectedPublisher: AnyPublisher<Bool, Never> { get }
 }
 
-final class DefaultConnectivityObserving: ConnectivityObserving {
-    var isConnectedPublisher: AnyPublisher<Bool, Never> {
+public final class DefaultConnectivityObserving: ConnectivityObserving {
+    public var isConnectedPublisher: AnyPublisher<Bool, Never> {
         isConnectedSubject
             .removeDuplicates()
             .eraseToAnyPublisher()
@@ -20,7 +20,7 @@ final class DefaultConnectivityObserving: ConnectivityObserving {
     private let monitor = NWPathMonitor(requiredInterfaceType: .wifi)
     private let queue = DispatchQueue(label: "connectivity-observing-queue")
 
-    init() {
+    public init() {
         initializeObserving()
     }
 }
@@ -34,7 +34,7 @@ private extension DefaultConnectivityObserving {
     }
 }
 
-extension Container {
+public extension Container {
     var connectivityObserver: Factory<ConnectivityObserving> {
         self {
             DefaultConnectivityObserving()

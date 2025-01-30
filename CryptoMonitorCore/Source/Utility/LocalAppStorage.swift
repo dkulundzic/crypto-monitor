@@ -2,13 +2,13 @@ import Foundation
 import Combine
 import Factory
 
-protocol LocalAppStorage: AnyObject {
+public protocol LocalAppStorage: AnyObject {
     var lastAssetCacheUpdateDate: Date? { get set }
     var lastAssetCacheUpdateDatePublisher: AnyPublisher<Date?, Never> { get }
 }
 
-final class DefaultLocalAppStorage: LocalAppStorage {
-    var lastAssetCacheUpdateDate: Date? {
+public final class DefaultLocalAppStorage: LocalAppStorage {
+    public var lastAssetCacheUpdateDate: Date? {
         get {
             UserDefaults.standard.date(for: Key.lastAssetCacheUpdateDate.rawValue)
         }
@@ -20,14 +20,14 @@ final class DefaultLocalAppStorage: LocalAppStorage {
         }
     }
 
-    var lastAssetCacheUpdateDatePublisher: AnyPublisher<Date?, Never> {
+    public var lastAssetCacheUpdateDatePublisher: AnyPublisher<Date?, Never> {
         lastAssetCacheUpdateDateSubject
             .eraseToAnyPublisher()
     }
 
     private let lastAssetCacheUpdateDateSubject: CurrentValueSubject<Date?, Never>
 
-    init() {
+    public init() {
         lastAssetCacheUpdateDateSubject = CurrentValueSubject<Date?, Never>(nil)
         lastAssetCacheUpdateDateSubject.value = lastAssetCacheUpdateDate
     }
@@ -37,7 +37,7 @@ final class DefaultLocalAppStorage: LocalAppStorage {
     }
 }
 
-extension Container {
+public extension Container {
     var localAppStorage: Factory<LocalAppStorage> {
         self {
             DefaultLocalAppStorage()
@@ -45,7 +45,8 @@ extension Container {
     }
 }
 
-extension UserDefaults {
+// TODO: Move to Extensions folder
+public extension UserDefaults {
     func setDate(
         _ date: Date?,
         for key: String

@@ -1,12 +1,9 @@
 import SwiftUI
 import Factory
-import CryptoMonitorNetworking
+import CryptoMonitorCore
 
 @main
 struct CryptoMonitorApp: App {
-    @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
-    @InjectedObject(\.coreDataStack) private var coreDataStack
-
     init() {
         boostrap()
     }
@@ -19,5 +16,8 @@ struct CryptoMonitorApp: App {
 }
 
 private extension CryptoMonitorApp {
-    func boostrap() { }
+    func boostrap() {
+        StartupProcessService()
+            .execute(AppearanceStartupProcess())
+    }
 }

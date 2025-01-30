@@ -2,17 +2,18 @@ import Foundation
 import Combine
 import Factory
 import CryptoMonitorModel
+import CryptoMonitorNetworking
 import CryptoMonitorPersistence
 
 #warning("TODO: Think about extracting into a reusable type")
-protocol ExchangeRateDataSource {
+public protocol ExchangeRateDataSource {
     var rates: AnyPublisher<[ExchangeRate], Never> { get }
     func fetchAll(for assetId: String, policy: DataSourceFetchPolicy) async throws
 }
 
 #warning("TODO: Think about error handling")
-final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
-    var rates: AnyPublisher<[ExchangeRate], Never> {
+public final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
+    public var rates: AnyPublisher<[ExchangeRate], Never> {
         ratesSubject.eraseToAnyPublisher()
     }
 
@@ -20,14 +21,14 @@ final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
     @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
     private let ratesSubject = PassthroughSubject<[ExchangeRate], Never>()
 
-    func fetchAll(
+    public func fetchAll(
         for assetId: String,
         policy: DataSourceFetchPolicy
     ) async throws {
         try await Task {
             func optionalLoadFromCache() async {
-                if let localExchangeRate = try? await ratesRepository.fetchAll() {
-                    ratesSubject.send(localExchangeRate)
+                if let localExchangeRates = try? await ratesRepository.fetchAll(), !localExchangeRates.isEmpty {
+                    ratesSubject.send(localExchangeRates)
                 }
             }
 
@@ -59,7 +60,7 @@ final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
     }
 }
 
-extension Container {
+public extension Container {
     var exchangeRatesDataSource: Factory<ExchangeRateDataSource> {
         self {
             DefaultExchangeRateDataSource()

@@ -4,17 +4,18 @@ import Factory
 import CryptoMonitorModel
 import CryptoMonitorNetworking
 import CryptoMonitorPersistence
+import CryptoMonitorCore
 
 #warning("TODO: Think about extracting into a reusable type")
-protocol AssetsDataSource {
+public protocol AssetsDataSource {
     var assets: AnyPublisher<[Asset], Never> { get }
     func fetchAll(policy: DataSourceFetchPolicy) async throws
     func setBookmark(_ bookmark: Bool, for asset: Asset) async throws
 }
 
 #warning("TODO: Think about error handling")
-final class DefaultAssetsDataSource: AssetsDataSource {
-    var assets: AnyPublisher<[Asset], Never> {
+public final class DefaultAssetsDataSource: AssetsDataSource {
+    public var assets: AnyPublisher<[Asset], Never> {
         assetsSubject.eraseToAnyPublisher()
     }
 
@@ -24,7 +25,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     private let assetsSubject = PassthroughSubject<[Asset], Never>()
 
     // swiftlint:disable:next function_body_length
-    func fetchAll(
+    public func fetchAll(
         policy: DataSourceFetchPolicy
     ) async throws {
         try await Task {
@@ -86,7 +87,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
         }.value
     }
 
-    func setBookmark(
+    public func setBookmark(
         _ bookmark: Bool,
         for asset: Asset
     ) async throws {
@@ -104,7 +105,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     }
 }
 
-extension Container {
+public extension Container {
     var assetDataSource: Factory<AssetsDataSource> {
         self {
             DefaultAssetsDataSource()

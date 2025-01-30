@@ -1,5 +1,5 @@
 import Foundation
 
-protocol StartupProcess {
+public protocol StartupProcess {
     func run()
 }

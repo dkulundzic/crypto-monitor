@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F0B8EC82D47B26E00945173 /* LocalAppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */; };
 		2F0B8ECE2D47BE8800945173 /* AlertState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8ECD2D47BE8800945173 /* AlertState.swift */; };
 		2F0B8ED12D47BEFA00945173 /* AlertState+Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8ED02D47BEFA00945173 /* AlertState+Vendor.swift */; };
 		2F0B8ED32D47BF3800945173 /* AlertStateAction+Vendor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0B8ED22D47BF3800945173 /* AlertStateAction+Vendor.swift */; };
@@ -21,9 +20,6 @@
 		2F3516D62D48FA9B003F3CA4 /* CryptoMonitorCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */; };
 		2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */; };
-		2F49AC142D3FD3B0007D6A92 /* StartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */; };
-		2F49AC162D3FD3B5007D6A92 /* StartupProcessService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */; };
-		2F49AC3B2D4114FF007D6A92 /* AssetDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC3A2D4114FF007D6A92 /* AssetDataSource.swift */; };
 		2F90F7062D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */; };
 		2F90F7072D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F90F70F2D4BC7AE00918EF2 /* CryptoMonitorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; };
@@ -38,13 +34,20 @@
 		2F90F78C2D4BCD9600918EF2 /* CryptoMonitorCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F90F78F2D4BCD9600918EF2 /* CryptoMonitorModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */; };
 		2F90F7902D4BCD9600918EF2 /* CryptoMonitorModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F8052D4BD33F00918EF2 /* CryptoMonitorData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */; };
+		2F90F8062D4BD33F00918EF2 /* CryptoMonitorData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F8242D4BD5E400918EF2 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2F90F8232D4BD5E400918EF2 /* Factory */; };
+		2F90F8252D4BD5E400918EF2 /* CryptoMonitorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; };
+		2F90F8262D4BD5E400918EF2 /* CryptoMonitorCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F8292D4BD5E400918EF2 /* CryptoMonitorModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */; };
+		2F90F82A2D4BD5E400918EF2 /* CryptoMonitorModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F82D2D4BD5E400918EF2 /* CryptoMonitorPersistence.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */; };
+		2F90F82E2D4BD5E400918EF2 /* CryptoMonitorPersistence.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F90F83A2D4BD7EB00918EF2 /* AppearanceStartupProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F90F8392D4BD7EB00918EF2 /* AppearanceStartupProcess.swift */; };
 		2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */; };
-		2F94C1992D47860700EDFE8E /* ConnectivityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */; };
 		2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */; };
 		2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */; };
 		2FA192BF2D47F471008EB7EE /* View+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA192BE2D47F471008EB7EE /* View+Alert.swift */; };
-		2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */; };
-		2FAC043F2D43A7D8000E471B /* ExchangeRateDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */; };
 		2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */; };
 		2FDEA9E22D41DC680034F241 /* DataPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E12D41DC680034F241 /* DataPointView.swift */; };
 		2FDEA9E52D41DD8F0034F241 /* AssetDetailSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */; };
@@ -135,6 +138,34 @@
 			remoteGlobalIDString = 2F3516C12D48FA6D003F3CA4;
 			remoteInfo = CryptoMonitorModel;
 		};
+		2F90F8032D4BD33F00918EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E0D1B82D1AE26C00A55CCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F90F7FE2D4BD33F00918EF2;
+			remoteInfo = CryptoMonitorData;
+		};
+		2F90F8272D4BD5E400918EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E0D1B82D1AE26C00A55CCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F35167E2D48F858003F3CA4;
+			remoteInfo = CryptoMonitorCore;
+		};
+		2F90F82B2D4BD5E400918EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E0D1B82D1AE26C00A55CCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F3516C12D48FA6D003F3CA4;
+			remoteInfo = CryptoMonitorModel;
+		};
+		2F90F82F2D4BD5E400918EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E0D1B82D1AE26C00A55CCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F90F7512D4BCCBB00918EF2;
+			remoteInfo = CryptoMonitorPersistence;
+		};
 		84E0D1D42D1AE26E00A55CCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84E0D1B82D1AE26C00A55CCB /* Project object */;
@@ -162,6 +193,7 @@
 				2F3516C92D48FA6D003F3CA4 /* CryptoMonitorModel.framework in Embed Frameworks */,
 				2F90F7072D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Embed Frameworks */,
 				2F3516B92D48F9B3003F3CA4 /* CryptoMonitorCore.framework in Embed Frameworks */,
+				2F90F8062D4BD33F00918EF2 /* CryptoMonitorData.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,10 +233,22 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F90F8312D4BD5E400918EF2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F90F82A2D4BD5E400918EF2 /* CryptoMonitorModel.framework in Embed Frameworks */,
+				2F90F8262D4BD5E400918EF2 /* CryptoMonitorCore.framework in Embed Frameworks */,
+				2F90F82E2D4BD5E400918EF2 /* CryptoMonitorPersistence.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAppStorage.swift; sourceTree = "<group>"; };
 		2F0B8ECD2D47BE8800945173 /* AlertState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertState.swift; sourceTree = "<group>"; };
 		2F0B8ED02D47BEFA00945173 /* AlertState+Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertState+Vendor.swift"; sourceTree = "<group>"; };
 		2F0B8ED22D47BF3800945173 /* AlertStateAction+Vendor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlertStateAction+Vendor.swift"; sourceTree = "<group>"; };
@@ -212,18 +256,14 @@
 		2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableView.swift; sourceTree = "<group>"; };
-		2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupProcess.swift; sourceTree = "<group>"; };
-		2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartupProcessService.swift; sourceTree = "<group>"; };
-		2F49AC3A2D4114FF007D6A92 /* AssetDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDataSource.swift; sourceTree = "<group>"; };
 		2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2F90F8392D4BD7EB00918EF2 /* AppearanceStartupProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceStartupProcess.swift; sourceTree = "<group>"; };
 		2F9269D42D3E89F300DBA5A7 /* AssetListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetListRowView.swift; sourceTree = "<group>"; };
-		2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityObserver.swift; sourceTree = "<group>"; };
 		2F94C19A2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppViewModel.swift; sourceTree = "<group>"; };
 		2F94C19C2D4787E600EDFE8E /* CryptoMonitorAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorAppView.swift; sourceTree = "<group>"; };
 		2FA192BE2D47F471008EB7EE /* View+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alert.swift"; sourceTree = "<group>"; };
-		2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceFetchPolicy.swift; sourceTree = "<group>"; };
-		2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataSource.swift; sourceTree = "<group>"; };
 		2FDEA9D82D41D77B0034F241 /* AssetDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModel.swift; sourceTree = "<group>"; };
 		2FDEA9E12D41DC680034F241 /* DataPointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPointView.swift; sourceTree = "<group>"; };
 		2FDEA9E42D41DD8F0034F241 /* AssetDetailSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailSection.swift; sourceTree = "<group>"; };
@@ -286,6 +326,13 @@
 			);
 			target = 2F90F7512D4BCCBB00918EF2 /* CryptoMonitorPersistence */;
 		};
+		2F90F80A2D4BD33F00918EF2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				CryptoMonitorData.h,
+			);
+			target = 2F90F7FE2D4BD33F00918EF2 /* CryptoMonitorData */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
@@ -303,6 +350,7 @@
 		2F3516C32D48FA6D003F3CA4 /* CryptoMonitorModel */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2F3516CA2D48FA6D003F3CA4 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CryptoMonitorModel; sourceTree = "<group>"; };
 		2F90F6F42D4BC70200918EF2 /* CryptoMonitorNetworking */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2F90F7082D4BC70300918EF2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CryptoMonitorNetworking; sourceTree = "<group>"; };
 		2F90F7532D4BCCBB00918EF2 /* CryptoMonitorPersistence */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2F90F76A2D4BCCBB00918EF2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CryptoMonitorPersistence; sourceTree = "<group>"; };
+		2F90F8002D4BD33F00918EF2 /* CryptoMonitorData */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2F90F80A2D4BD33F00918EF2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CryptoMonitorData; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +391,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F90F7FC2D4BD33F00918EF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F90F82D2D4BD5E400918EF2 /* CryptoMonitorPersistence.framework in Frameworks */,
+				2F90F8242D4BD5E400918EF2 /* Factory in Frameworks */,
+				2F90F8252D4BD5E400918EF2 /* CryptoMonitorCore.framework in Frameworks */,
+				2F90F8292D4BD5E400918EF2 /* CryptoMonitorModel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84E0D1BD2D1AE26C00A55CCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +409,7 @@
 				2F90F7062D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Frameworks */,
 				2FE785512D3A753C002C2B71 /* Factory in Frameworks */,
 				2F90F7652D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework in Frameworks */,
+				2F90F8052D4BD33F00918EF2 /* CryptoMonitorData.framework in Frameworks */,
 				2FFE1EEC2D3A875D000EE296 /* NukeUI in Frameworks */,
 				2F3516C82D48FA6D003F3CA4 /* CryptoMonitorModel.framework in Frameworks */,
 				2F3516B82D48F9B3003F3CA4 /* CryptoMonitorCore.framework in Frameworks */,
@@ -394,38 +454,9 @@
 		2F49AC122D3FD3A8007D6A92 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				2F94C1982D47860700EDFE8E /* ConnectivityObserver.swift */,
-				2F0B8EC72D47B26E00945173 /* LocalAppStorage.swift */,
-				2F49AC172D3FD40B007D6A92 /* Startup Process */,
+				2F90F8392D4BD7EB00918EF2 /* AppearanceStartupProcess.swift */,
 			);
 			path = Utility;
-			sourceTree = "<group>";
-		};
-		2F49AC172D3FD40B007D6A92 /* Startup Process */ = {
-			isa = PBXGroup;
-			children = (
-				2F49AC132D3FD3B0007D6A92 /* StartupProcess.swift */,
-				2F49AC152D3FD3B5007D6A92 /* StartupProcessService.swift */,
-			);
-			path = "Startup Process";
-			sourceTree = "<group>";
-		};
-		2F49AC302D4101A2007D6A92 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				84E0D1F12D1AE64400A55CCB /* Services */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		2F49AC312D4101B6007D6A92 /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				2F49AC3A2D4114FF007D6A92 /* AssetDataSource.swift */,
-				2FAC043E2D43A7D8000E471B /* ExchangeRateDataSource.swift */,
-				2FAC04322D438DA8000E471B /* DataSourceFetchPolicy.swift */,
-			);
-			path = "Data Sources";
 			sourceTree = "<group>";
 		};
 		2FA192BD2D47F44B008EB7EE /* Modifiers */ = {
@@ -521,7 +552,6 @@
 		2FFE1EEF2D3D1777000EE296 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2F49AC302D4101A2007D6A92 /* Data */,
 				2FE785442D3A6252002C2B71 /* Extensions */,
 				2FDEA9DE2D41DAE10034F241 /* UI */,
 				2F49AC122D3FD3A8007D6A92 /* Utility */,
@@ -537,6 +567,7 @@
 				2F3516C32D48FA6D003F3CA4 /* CryptoMonitorModel */,
 				2F90F6F42D4BC70200918EF2 /* CryptoMonitorNetworking */,
 				2F90F7532D4BCCBB00918EF2 /* CryptoMonitorPersistence */,
+				2F90F8002D4BD33F00918EF2 /* CryptoMonitorData */,
 				2FE7854F2D3A753C002C2B71 /* Frameworks */,
 				84E0D1C12D1AE26C00A55CCB /* Products */,
 				84E0D1C22D1AE26C00A55CCB /* WB-Test-Template */,
@@ -555,6 +586,7 @@
 				2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */,
 				2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */,
 				2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */,
+				2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -593,14 +625,6 @@
 				84E0D1E32D1AE26E00A55CCB /* WB_Test_TemplateUITestsLaunchTests.swift */,
 			);
 			path = "WB-Test-TemplateUITests";
-			sourceTree = "<group>";
-		};
-		84E0D1F12D1AE64400A55CCB /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				2F49AC312D4101B6007D6A92 /* Data Sources */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		84E0D1F62D1AE64400A55CCB /* Views */ = {
@@ -647,6 +671,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2F90F74D2D4BCCBB00918EF2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F90F7FA2D4BD33F00918EF2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -761,6 +792,34 @@
 			productReference = 2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		2F90F7FE2D4BD33F00918EF2 /* CryptoMonitorData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2F90F8092D4BD33F00918EF2 /* Build configuration list for PBXNativeTarget "CryptoMonitorData" */;
+			buildPhases = (
+				2F90F7FA2D4BD33F00918EF2 /* Headers */,
+				2F90F7FB2D4BD33F00918EF2 /* Sources */,
+				2F90F7FC2D4BD33F00918EF2 /* Frameworks */,
+				2F90F7FD2D4BD33F00918EF2 /* Resources */,
+				2F90F8312D4BD5E400918EF2 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2F90F8282D4BD5E400918EF2 /* PBXTargetDependency */,
+				2F90F82C2D4BD5E400918EF2 /* PBXTargetDependency */,
+				2F90F8302D4BD5E400918EF2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2F90F8002D4BD33F00918EF2 /* CryptoMonitorData */,
+			);
+			name = CryptoMonitorData;
+			packageProductDependencies = (
+				2F90F8232D4BD5E400918EF2 /* Factory */,
+			);
+			productName = CryptoMonitorData;
+			productReference = 2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		84E0D1BF2D1AE26C00A55CCB /* WB-Test-Template */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84E0D1E72D1AE26E00A55CCB /* Build configuration list for PBXNativeTarget "WB-Test-Template" */;
@@ -778,6 +837,7 @@
 				2F3516C72D48FA6D003F3CA4 /* PBXTargetDependency */,
 				2F90F7052D4BC70300918EF2 /* PBXTargetDependency */,
 				2F90F7642D4BCCBB00918EF2 /* PBXTargetDependency */,
+				2F90F8042D4BD33F00918EF2 /* PBXTargetDependency */,
 			);
 			name = "WB-Test-Template";
 			productName = "WB-Test-Template";
@@ -842,6 +902,9 @@
 					2F90F7512D4BCCBB00918EF2 = {
 						CreatedOnToolsVersion = 16.2;
 					};
+					2F90F7FE2D4BD33F00918EF2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					84E0D1BF2D1AE26C00A55CCB = {
 						CreatedOnToolsVersion = 15.4;
 					};
@@ -879,6 +942,7 @@
 				2F3516C12D48FA6D003F3CA4 /* CryptoMonitorModel */,
 				2F90F6F22D4BC70200918EF2 /* CryptoMonitorNetworking */,
 				2F90F7512D4BCCBB00918EF2 /* CryptoMonitorPersistence */,
+				2F90F7FE2D4BD33F00918EF2 /* CryptoMonitorData */,
 			);
 		};
 /* End PBXProject section */
@@ -906,6 +970,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2F90F7502D4BCCBB00918EF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2F90F7FD2D4BD33F00918EF2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -987,19 +1058,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2F90F7FB2D4BD33F00918EF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84E0D1BC2D1AE26C00A55CCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F90F83A2D4BD7EB00918EF2 /* AppearanceStartupProcess.swift in Sources */,
 				84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */,
 				2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */,
 				2F0B8ED32D47BF3800945173 /* AlertStateAction+Vendor.swift in Sources */,
-				2F94C1992D47860700EDFE8E /* ConnectivityObserver.swift in Sources */,
 				2F0B8ECE2D47BE8800945173 /* AlertState.swift in Sources */,
-				2FAC04332D438DA8000E471B /* DataSourceFetchPolicy.swift in Sources */,
 				84E0D1FC2D1AE64400A55CCB /* AssetListView.swift in Sources */,
 				2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */,
-				2F49AC3B2D4114FF007D6A92 /* AssetDataSource.swift in Sources */,
 				84E0D1FD2D1AE64400A55CCB /* AssetListViewModel.swift in Sources */,
 				2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */,
 				2FDEA9EE2D41F5490034F241 /* AssetBookmarkButton.swift in Sources */,
@@ -1010,12 +1086,8 @@
 				2FA192BF2D47F471008EB7EE /* View+Alert.swift in Sources */,
 				2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
-				2FAC043F2D43A7D8000E471B /* ExchangeRateDataSource.swift in Sources */,
-				2F49AC162D3FD3B5007D6A92 /* StartupProcessService.swift in Sources */,
-				2F0B8EC82D47B26E00945173 /* LocalAppStorage.swift in Sources */,
 				2FDEA9E72D41E48E0034F241 /* AssetDetailSectionBuilder.swift in Sources */,
 				2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */,
-				2F49AC142D3FD3B0007D6A92 /* StartupProcess.swift in Sources */,
 				2FDEA9E92D41EA210034F241 /* DynamicStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1089,6 +1161,26 @@
 			isa = PBXTargetDependency;
 			target = 2F3516C12D48FA6D003F3CA4 /* CryptoMonitorModel */;
 			targetProxy = 2F90F7912D4BCD9600918EF2 /* PBXContainerItemProxy */;
+		};
+		2F90F8042D4BD33F00918EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F90F7FE2D4BD33F00918EF2 /* CryptoMonitorData */;
+			targetProxy = 2F90F8032D4BD33F00918EF2 /* PBXContainerItemProxy */;
+		};
+		2F90F8282D4BD5E400918EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F35167E2D48F858003F3CA4 /* CryptoMonitorCore */;
+			targetProxy = 2F90F8272D4BD5E400918EF2 /* PBXContainerItemProxy */;
+		};
+		2F90F82C2D4BD5E400918EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F3516C12D48FA6D003F3CA4 /* CryptoMonitorModel */;
+			targetProxy = 2F90F82B2D4BD5E400918EF2 /* PBXContainerItemProxy */;
+		};
+		2F90F8302D4BD5E400918EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F90F7512D4BCCBB00918EF2 /* CryptoMonitorPersistence */;
+			targetProxy = 2F90F82F2D4BD5E400918EF2 /* PBXContainerItemProxy */;
 		};
 		84E0D1D52D1AE26E00A55CCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1178,7 +1270,7 @@
 		2F3516CC2D48FA6D003F3CA4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1214,7 +1306,7 @@
 		2F3516CD2D48FA6D003F3CA4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1380,6 +1472,78 @@
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox-task.CryptoMonitorPersistence";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		2F90F8072D4BD33F00918EF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5Y2HY26HKK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox-task.CryptoMonitorData";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2F90F8082D4BD33F00918EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 5Y2HY26HKK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.whitebox-task.CryptoMonitorData";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1687,6 +1851,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2F90F8092D4BD33F00918EF2 /* Build configuration list for PBXNativeTarget "CryptoMonitorData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F90F8072D4BD33F00918EF2 /* Debug */,
+				2F90F8082D4BD33F00918EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		84E0D1BB2D1AE26C00A55CCB /* Build configuration list for PBXProject "WB-Test-Template" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1761,6 +1934,11 @@
 			productName = Factory;
 		};
 		2F90F7892D4BCD9600918EF2 /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FE7854D2D3A7516002C2B71 /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
+		};
+		2F90F8232D4BD5E400918EF2 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FE7854D2D3A7516002C2B71 /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;

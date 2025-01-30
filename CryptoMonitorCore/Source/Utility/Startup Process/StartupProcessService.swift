@@ -1,8 +1,10 @@
 import Foundation
 
-final class StartupProcessService {
+public final class StartupProcessService {
+    public init() { }
+    
     @discardableResult
-    func execute(
+    public func execute(
         _ process: StartupProcess
     ) -> Self {
         process.run()
