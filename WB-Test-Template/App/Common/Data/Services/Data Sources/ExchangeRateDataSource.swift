@@ -39,7 +39,7 @@ final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
                 let remoteRates = try await exchangeRateNetworkService.getAllRates(
                     for: assetId,
                     filterAssetId: Statics.popularExchangesRates.map(\.rawValue)
-                ).rates
+                )
                 try await ratesRepository.save(remoteRates)
             }
 

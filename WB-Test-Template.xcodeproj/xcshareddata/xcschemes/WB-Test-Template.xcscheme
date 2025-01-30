@@ -52,6 +52,17 @@
                ReferencedContainer = "container:WB-Test-Template.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2F90F6F92D4BC70200918EF2"
+               BuildableName = "CryptoMonitorNetworkingTests.xctest"
+               BlueprintName = "CryptoMonitorNetworkingTests"
+               ReferencedContainer = "container:WB-Test-Template.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

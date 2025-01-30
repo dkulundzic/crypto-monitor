@@ -2,24 +2,25 @@ import Foundation
 import Factory
 import CryptoMonitorModel
 
-protocol ExchangeRateNetworkService: NetworkService {
-    func getAllRates(for assetId: String, filterAssetId: [String]) async throws -> ExchangeRatesResponse
+public protocol ExchangeRateNetworkService: NetworkService {
+    func getAllRates(for assetId: String, filterAssetId: [String]) async throws -> [ExchangeRate]
     func get(for assetId: String, against assetIdQuote: String) async throws -> ExchangeRate
 }
 
-struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
-    func getAllRates(
+public struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
+    public func getAllRates(
         for assetId: String,
         filterAssetId: [String]
-    ) async throws -> ExchangeRatesResponse {
-        try await resolve(
+    ) async throws -> [ExchangeRate] {
+        let response: ExchangeRatesResponse = try await resolve(
             resource: ExchangeRateResource.allRates(
                 assetId: assetId, filterAssetId: filterAssetId
             )
         )
+        return response.rates
     }
 
-    func get(
+    public func get(
         for assetId: String,
         against assetIdQuote: String
     ) async throws -> ExchangeRate {
@@ -32,7 +33,7 @@ struct DefaultExchangeRateNetworkService: ExchangeRateNetworkService {
     }
 }
 
-extension Container {
+public extension Container {
     var exchangeRateNetworkService: Factory<ExchangeRateNetworkService> {
         self {
             DefaultExchangeRateNetworkService()

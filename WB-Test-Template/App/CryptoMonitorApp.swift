@@ -1,5 +1,6 @@
 import SwiftUI
 import Factory
+import CryptoMonitorNetworking
 
 @main
 struct CryptoMonitorApp: App {

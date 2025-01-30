@@ -1,14 +1,15 @@
 import Foundation
 import Factory
+import CryptoMonitorCore
 import CryptoMonitorModel
 
-protocol AssetsNetworkService: NetworkService {
+public protocol AssetsNetworkService: NetworkService {
     func fetchAssets(filterAssetIds: Set<String>) async throws -> [Asset]
     func fetchAssetIcons() async throws -> [AssetIcon]
 }
 
-struct DefaultAssetNetworkService: AssetsNetworkService {
-    func fetchAssets(
+public struct DefaultAssetNetworkService: AssetsNetworkService {
+    public func fetchAssets(
         filterAssetIds: Set<String> = []
     ) async throws -> [Asset] {
         return try await resolve(
@@ -16,13 +17,15 @@ struct DefaultAssetNetworkService: AssetsNetworkService {
         )
     }
 
-    func fetchAssetIcons() async throws -> [AssetIcon] {
+    public func fetchAssetIcons() async throws -> [AssetIcon] {
         try await resolve(resource: AssetsResource.icons(128))
     }
 }
 
-struct MockAssetsNetworkService: AssetsNetworkService {
-    func fetchAssets(
+public struct MockAssetsNetworkService: AssetsNetworkService {
+    public init() { }
+
+    public func fetchAssets(
         filterAssetIds: Set<String>
     ) async throws -> [Asset] {
         try DefaultJSONMock<[Asset]>(fileName: "Assets")
@@ -32,13 +35,13 @@ struct MockAssetsNetworkService: AssetsNetworkService {
             }
     }
 
-    func fetchAssetIcons() async throws -> [AssetIcon] {
+    public func fetchAssetIcons() async throws -> [AssetIcon] {
         try DefaultJSONMock<[AssetIcon]>(fileName: "AssetsIcons")
             .mock()
     }
 }
 
-extension Container {
+public extension Container {
     var assetsNetworkService: Factory<AssetsNetworkService> {
         self {
             DefaultAssetNetworkService()

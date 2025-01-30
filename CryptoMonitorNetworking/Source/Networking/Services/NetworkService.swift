@@ -4,9 +4,9 @@ import Factory
 #warning("TODO: Move to an appropriate place ")
 let apiKey = "9A52912A-724F-493D-90A4-8E7066C15B2E"
 
-protocol NetworkService { }
+public protocol NetworkService { }
 
-extension NetworkService {
+public extension NetworkService {
     func resolve<T: Decodable>(
         resource: any Resource,
         retry: NetworkServiceRetryPolicy = .default

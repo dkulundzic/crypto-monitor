@@ -1,11 +1,11 @@
 import Foundation
 
-protocol Resource {
+public protocol Resource {
     var endpoint: String { get }
     var queryItems: [URLQueryItem] { get }
 }
 
-extension Resource {
+public extension Resource {
     var queryItems: [URLQueryItem] {
         []
     }

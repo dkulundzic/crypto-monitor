@@ -1,5 +1,6 @@
 import SwiftUI
 import Factory
+import CryptoMonitorNetworking
 
 struct AssetListView: ActionableView {
     @StateObject private var viewModel = AssetListViewModel()

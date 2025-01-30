@@ -1,10 +1,10 @@
 import Foundation
 
-enum NetworkServiceRetryPolicy {
+public enum NetworkServiceRetryPolicy {
     case `default`
     case never
 
-    var maxRetryCount: Int {
+    public var maxRetryCount: Int {
         switch self {
         case .default:
             3
@@ -13,7 +13,7 @@ enum NetworkServiceRetryPolicy {
         }
     }
 
-    var retryDelay: TimeInterval {
+    public var retryDelay: TimeInterval {
         switch self {
         case .default:
             2
