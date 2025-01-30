@@ -2,7 +2,7 @@ import Foundation
 
 public final class StartupProcessService {
     public init() { }
-    
+
     @discardableResult
     public func execute(
         _ process: StartupProcess

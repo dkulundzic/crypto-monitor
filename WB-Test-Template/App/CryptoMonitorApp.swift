@@ -1,6 +1,7 @@
 import SwiftUI
 import Factory
 import CryptoMonitorCore
+import CryptoMonitorLocalization
 
 @main
 struct CryptoMonitorApp: App {

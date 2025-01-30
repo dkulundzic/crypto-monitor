@@ -1,0 +1,7 @@
+strings:
+  inputs: CryptoMonitorLocalization/Resources/en.lproj
+  outputs:
+    - templateName: structured-swift5
+      output: CryptoMonitorLocalization/Source/Generated/Strings.swift
+      params:
+          publicAccess: true
