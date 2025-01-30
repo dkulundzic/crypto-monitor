@@ -23,6 +23,7 @@ final class DefaultAssetsDataSource: AssetsDataSource {
     @Injected(\.assetsNetworkService) private var assetsNetworkService
     private let assetsSubject = PassthroughSubject<[Asset], Never>()
 
+    // swiftlint:disable:next function_body_length
     func fetchAll(
         policy: DataSourceFetchPolicy
     ) async throws {
