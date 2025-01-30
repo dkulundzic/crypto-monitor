@@ -1,4 +1,5 @@
 import CoreData
+import CryptoMonitorModel
 
 @objc(AssetMO)
 final class AssetMO: NSManagedObject {

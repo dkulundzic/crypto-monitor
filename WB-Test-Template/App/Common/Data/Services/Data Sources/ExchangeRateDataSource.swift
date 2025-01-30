@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import Factory
+import CryptoMonitorModel
 
 #warning("TODO: Think about extracting into a reusable type")
 protocol ExchangeRateDataSource {

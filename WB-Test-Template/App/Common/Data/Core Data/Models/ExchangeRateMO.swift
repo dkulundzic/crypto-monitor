@@ -1,5 +1,6 @@
 import Foundation
 import CoreData
+import CryptoMonitorModel
 
 @objc(ExchangeRateMO)
 final class ExchangeRateMO: NSManagedObject {

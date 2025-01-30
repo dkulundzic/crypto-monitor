@@ -1,6 +1,6 @@
 import Foundation
 
-extension JSONDecoder {
+public extension JSONDecoder {
     static let `default`: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .custom { decoder in

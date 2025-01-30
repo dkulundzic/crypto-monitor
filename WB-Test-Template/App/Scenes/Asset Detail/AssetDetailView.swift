@@ -1,6 +1,7 @@
 import SwiftUI
 import NukeUI
 import Factory
+import CryptoMonitorModel
 
 struct AssetDetailView: ActionableView {
     @StateObject private var viewModel: AssetDetailViewModel

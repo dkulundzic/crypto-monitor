@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 import Factory
+import CryptoMonitorModel
 
 protocol ExchangeRateRepository: Repository where Model == ExchangeRate, Model: ManagedObjectTransformable { }
 

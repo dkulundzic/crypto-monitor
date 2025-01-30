@@ -1,6 +1,7 @@
 import Foundation
 import CoreData
 import Factory
+import CryptoMonitorModel
 
 protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectTransformable { }
 

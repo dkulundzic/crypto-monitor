@@ -1,5 +1,6 @@
 import Foundation
 import Factory
+import CryptoMonitorModel
 
 protocol ExchangeRateNetworkService: NetworkService {
     func getAllRates(for assetId: String, filterAssetId: [String]) async throws -> ExchangeRatesResponse

@@ -1,4 +1,5 @@
 import Foundation
+import CryptoMonitorModel
 
 struct AssetDetailSectionBuilder {
     let asset: Asset

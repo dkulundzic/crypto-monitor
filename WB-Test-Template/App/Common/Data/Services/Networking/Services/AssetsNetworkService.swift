@@ -1,5 +1,6 @@
 import Foundation
 import Factory
+import CryptoMonitorModel
 
 protocol AssetsNetworkService: NetworkService {
     func fetchAssets(filterAssetIds: Set<String>) async throws -> [Asset]

@@ -1,4 +1,5 @@
 import Foundation
+import CryptoMonitorCore
 
 extension AlertState {
     static func error<Error>(

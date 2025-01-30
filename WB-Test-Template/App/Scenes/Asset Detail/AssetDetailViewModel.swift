@@ -1,6 +1,7 @@
 import Foundation
 import Combine
 import Factory
+import CryptoMonitorModel
 
 @MainActor
 final class AssetDetailViewModel: ViewModel {

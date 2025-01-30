@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import CryptoMonitorCore
 
 struct AlertState: Equatable, Identifiable {
     var id: String {
