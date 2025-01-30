@@ -2,9 +2,27 @@ import Foundation
 import CoreData
 import Factory
 
-final class CoreDataStack: ObservableObject {
-    private(set) lazy var persistentContainer = {
-        let container = NSPersistentContainer(name: "Model")
+public final class CoreDataStack: ObservableObject {
+    public private(set) lazy var persistentContainer = {
+        let modelName = "Model"
+
+        guard
+            let modelDir = Bundle(for: type(of: self))
+                .url(forResource: modelName, withExtension: "momd")
+        else {
+            fatalError("Could not find model directory.")
+        }
+
+        guard
+            let managedObjectModel = NSManagedObjectModel(contentsOf: modelDir)
+        else {
+            fatalError("Could not find managed object model.")
+        }
+
+        let container = NSPersistentContainer(
+            name: modelName,
+            managedObjectModel: managedObjectModel
+        )
         container.loadPersistentStores { _, error in
             if let error {
                 fatalError("Failed to load persistent stores: \(error.localizedDescription)")
@@ -15,7 +33,7 @@ final class CoreDataStack: ObservableObject {
     }()
 }
 
-extension Container {
+public extension Container {
     var coreDataStack: Factory<CoreDataStack> {
         self {
             CoreDataStack()

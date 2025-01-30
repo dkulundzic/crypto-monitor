@@ -3,13 +3,13 @@ import CoreData
 import Factory
 import CryptoMonitorModel
 
-protocol ExchangeRateRepository: Repository where Model == ExchangeRate, Model: ManagedObjectTransformable { }
+public protocol ExchangeRateRepository: Repository where Model == ExchangeRate, Model: ManagedObjectTransformable { }
 
-final class DefaultExchangeRateRepository: ExchangeRateRepository {
+public final class DefaultExchangeRateRepository: ExchangeRateRepository {
     @Injected(\.viewContext) private var viewContext
     @Injected(\.backgroundContext) private var backgroundContext
 
-    func fetch(
+    public func fetch(
         id: String
     ) async throws -> ExchangeRate? {
         let request = ExchangeRateMO.fetchRequest()
@@ -21,7 +21,7 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
         }
     }
 
-    func fetchAll() async throws -> [ExchangeRate] {
+    public func fetchAll() async throws -> [ExchangeRate] {
         let request = ExchangeRateMO.fetchRequest()
         return try await viewContext.perform { [viewContext] in
             try viewContext.fetch(request)
@@ -29,7 +29,7 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
         }
     }
 
-    func save(
+    public func save(
         _ model: ExchangeRate
     ) async throws {
         try await viewContext.perform { [viewContext] in
@@ -39,7 +39,7 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
         }
     }
 
-    func save(
+    public func save(
         _ models: [ExchangeRate]
     ) async throws {
         var iterator = models.makeIterator()
@@ -65,7 +65,7 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
         }
     }
 
-    func delete(
+    public func delete(
         _ assetId: String
     ) async throws {
         let fetchRequest = ExchangeRateMO.fetchRequest()
@@ -87,7 +87,7 @@ final class DefaultExchangeRateRepository: ExchangeRateRepository {
     }
 }
 
-extension Container {
+public extension Container {
     var exchangeRateRepository: Factory<any ExchangeRateRepository> {
         self {
             DefaultExchangeRateRepository()

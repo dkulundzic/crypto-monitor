@@ -3,13 +3,13 @@ import CoreData
 import Factory
 import CryptoMonitorModel
 
-protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectTransformable { }
+public protocol AssetRepository: Repository where Model == Asset, Model: ManagedObjectTransformable { }
 
-final class DefaultAssetRepository: AssetRepository {
+public final class DefaultAssetRepository: AssetRepository {
     @Injected(\.viewContext) private var viewContext
     @Injected(\.backgroundContext) private var backgroundContext
 
-    func fetch(
+    public func fetch(
         id: String
     ) async throws -> Asset? {
         let request = AssetMO.fetchRequest()
@@ -21,7 +21,7 @@ final class DefaultAssetRepository: AssetRepository {
         }
     }
 
-    func fetchAll() async throws -> [Asset] {
+    public func fetchAll() async throws -> [Asset] {
         let request = AssetMO.fetchRequest()
         return try await viewContext.perform { [viewContext] in
             try viewContext.fetch(request)
@@ -29,7 +29,7 @@ final class DefaultAssetRepository: AssetRepository {
         }
     }
 
-    func save(
+    public func save(
         _ model: Asset
     ) async throws {
         return try await viewContext.perform { [viewContext] in
@@ -39,7 +39,7 @@ final class DefaultAssetRepository: AssetRepository {
         }
     }
 
-    func save(
+    public func save(
         _ models: [Asset]
     ) async throws {
         var iterator = models.makeIterator()
@@ -65,7 +65,7 @@ final class DefaultAssetRepository: AssetRepository {
         }
     }
 
-    func delete(
+    public func delete(
         _ assetId: String
     ) async throws {
         let fetchRequest = AssetMO.fetchRequest()
@@ -87,7 +87,7 @@ final class DefaultAssetRepository: AssetRepository {
     }
 }
 
-extension Container {
+public extension Container {
     var assetRepository: Factory<any AssetRepository> {
         self {
             DefaultAssetRepository()

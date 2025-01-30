@@ -3,7 +3,7 @@ import CoreData
 import Factory
 import CryptoMonitorModel
 
-protocol Repository {
+public protocol Repository {
     associatedtype Model: ManagedObjectTransformable
     func fetch(id: String) async throws -> Model?
     func fetchAll() async throws -> [Model]
@@ -12,19 +12,19 @@ protocol Repository {
     func delete(_ id: String) async throws
 }
 
-protocol DomainObjectTransformable {
+public protocol DomainObjectTransformable {
     associatedtype DomainModel
     func toDomain() -> DomainModel
 }
 
-protocol ManagedObjectTransformable {
+public protocol ManagedObjectTransformable {
     associatedtype ManagedModel: NSManagedObject
     func toManaged(using object: ManagedModel) -> ManagedModel
 }
 
 // TODO: Move to a more appropriate place
 extension ExchangeRate: ManagedObjectTransformable {
-    func toManaged(
+    public func toManaged(
         using object: ExchangeRateMO
     ) -> ExchangeRateMO {
         object.time = time
@@ -36,7 +36,7 @@ extension ExchangeRate: ManagedObjectTransformable {
 
 // TODO: Move to a more appropriate place
 extension Asset: ManagedObjectTransformable {
-    func toManaged(
+    public func toManaged(
         using model: AssetMO
     ) -> AssetMO {
         model.assetId = assetId

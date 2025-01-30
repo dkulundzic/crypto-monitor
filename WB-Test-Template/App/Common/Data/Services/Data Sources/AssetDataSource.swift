@@ -3,6 +3,7 @@ import Combine
 import Factory
 import CryptoMonitorModel
 import CryptoMonitorNetworking
+import CryptoMonitorPersistence
 
 #warning("TODO: Think about extracting into a reusable type")
 protocol AssetsDataSource {

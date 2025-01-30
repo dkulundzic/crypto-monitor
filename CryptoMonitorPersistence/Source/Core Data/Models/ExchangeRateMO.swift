@@ -3,12 +3,12 @@ import CoreData
 import CryptoMonitorModel
 
 @objc(ExchangeRateMO)
-final class ExchangeRateMO: NSManagedObject {
-    @NSManaged var time: Date
-    @NSManaged var rate: Double
-    @NSManaged var assetIdQuote: String?
+public final class ExchangeRateMO: NSManagedObject {
+    @NSManaged public var time: Date
+    @NSManaged public var rate: Double
+    @NSManaged public var assetIdQuote: String?
 
-    @nonobjc static func fetchRequest() -> NSFetchRequest<ExchangeRateMO> {
+    @nonobjc public static func fetchRequest() -> NSFetchRequest<ExchangeRateMO> {
         NSFetchRequest(entityName: "ExchangeRate")
     }
 }
@@ -16,7 +16,7 @@ final class ExchangeRateMO: NSManagedObject {
 extension ExchangeRateMO: Identifiable { }
 
 extension ExchangeRateMO: DomainObjectTransformable {
-    func toDomain() -> ExchangeRate {
+    public func toDomain() -> ExchangeRate {
         .init(
             time: time,
             rate: rate,
