@@ -8,7 +8,7 @@ class AssetListViewModel: ViewModel {
     typealias View = AssetListView
     @Published var searchText = ""
     @Published var showFavoritesOnly = false
-    @Published var error: AlertState?
+    @Published var alertState: AlertState?
     @Published private(set) var formattedLastUpdateDate: String?
     @Published private(set) var filteredAssets: [Asset] = []
     @Published private(set) var isLoading = false
@@ -83,7 +83,7 @@ private extension AssetListViewModel {
         do {
             try await assetsDataSource.fetchAll(policy: policy)
         } catch {
-            self.error = .error(
+            self.alertState = .error(
                 error.localizedDescription,
                 retry: { [weak self, policy] in
                     Task {

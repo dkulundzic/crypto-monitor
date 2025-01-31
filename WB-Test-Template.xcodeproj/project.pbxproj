@@ -16,6 +16,10 @@
 		2F15C8D52D4D06D80048BCEC /* ConcurrencyExtras in Frameworks */ = {isa = PBXBuildFile; productRef = 2F15C8D42D4D06D80048BCEC /* ConcurrencyExtras */; };
 		2F15C8D92D4D0C6B0048BCEC /* Assets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2F15C8D82D4D0C6B0048BCEC /* Assets.json */; };
 		2F15C8DC2D4D17400048BCEC /* LocalAppStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15C8DB2D4D17400048BCEC /* LocalAppStorageMock.swift */; };
+		2F15C8E02D4D1A960048BCEC /* AssetDetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15C8DF2D4D1A960048BCEC /* AssetDetailViewModelTests.swift */; };
+		2F15C8E32D4D1B210048BCEC /* ExchangeRateDataSourceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15C8E22D4D1B210048BCEC /* ExchangeRateDataSourceMock.swift */; };
+		2F15C8E52D4D1C090048BCEC /* ExchangeRateDataSourceThrowingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15C8E42D4D1C090048BCEC /* ExchangeRateDataSourceThrowingMock.swift */; };
+		2F15C8E72D4D1C360048BCEC /* AssetDataSourceThrowingMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F15C8E62D4D1C360048BCEC /* AssetDataSourceThrowingMock.swift */; };
 		2F3516B82D48F9B3003F3CA4 /* CryptoMonitorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; };
 		2F3516B92D48F9B3003F3CA4 /* CryptoMonitorCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2F3516BC2D48FA0F003F3CA4 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2F3516BB2D48FA0F003F3CA4 /* Factory */; };
@@ -273,6 +277,10 @@
 		2F15C8D82D4D0C6B0048BCEC /* Assets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Assets.json; sourceTree = "<group>"; };
 		2F15C8DB2D4D17400048BCEC /* LocalAppStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAppStorageMock.swift; sourceTree = "<group>"; };
 		2F15C8DD2D4D1A420048BCEC /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
+		2F15C8DF2D4D1A960048BCEC /* AssetDetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailViewModelTests.swift; sourceTree = "<group>"; };
+		2F15C8E22D4D1B210048BCEC /* ExchangeRateDataSourceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataSourceMock.swift; sourceTree = "<group>"; };
+		2F15C8E42D4D1C090048BCEC /* ExchangeRateDataSourceThrowingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateDataSourceThrowingMock.swift; sourceTree = "<group>"; };
+		2F15C8E62D4D1C360048BCEC /* AssetDataSourceThrowingMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDataSourceThrowingMock.swift; sourceTree = "<group>"; };
 		2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
@@ -502,7 +510,9 @@
 		2F15C8CB2D4CD4510048BCEC /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				2F15C8DE2D4D1A8C0048BCEC /* Asset Detail */,
 				2F15C8CE2D4CD5040048BCEC /* Asset List */,
+				2F15C8E12D4D1B190048BCEC /* Mocking */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -511,16 +521,26 @@
 			isa = PBXGroup;
 			children = (
 				2F15C8CC2D4CD4690048BCEC /* AssetListViewModelTests.swift */,
-				2F15C8DA2D4D17300048BCEC /* Mocking */,
 			);
 			path = "Asset List";
 			sourceTree = "<group>";
 		};
-		2F15C8DA2D4D17300048BCEC /* Mocking */ = {
+		2F15C8DE2D4D1A8C0048BCEC /* Asset Detail */ = {
 			isa = PBXGroup;
 			children = (
+				2F15C8DF2D4D1A960048BCEC /* AssetDetailViewModelTests.swift */,
+			);
+			path = "Asset Detail";
+			sourceTree = "<group>";
+		};
+		2F15C8E12D4D1B190048BCEC /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				2F15C8E22D4D1B210048BCEC /* ExchangeRateDataSourceMock.swift */,
+				2F15C8E42D4D1C090048BCEC /* ExchangeRateDataSourceThrowingMock.swift */,
 				2F15C8D82D4D0C6B0048BCEC /* Assets.json */,
 				2F15C8CF2D4CD5270048BCEC /* AssetDataSourceMock.swift */,
+				2F15C8E62D4D1C360048BCEC /* AssetDataSourceThrowingMock.swift */,
 				2F15C8DB2D4D17400048BCEC /* LocalAppStorageMock.swift */,
 			);
 			path = Mocking;
@@ -1248,9 +1268,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F15C8E72D4D1C360048BCEC /* AssetDataSourceThrowingMock.swift in Sources */,
+				2F15C8E02D4D1A960048BCEC /* AssetDetailViewModelTests.swift in Sources */,
+				2F15C8E52D4D1C090048BCEC /* ExchangeRateDataSourceThrowingMock.swift in Sources */,
 				2F15C8CD2D4CD4690048BCEC /* AssetListViewModelTests.swift in Sources */,
 				2F15C8DC2D4D17400048BCEC /* LocalAppStorageMock.swift in Sources */,
 				2F15C8D02D4CD5270048BCEC /* AssetDataSourceMock.swift in Sources */,
+				2F15C8E32D4D1B210048BCEC /* ExchangeRateDataSourceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

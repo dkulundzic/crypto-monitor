@@ -53,13 +53,13 @@ final class AssetListViewModelTests: XCTestCase {
 
     func test_alert_state_when_data_source_throws_an_error() async throws {
         Container.shared.assetDataSource.register {
-            AssetDataSourceErrorMock()
+            AssetDataSourceThrowingMock()
         }
         let viewModel = AssetListViewModel()
 
         await viewModel.onAction(.onTask)
 
-        XCTAssertNotNil(viewModel.error)
+        XCTAssertNotNil(viewModel.alertState)
     }
 
     // WARNING: Might be flaky due to different Locales

@@ -5,7 +5,6 @@ import CryptoMonitorModel
 import CryptoMonitorData
 import CryptoMonitorLocalization
 
-@MainActor
 final class AssetDetailViewModel: ViewModel {
     typealias View = AssetDetailView
     @Published var isBookmarked = false
@@ -65,10 +64,7 @@ private extension AssetDetailViewModel {
             .removeDuplicates()
             .sink { [asset, assetDataSource] isBookmarked in
                 Task {
-                    try await assetDataSource.setBookmark(
-                        isBookmarked, for: asset
-                    )
-
+                    try await assetDataSource.setBookmark(isBookmarked, for: asset)
                     try await assetDataSource.fetchAll(policy: .cacheOnly)
                 }
             }
@@ -80,6 +76,7 @@ private extension AssetDetailViewModel {
             .assign(to: &$exchangeRates)
     }
 
+    @MainActor
     func loadExchangeRates() async {
         do {
             try await exchangeRatesDataSource

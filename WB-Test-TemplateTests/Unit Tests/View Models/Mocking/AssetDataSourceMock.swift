@@ -10,7 +10,7 @@ final class AssetDataSourceMock: AssetsDataSource {
     }
 
     var wasFetchCalled = false
-    var wasBookmarkingCalled = false
+    var isBookmarked = false
     private let assetsSubject: CurrentValueSubject<[Asset], Never>
 
     init() {
@@ -50,33 +50,6 @@ final class AssetDataSourceMock: AssetsDataSource {
         _ bookmark: Bool,
         for asset: CryptoMonitorModel.Asset
     ) async throws {
-        wasBookmarkingCalled = true
-    }
-}
-
-final class AssetDataSourceErrorMock: AssetsDataSource {
-    var assets: [CryptoMonitorModel.Asset] {
-        []
-    }
-
-    var assetsPublisher: AnyPublisher<[CryptoMonitorModel.Asset], Never> {
-        Just([]).eraseToAnyPublisher()
-    }
-
-    func fetchAll(
-        policy: CryptoMonitorData.DataSourceFetchPolicy
-    ) async throws {
-        throw PlaceholderError.error
-    }
-
-    func setBookmark(
-        _ bookmark: Bool,
-        for asset: CryptoMonitorModel.Asset
-    ) async throws {
-
-    }
-
-    enum PlaceholderError: Error {
-        case error
+        isBookmarked = bookmark
     }
 }
