@@ -7,16 +7,19 @@ public protocol JSONMock {
 
 public struct DefaultJSONMock<T>: JSONMock where T: Codable {
     public let fileName: String
+    public let bundle: Bundle
 
     public init(
-        fileName: String
+        fileName: String,
+        bundle: Bundle = .main
     ) {
         self.fileName = fileName
+        self.bundle = bundle
     }
 
     public func mock() throws -> T {
         guard
-            let url = Bundle.main.url(forResource: fileName, withExtension: "json")
+            let url = bundle.url(forResource: fileName, withExtension: "json")
         else {
             throw Error.fileNotFound
         }

@@ -4,7 +4,6 @@ import Factory
 import CryptoMonitorModel
 import CryptoMonitorData
 
-@MainActor
 class AssetListViewModel: ViewModel {
     typealias View = AssetListView
     @Published var searchText = ""
@@ -37,7 +36,7 @@ class AssetListViewModel: ViewModel {
 private extension AssetListViewModel {
     func initializeObserving() {
         let assetsPublisher = assetsDataSource
-            .assets
+            .assetsPublisher
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
 
@@ -56,11 +55,6 @@ private extension AssetListViewModel {
             searchTextPublisher,
             favouritesPublisher
         )
-        .receive(
-            on: DispatchQueue.global(
-                qos: .userInitiated
-            )
-        )
         .map { assets, searchText, showFavoritesOnly in
             assets.filter(searchText: searchText, favouritesExclusively: showFavoritesOnly)
         }
@@ -68,7 +62,6 @@ private extension AssetListViewModel {
         .assign(to: &$filteredAssets)
 
         localAppStorage.lastAssetCacheUpdateDatePublisher
-            .receive(on: DispatchQueue.main)
             .map { date in
                 if let date {
                     return DateFormatter.defaultDateAndTime.string(from: date)
@@ -76,9 +69,11 @@ private extension AssetListViewModel {
                     return nil
                 }
             }
+            .receive(on: DispatchQueue.main)
             .assign(to: &$formattedLastUpdateDate)
     }
 
+    @MainActor
     func loadAssets(
         policy: DataSourceFetchPolicy
     ) async {

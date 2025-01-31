@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "86B7506A-88C4-4003-8D2F-CE5746D21C5B",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "commandLineArgumentEntries" : [
+      {
+        "argument" : "-com.apple.CoreData.ConcurrencyDebug 1"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:WB-Test-Template.xcodeproj",
+      "identifier" : "84E0D1BF2D1AE26C00A55CCB",
+      "name" : "WB-Test-Template"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WB-Test-Template.xcodeproj",
+        "identifier" : "84E0D1D22D1AE26E00A55CCB",
+        "name" : "WB-Test-TemplateTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:WB-Test-Template.xcodeproj",
+        "identifier" : "84E0D1DC2D1AE26E00A55CCB",
+        "name" : "WB-Test-TemplateUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

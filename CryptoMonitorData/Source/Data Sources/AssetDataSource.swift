@@ -8,21 +8,26 @@ import CryptoMonitorCore
 
 #warning("TODO: Think about extracting into a reusable type")
 public protocol AssetsDataSource {
-    var assets: AnyPublisher<[Asset], Never> { get }
+    var assets: [Asset] { get }
+    var assetsPublisher: AnyPublisher<[Asset], Never> { get }
     func fetchAll(policy: DataSourceFetchPolicy) async throws
     func setBookmark(_ bookmark: Bool, for asset: Asset) async throws
 }
 
 #warning("TODO: Think about error handling")
 public final class DefaultAssetsDataSource: AssetsDataSource {
-    public var assets: AnyPublisher<[Asset], Never> {
+    public var assets: [Asset] {
+        assetsSubject.value
+    }
+
+    public var assetsPublisher: AnyPublisher<[Asset], Never> {
         assetsSubject.eraseToAnyPublisher()
     }
 
     @Injected(\.localAppStorage) private var localAppStorage
     @Injected(\.assetRepository) private var assetRepository
     @Injected(\.assetsNetworkService) private var assetsNetworkService
-    private let assetsSubject = PassthroughSubject<[Asset], Never>()
+    private let assetsSubject = CurrentValueSubject<[Asset], Never>([])
 
     // swiftlint:disable:next function_body_length
     public func fetchAll(
