@@ -16,6 +16,8 @@ public enum L10n {
   public static let alertActionCasualCancel = L10n.tr("Localizable", "alert_action_casual_cancel", fallback: "OK")
   /// Retry
   public static let alertActionRetry = L10n.tr("Localizable", "alert_action_retry", fallback: "Retry")
+  /// No available data
+  public static let assetDetailExchangeRatesSectionNoData = L10n.tr("Localizable", "asset_detail_exchange_rates_section_no_data", fallback: "No available data")
   /// Last updated: 
   public static let assetListLastUpdateLabel = L10n.tr("Localizable", "asset_list_last_update_label", fallback: "Last updated: ")
   /// Crypto Monitor

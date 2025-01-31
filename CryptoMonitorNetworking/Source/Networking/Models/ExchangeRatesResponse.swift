@@ -1,7 +1,7 @@
 import Foundation
 import CryptoMonitorModel
 
-struct ExchangeRatesResponse: Decodable {
-    let assetIdBase: String
-    let rates: [ExchangeRate]
+public struct ExchangeRatesResponse: Codable {
+    public let assetIdBase: String
+    public let rates: [ExchangeRate]
 }

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ExchangeRate: Decodable, Identifiable, Hashable {
+public struct ExchangeRate: Codable, Identifiable, Hashable {
     public let time: Date
     public let rate: Double
     public let assetIdQuote: String?

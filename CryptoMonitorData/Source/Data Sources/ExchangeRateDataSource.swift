@@ -7,19 +7,24 @@ import CryptoMonitorPersistence
 
 #warning("TODO: Think about extracting into a reusable type")
 public protocol ExchangeRateDataSource {
-    var rates: AnyPublisher<[ExchangeRate], Never> { get }
+    var rates: [ExchangeRate] { get }
+    var ratesPublisher: AnyPublisher<[ExchangeRate], Never> { get }
     func fetchAll(for assetId: String, policy: DataSourceFetchPolicy) async throws
 }
 
 #warning("TODO: Think about error handling")
 public final class DefaultExchangeRateDataSource: ExchangeRateDataSource {
-    public var rates: AnyPublisher<[ExchangeRate], Never> {
+    public var rates: [ExchangeRate] {
+        ratesSubject.value
+    }
+
+    public var ratesPublisher: AnyPublisher<[ExchangeRate], Never> {
         ratesSubject.eraseToAnyPublisher()
     }
 
     @Injected(\.exchangeRateRepository) private var ratesRepository
     @Injected(\.exchangeRateNetworkService) private var exchangeRateNetworkService
-    private let ratesSubject = PassthroughSubject<[ExchangeRate], Never>()
+    private let ratesSubject = CurrentValueSubject<[ExchangeRate], Never>([])
 
     public func fetchAll(
         for assetId: String,

@@ -8,7 +8,7 @@ class AssetListViewModel: ViewModel {
     typealias View = AssetListView
     @Published var searchText = ""
     @Published var showFavoritesOnly = false
-    @Published var alertState: AlertState?
+    @Published var error: AlertState?
     @Published private(set) var formattedLastUpdateDate: String?
     @Published private(set) var filteredAssets: [Asset] = []
     @Published private(set) var isLoading = false
@@ -55,6 +55,11 @@ private extension AssetListViewModel {
             searchTextPublisher,
             favouritesPublisher
         )
+        .receive(
+            on: DispatchQueue.global(
+                qos: .userInitiated
+            )
+        )
         .map { assets, searchText, showFavoritesOnly in
             assets.filter(searchText: searchText, favouritesExclusively: showFavoritesOnly)
         }
@@ -83,7 +88,7 @@ private extension AssetListViewModel {
         do {
             try await assetsDataSource.fetchAll(policy: policy)
         } catch {
-            self.alertState = .error(
+            self.error = .error(
                 error.localizedDescription,
                 retry: { [weak self, policy] in
                     Task {

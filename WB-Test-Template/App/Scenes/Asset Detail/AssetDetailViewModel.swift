@@ -70,7 +70,7 @@ private extension AssetDetailViewModel {
             }
             .store(in: &bag)
 
-        exchangeRatesDataSource.rates
+        exchangeRatesDataSource.ratesPublisher
             .removeDuplicates()
             .receive(on: DispatchQueue.main)
             .assign(to: &$exchangeRates)

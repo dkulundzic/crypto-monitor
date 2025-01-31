@@ -2,6 +2,9 @@
 "asset_list_navigation_title" = "Crypto Monitor";
 "asset_list_last_update_label" = "Last updated: ";
 
+// MARK: - Asset Detail
+"asset_detail_exchange_rates_section_no_data" = "No available data";
+
 // MARK: - Messages
 "message_offline" = "You're currently offline";
 

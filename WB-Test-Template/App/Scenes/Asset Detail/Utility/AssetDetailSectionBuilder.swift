@@ -1,5 +1,6 @@
 import Foundation
 import CryptoMonitorModel
+import CryptoMonitorLocalization
 
 struct AssetDetailSectionBuilder {
     let asset: Asset
@@ -19,7 +20,10 @@ private extension AssetDetailSectionBuilder {
         else {
             return .exchangeRates(
                 [
-                    .init(title: "No available data", detail: "")
+                    .init(
+                        title: L10n.assetDetailExchangeRatesSectionNoData,
+                        detail: ""
+                    )
                 ]
             )
         }

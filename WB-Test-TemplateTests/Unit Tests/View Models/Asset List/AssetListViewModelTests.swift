@@ -59,7 +59,7 @@ final class AssetListViewModelTests: XCTestCase {
 
         await viewModel.onAction(.onTask)
 
-        XCTAssertNotNil(viewModel.alertState)
+        XCTAssertNotNil(viewModel.error)
     }
 
     // WARNING: Might be flaky due to different Locales

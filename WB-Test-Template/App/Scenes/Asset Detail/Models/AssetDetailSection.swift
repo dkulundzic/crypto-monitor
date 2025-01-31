@@ -29,6 +29,24 @@ enum AssetDetailSection: Identifiable, Hashable {
         }
     }
 
+    var isExchangesRatesSection: Bool {
+        switch self {
+        case .exchangeRates:
+            true
+        case .volumes:
+            false
+        }
+    }
+
+    var isVolumesSection: Bool {
+        switch self {
+        case .exchangeRates:
+            false
+        case .volumes:
+            true
+        }
+    }
+
     struct Item: Identifiable, Hashable {
         let title: String
         let detail: String

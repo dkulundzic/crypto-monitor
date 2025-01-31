@@ -4,7 +4,11 @@ import CryptoMonitorData
 import CryptoMonitorModel
 
 final class ExchangeRateDataSourceThrowingMock: ExchangeRateDataSource {
-    var rates: AnyPublisher<[CryptoMonitorModel.ExchangeRate], Never> {
+    var rates: [CryptoMonitorModel.ExchangeRate] {
+        []
+    }
+
+    var ratesPublisher: AnyPublisher<[CryptoMonitorModel.ExchangeRate], Never> {
         Just([]).eraseToAnyPublisher()
     }
 
