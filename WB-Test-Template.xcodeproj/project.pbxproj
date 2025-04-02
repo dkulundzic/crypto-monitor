@@ -32,6 +32,8 @@
 		2F3516D62D48FA9B003F3CA4 /* CryptoMonitorCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */; };
 		2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */; };
+		2F84B7BC2D9D55C400E45134 /* KnowledgeAndExperienceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84B7BB2D9D55C400E45134 /* KnowledgeAndExperienceItem.swift */; };
+		2F84B7BE2D9D5F5A00E45134 /* KnowledgeAndExperienceOptionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F84B7BD2D9D5F5A00E45134 /* KnowledgeAndExperienceOptionSheet.swift */; };
 		2F90F7062D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */; };
 		2F90F7072D4BC70300918EF2 /* CryptoMonitorNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2F90F70F2D4BC7AE00918EF2 /* CryptoMonitorCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F35167F2D48F858003F3CA4 /* CryptoMonitorCore.framework */; };
@@ -69,6 +71,11 @@
 		2FDEA9E72D41E48E0034F241 /* AssetDetailSectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E62D41E48E0034F241 /* AssetDetailSectionBuilder.swift */; };
 		2FDEA9E92D41EA210034F241 /* DynamicStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9E82D41EA210034F241 /* DynamicStack.swift */; };
 		2FDEA9EE2D41F5490034F241 /* AssetBookmarkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDEA9ED2D41F5490034F241 /* AssetBookmarkButton.swift */; };
+		2FDFBE1F2D9C458B0026DAD0 /* KnowledgeAndExperienceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBE1D2D9C458B0026DAD0 /* KnowledgeAndExperienceViewModel.swift */; };
+		2FDFBE202D9C458B0026DAD0 /* KnowledgeAndExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBE1C2D9C458B0026DAD0 /* KnowledgeAndExperienceView.swift */; };
+		2FDFBE222D9C463F0026DAD0 /* KnowledgeAndExperienceInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBE212D9C463F0026DAD0 /* KnowledgeAndExperienceInputField.swift */; };
+		2FDFBE242D9C4BB10026DAD0 /* KnowledgeAndExperienceOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBE232D9C4BB10026DAD0 /* KnowledgeAndExperienceOption.swift */; };
+		2FDFBE262D9C4C400026DAD0 /* KnowledgeAndExperienceTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FDFBE252D9C4C400026DAD0 /* KnowledgeAndExperienceTopic.swift */; };
 		2FE785512D3A753C002C2B71 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 2FE785502D3A753C002C2B71 /* Factory */; };
 		2FFE1EEC2D3A875D000EE296 /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2FFE1EEB2D3A875D000EE296 /* NukeUI */; };
 		84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */; };
@@ -289,6 +296,8 @@
 		2F3516C22D48FA6D003F3CA4 /* CryptoMonitorModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F49AC0E2D3FC915007D6A92 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		2F49AC102D3FC9A6007D6A92 /* ActionableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableView.swift; sourceTree = "<group>"; };
+		2F84B7BB2D9D55C400E45134 /* KnowledgeAndExperienceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceItem.swift; sourceTree = "<group>"; };
+		2F84B7BD2D9D5F5A00E45134 /* KnowledgeAndExperienceOptionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceOptionSheet.swift; sourceTree = "<group>"; };
 		2F90F6F32D4BC70200918EF2 /* CryptoMonitorNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F90F7522D4BCCBB00918EF2 /* CryptoMonitorPersistence.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorPersistence.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F90F7FF2D4BD33F00918EF2 /* CryptoMonitorData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMonitorData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,6 +314,11 @@
 		2FDEA9E62D41E48E0034F241 /* AssetDetailSectionBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetDetailSectionBuilder.swift; sourceTree = "<group>"; };
 		2FDEA9E82D41EA210034F241 /* DynamicStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStack.swift; sourceTree = "<group>"; };
 		2FDEA9ED2D41F5490034F241 /* AssetBookmarkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetBookmarkButton.swift; sourceTree = "<group>"; };
+		2FDFBE1C2D9C458B0026DAD0 /* KnowledgeAndExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceView.swift; sourceTree = "<group>"; };
+		2FDFBE1D2D9C458B0026DAD0 /* KnowledgeAndExperienceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceViewModel.swift; sourceTree = "<group>"; };
+		2FDFBE212D9C463F0026DAD0 /* KnowledgeAndExperienceInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceInputField.swift; sourceTree = "<group>"; };
+		2FDFBE232D9C4BB10026DAD0 /* KnowledgeAndExperienceOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceOption.swift; sourceTree = "<group>"; };
+		2FDFBE252D9C4C400026DAD0 /* KnowledgeAndExperienceTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeAndExperienceTopic.swift; sourceTree = "<group>"; };
 		84E0D1C02D1AE26C00A55CCB /* WB-Test-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WB-Test-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E0D1C32D1AE26C00A55CCB /* CryptoMonitorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMonitorApp.swift; sourceTree = "<group>"; };
 		84E0D1C92D1AE26E00A55CCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -560,6 +574,36 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		2F84B7BF2D9D702500E45134 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2F84B7BB2D9D55C400E45134 /* KnowledgeAndExperienceItem.swift */,
+				2FDFBE232D9C4BB10026DAD0 /* KnowledgeAndExperienceOption.swift */,
+				2FDFBE252D9C4C400026DAD0 /* KnowledgeAndExperienceTopic.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2F84B7C02D9D702B00E45134 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2FDFBE212D9C463F0026DAD0 /* KnowledgeAndExperienceInputField.swift */,
+				2F84B7BD2D9D5F5A00E45134 /* KnowledgeAndExperienceOptionSheet.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2F84B7C12D9D726900E45134 /* K & E */ = {
+			isa = PBXGroup;
+			children = (
+				2FDFBE1C2D9C458B0026DAD0 /* KnowledgeAndExperienceView.swift */,
+				2FDFBE1D2D9C458B0026DAD0 /* KnowledgeAndExperienceViewModel.swift */,
+				2F84B7BF2D9D702500E45134 /* Models */,
+				2F84B7C02D9D702B00E45134 /* Views */,
+			);
+			path = "K & E";
+			sourceTree = "<group>";
+		};
 		2FA192BD2D47F44B008EB7EE /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +629,7 @@
 			children = (
 				2FDEA9DD2D41DAB80034F241 /* Asset Detail */,
 				2FDEA9DC2D41DAB10034F241 /* Asset List */,
+				2FDFBE1E2D9C458B0026DAD0 /* Knowledge And Experience */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -633,6 +678,14 @@
 				2FDEA9E62D41E48E0034F241 /* AssetDetailSectionBuilder.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		2FDFBE1E2D9C458B0026DAD0 /* Knowledge And Experience */ = {
+			isa = PBXGroup;
+			children = (
+				2F84B7C12D9D726900E45134 /* K & E */,
+			);
+			path = "Knowledge And Experience";
 			sourceTree = "<group>";
 		};
 		2FE785442D3A6252002C2B71 /* Extensions */ = {
@@ -1249,6 +1302,7 @@
 			files = (
 				2F90F83A2D4BD7EB00918EF2 /* AppearanceStartupProcess.swift in Sources */,
 				84E0D1C42D1AE26C00A55CCB /* CryptoMonitorApp.swift in Sources */,
+				2F84B7BC2D9D55C400E45134 /* KnowledgeAndExperienceItem.swift in Sources */,
 				2F94C19D2D4787E600EDFE8E /* CryptoMonitorAppView.swift in Sources */,
 				2F0B8ED32D47BF3800945173 /* AlertStateAction+Vendor.swift in Sources */,
 				2F0B8ECE2D47BE8800945173 /* AlertState.swift in Sources */,
@@ -1256,17 +1310,23 @@
 				2F49AC0F2D3FC915007D6A92 /* ViewModel.swift in Sources */,
 				84E0D1FD2D1AE64400A55CCB /* AssetListViewModel.swift in Sources */,
 				2F94C19B2D4787AB00EDFE8E /* CryptoMonitorAppViewModel.swift in Sources */,
+				2FDFBE262D9C4C400026DAD0 /* KnowledgeAndExperienceTopic.swift in Sources */,
 				2FDEA9EE2D41F5490034F241 /* AssetBookmarkButton.swift in Sources */,
 				2FDEA9E52D41DD8F0034F241 /* AssetDetailSection.swift in Sources */,
 				2F0B8ED12D47BEFA00945173 /* AlertState+Vendor.swift in Sources */,
+				2F84B7BE2D9D5F5A00E45134 /* KnowledgeAndExperienceOptionSheet.swift in Sources */,
+				2FDFBE242D9C4BB10026DAD0 /* KnowledgeAndExperienceOption.swift in Sources */,
 				2FDEA9E22D41DC680034F241 /* DataPointView.swift in Sources */,
 				84E0D1FB2D1AE64400A55CCB /* AssetDetailView.swift in Sources */,
 				2FA192BF2D47F471008EB7EE /* View+Alert.swift in Sources */,
 				2F90F8D42D4BDE9800918EF2 /* OfflineBannerView.swift in Sources */,
+				2FDFBE1F2D9C458B0026DAD0 /* KnowledgeAndExperienceViewModel.swift in Sources */,
+				2FDFBE202D9C458B0026DAD0 /* KnowledgeAndExperienceView.swift in Sources */,
 				2F9269D52D3E89F300DBA5A7 /* AssetListRowView.swift in Sources */,
 				2F49AC112D3FC9A6007D6A92 /* ActionableView.swift in Sources */,
 				2FDEA9E72D41E48E0034F241 /* AssetDetailSectionBuilder.swift in Sources */,
 				2FDEA9D92D41D77B0034F241 /* AssetDetailViewModel.swift in Sources */,
+				2FDFBE222D9C463F0026DAD0 /* KnowledgeAndExperienceInputField.swift in Sources */,
 				2FDEA9E92D41EA210034F241 /* DynamicStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
