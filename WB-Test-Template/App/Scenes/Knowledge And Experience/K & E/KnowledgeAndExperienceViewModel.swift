@@ -3,12 +3,18 @@
 import SwiftUI
 import Combine
 
+typealias KnowledgeAndExperienceResult = KnowledgeAndExperienceViewModel.Result
+
 final class KnowledgeAndExperienceViewModel: ObservableObject {
     @Published var sheet: Sheet?
     @Published var items = KnowledgeAndExperienceItem.allCases
     private var bag = Set<AnyCancellable>()
+    private let onResult: (KnowledgeAndExperienceResult) -> Void
 
-    init() {
+    init(
+        onResult: @escaping (KnowledgeAndExperienceResult) -> Void
+    ) {
+        self.onResult = onResult
         setupObserving()
     }
 
@@ -21,6 +27,11 @@ final class KnowledgeAndExperienceViewModel: ObservableObject {
                 item.topic.id
             }
         }
+    }
+
+    enum Result {
+        case successfullySubmit
+        case logoutRequested
     }
 }
 
@@ -37,6 +48,7 @@ extension KnowledgeAndExperienceViewModel {
         sheet = nil
     }
 
+    @MainActor
     func onSubmitButtonTapped() {
         items = items.map { item in
             var item = item
@@ -48,7 +60,14 @@ extension KnowledgeAndExperienceViewModel {
             return
         }
 
-        print("Proceed to network request.")
+        Task {
+            try await Task.sleep(for: .seconds(1))
+            onResult(.successfullySubmit)
+        }
+    }
+
+    func onLogoutButtonTapped() {
+        onResult(.logoutRequested)
     }
 }
 

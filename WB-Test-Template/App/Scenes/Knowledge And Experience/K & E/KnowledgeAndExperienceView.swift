@@ -6,7 +6,17 @@ import SwiftUI
 struct KnowledgeAndExperienceView: View {
     private let text: String = "Please indicate  for each product group how many transactions you have already carried out yourself in the past 3 years, i.e., without the support of an asset manager or  investment advisor."
 
-    @StateObject var viewModel = KnowledgeAndExperienceViewModel()
+    @StateObject var viewModel: KnowledgeAndExperienceViewModel
+
+    init(
+        onResult: @escaping (KnowledgeAndExperienceResult) -> Void
+    ) {
+        self._viewModel = .init(
+            wrappedValue: .init(
+                onResult: onResult
+            )
+        )
+    }
 
     var body: some View {
         VStack(spacing: 0) {
@@ -55,7 +65,7 @@ struct KnowledgeAndExperienceView: View {
                 )
 
                 Button {
-
+                    viewModel.onLogoutButtonTapped()
                 } label: {
                     Text("Logout")
                 }
@@ -87,5 +97,5 @@ struct KnowledgeAndExperienceView: View {
 }
 
 #Preview {
-    KnowledgeAndExperienceView()
+    KnowledgeAndExperienceView { _ in }
 }
